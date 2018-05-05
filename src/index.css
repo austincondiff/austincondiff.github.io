@@ -50,6 +50,14 @@ table {
 /*-------------------------------------*/
 
 
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #94a1ab;
+	font-weight: 300;
+	font-size: 14px;
+}
+
 .hide {
 	display: none;
 }
