@@ -20,7 +20,6 @@ export default class Nav extends Component {
       <nav className={'block' + (this.state.scrollTop > 0 ? ' scrolled' : '')}>
     		<div className='wrap'>
           <img src={ require('../assets/img/logo.svg') } alt="" id="logo"/>
-          {this.state.scrollTop}
     			<a className="about current" href="#about">About</a>
     			<a className="work" href="#work">Work</a>
     			<a className="timeline" href="#timeline">Timeline</a>

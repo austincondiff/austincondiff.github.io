@@ -19051,38 +19051,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Nav extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = { scrollTop: 0 };
+    this.onScroll = this.onScroll.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  onScroll() {
+    this.setState({ scrollTop: window.scrollY });
+  }
+
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      "nav",
-      { className: "block" },
+      'nav',
+      { className: 'block' + (this.state.scrollTop > 0 ? ' scrolled' : '') },
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        "div",
-        { className: "wrap" },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", { src: __webpack_require__(24), alt: "", id: "logo" }),
+        'div',
+        { className: 'wrap' },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('img', { src: __webpack_require__(24), alt: '', id: 'logo' }),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "a",
-          { className: "about current", href: "#about" },
-          "About"
+          'a',
+          { className: 'about current', href: '#about' },
+          'About'
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "a",
-          { className: "work", href: "#work" },
-          "Work"
+          'a',
+          { className: 'work', href: '#work' },
+          'Work'
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "a",
-          { className: "timeline", href: "#timeline" },
-          "Timeline"
+          'a',
+          { className: 'timeline', href: '#timeline' },
+          'Timeline'
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "a",
-          { className: "connect", href: "#connect" },
-          "Connect"
+          'a',
+          { className: 'connect', href: '#connect' },
+          'Connect'
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "a",
-          { href: "files/resume-2017.pdf", target: "_blank", className: "resume" },
-          "Download Resume"
+          'a',
+          { href: 'files/resume-2017.pdf', target: '_blank', className: 'resume' },
+          'Download Resume'
         )
       )
     );
@@ -19440,65 +19454,79 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = { scrollTop: 0 };
+    this.onScroll = this.onScroll.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  onScroll() {
+    this.setState({ scrollTop: window.scrollY });
+  }
+
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      "header",
-      { id: "about" },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "bg-img" }),
+      'header',
+      { id: 'about' },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'bg-img', style: { top: this.state.scrollTop } }),
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        "div",
-        { className: "wrap" },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "photo" }),
+        'div',
+        { className: 'wrap' },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'photo' }),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "h1",
-          { className: "name" },
-          "Austin ",
+          'h1',
+          { className: 'name' },
+          'Austin ',
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "em",
+            'em',
             null,
-            "Condiff"
+            'Condiff'
           )
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "h2",
-          { className: "title" },
-          "UX/UI Designer & Developer"
+          'h2',
+          { className: 'title' },
+          'UX/UI Designer & Developer'
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "div",
-          { className: "social" },
+          'div',
+          { className: 'social' },
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://twitter.com/austincondiff", className: "twitter" },
-            "Twitter"
+            'a',
+            { target: '_blank', href: 'https://twitter.com/austincondiff', className: 'twitter' },
+            'Twitter'
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://www.dribbble.com/austincondiff", className: "dribbble" },
-            "Dribbble"
+            'a',
+            { target: '_blank', href: 'http://www.dribbble.com/austincondiff', className: 'dribbble' },
+            'Dribbble'
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://www.linkedin.com/pub/austin-condiff/19/966/b6b", className: "linkedin" },
-            "LinkedIn"
+            'a',
+            { target: '_blank', href: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b', className: 'linkedin' },
+            'LinkedIn'
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://plus.google.com/113055989549833930913/", className: "gplus" },
-            "Google+"
+            'a',
+            { target: '_blank', href: 'https://plus.google.com/113055989549833930913/', className: 'gplus' },
+            'Google+'
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://www.facebook.com/acondiff", className: "facebook" },
-            "Facebook"
+            'a',
+            { target: '_blank', href: 'https://www.facebook.com/acondiff', className: 'facebook' },
+            'Facebook'
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://instagram.com/austincondiff", className: "instagram" },
-            "Instagram"
+            'a',
+            { target: '_blank', href: 'http://instagram.com/austincondiff', className: 'instagram' },
+            'Instagram'
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", { className: "arrow" })
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('i', { className: 'arrow' })
       )
     );
   }
