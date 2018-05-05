@@ -15,6 +15,7 @@ export default class App extends Component {
         <Work />
         <Timeline />
         <Connect />
+        <FindMe />
         <Footer />
       </div>
     )
