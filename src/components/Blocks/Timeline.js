@@ -63,14 +63,22 @@ export default class Timeline extends Component {
     						<p>At RSS.com I  developed ideas for RSS.com in an effort to revive an aging technology, create a reimagined reader experience, help publishers to obtain a styled, user-friendly RSS feed page, and educate the public about the benefits of the technology. I designed wireframes and mockups then later implemented those mockups in an Angular front end.</p>
     					</div>
     				</li>
-    				<li className="intuit">
+            <li className="intuit">
     					<h4 className="company">Intuit</h4>
     					<h5 className="job-title">UI Engineer/Designer</h5>
-    					<div className="date">2016 - Present</div>
+    					<div className="date">2016</div>
     					<div className="description">
     						<p>At Intuit, I worked on a product that helps accountants better communicate and get documents from their clients. I helped in the transition from AngularJS to ReactJS and refreshed the design of both their accountant and client-facing apps. </p>
     					</div>
     				</li>
+            <li className="verizon">
+              <h4 className="company">Verizon</h4>
+              <h5 className="job-title">Creative UI Engineer</h5>
+              <div className="date">2017 - Present</div>
+              <div className="description">
+                <p>At Verizon, I created a design system, developed a story map (or user flow) based on user input, and arechetected a frontend project from the ground up based on ReactJS for hardware operations. </p>
+              </div>
+            </li>
     				<li className="now">
     					<h4 className="company">You are here.</h4>
     				</li>

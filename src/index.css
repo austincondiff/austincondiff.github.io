@@ -222,17 +222,19 @@ header .social a {
 	background: #50d0bf;
 	width: 45px;
 	height: 45px;
-	font-size: 0px;
-	text-indent: -99999px;
-	text-decoration: none;
-	   -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-            border-radius: 100px;
-    margin: 0 8px;
-    -webkit-transition: .25s;
-    -moz-transition: .25s;
-    -ms-transition: .25s;
-    transition: .25s;
+	/* font-size: 0px;
+	text-indent: -99999px; */
+  color: white;
+  border-radius: 100px;
+  margin: 0 8px;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  -ms-transition: .25s;
+  transition: .25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
 header .social a:hover {
@@ -393,10 +395,14 @@ ul.theory li em {
 	position: relative;
 	line-height: 0;
 	overflow: hidden;
+  padding-top: calc(75% - 15px);
 }
 
 .block.work ul li a img {
 	width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .block.work ul li a[href]:after {
@@ -458,17 +464,13 @@ ul.theory li em {
 	opacity: .5;
 }
 
-
-
 ul.timeline {
-	margin-left: 455px;
-/*	margin-left: -webkit-calc(50% - 5px);
-	margin-left: -moz-calc(50% - 5px);
-	margin-left: calc(50% - 5px);
-*/	margin-top: -55px;
-	border-left: 10px solid white;
-	padding: 65px 0;
-	position: relative;
+  margin-left: 455px;
+  margin-top: -56px;
+  border-left: 10px solid white;
+  padding: 48px 0 0 0;
+  position: relative;
+  margin-bottom: 48px;
 }
 
 ul.timeline:after {
@@ -478,19 +480,23 @@ ul.timeline:after {
 	height: 90px;
 	position: absolute;
 	bottom: 0;
-	left: -10px;
+	left: -10px;``
 	background: #f5f6f7;
 }
 
 ul.timeline li {
 	background: white;
-	padding: 20px;
-	   -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-            border-radius: 5px;
-    position: relative;
-    text-align: left;
-    z-index: 1;
+	padding: 24px;
+  border-radius: 5px;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+
+ul.timeline li p {
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: .25px;
 }
 
 
@@ -498,29 +504,31 @@ ul.timeline li.mf {
 	margin-top: -68px;
 }
 ul.timeline li.ogf {
-	margin-top: -153px;
+	margin-top: -203px;
 }
 ul.timeline li.ancestry {
-	margin-top: -104px;
+	margin-top: -130px;
 }
 ul.timeline li.usana {
-	margin-top: -75px;
-}
-ul.timeline li.now {
-	margin-top: 0;
-  width: 170px;
-  margin-left: -211px !important;
+	margin-top: -90px;
 }
 ul.timeline li.solutionstream {
-	margin-top: -146px;
+	margin-top: -179px;
 }
 ul.timeline li.rss {
-	margin-top: -8px;
+	margin-top: -10px;
 }
 ul.timeline li.intuit {
 	margin-top: -160px;
 }
-
+ul.timeline li.verizon {
+	margin-top: -30px;
+}
+ul.timeline li.now {
+  margin-top: -73px;
+  width: 196px;
+  /* margin-left: -237px !important; */
+}
 
 
 ul.timeline li:nth-child(odd) {
@@ -578,12 +586,15 @@ ul.timeline li:last-child {
 	/* width: 300px;
 	width: 130px;
 	text-align: center; */
+  position: absolute;
+  left: 0;
+  bottom: -40px;
 }
 
 ul.timeline li .company {
-	font-size: 21px;
+	font-size: 24px;
 	font-weight: 300;
-	margin-bottom: 6px;
+	margin-bottom: 8px;
 	color: #6B6F81;
 }
 
@@ -597,7 +608,7 @@ ul.timeline li .job-title {
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	opacity: 0.8;
-	margin-bottom: 10px;
+	margin-bottom: 16px;
 	color: #E06A85;
 }
 
@@ -606,8 +617,8 @@ ul.timeline li .date {
 	font-weight: 500;
 	opacity: 0.8;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 24px;
+	right: 24px;
 }
 
 .block.connect p.connect-txt,
@@ -778,7 +789,7 @@ header .wrap {
 	padding: 80px 0 50px 0;
 }
 
-header .social a:after {
+/* header .social a:after {
 	color: white;
 	font-family: 'entypo';
 	display: block;
@@ -792,7 +803,7 @@ header .social a:after {
 	text-indent: 0;
 	line-height: 45px;
 	text-decoration: none;
-}
+} */
 
 .find-me {
 	-webkit-transition: .25s;
@@ -803,15 +814,16 @@ header .social a:after {
 
 .find-me .social {
 	margin-bottom: 30px;
+  font-size: 0;
 }
 
-.find-me.twitter { background: #00ACEE; }
+/* .find-me.twitter { background: #00ACEE; }
 .find-me.dribbble { background: #ea4c89; }
 .find-me.linkedin { background: #0077b5; }
 .find-me.gplus { background: #D34836; }
 .find-me.facebook { background: #4c66a4; }
 .find-me.instagram { background: #517fa4; }
-.find-me.rdio { background: #008fd5; }
+.find-me.rdio { background: #008fd5; } */
 
 .find-me .find-txt {
 	-webkit-transition: .25s;
@@ -820,28 +832,25 @@ header .social a:after {
 	transition: .25s;
 }
 
-.find-me.twitter .find-txt,
-.find-me.dribbble .find-txt,
-.find-me.linkedin .find-txt,
-.find-me.gplus .find-txt,
-.find-me.facebook .find-txt,
-.find-me.instagram .find-txt,
-.find-me.rdio .find-txt { color: white; }
-
 .find-me .social a {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
-	font-size: 0px;
-	text-indent: -99999px;
-	   -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-            border-radius: 100px;
-    margin: 0 8px;
-    text-decoration: none;
+	/* font-size: 0px;
+	text-indent: -99999px; */
+  border-radius: 100px;
+  padding: 0 8px;
+  text-decoration: none;
+  font-size: 32px;
+  color: rgba(0,0,0,0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .25s;
+  box-sizing: content-box;
 }
 
-.find-me .social a:after {
+/* .find-me .social a:after {
 	color: rgba(0, 0, 0, 0.3);
 	font-family: 'entypo';
 	display: block;
@@ -859,13 +868,13 @@ header .social a:after {
 	-moz-transition: .25s;
 	-ms-transition: .25s;
 	transition: .25s;
-}
+} */
 
-.find-me .social a:hover:after {
+.find-me .social a:hover {
 	color: white;
 }
 
-.social a.twitter:after {
+/* .social a.twitter:after {
 	content: '\f309';
 }
 
@@ -891,7 +900,7 @@ header .social a:after {
 
 .social a.rdio:after {
 	content: '\f324';
-}
+} */
 
 footer {
 	background: #3A3C47;
@@ -1208,8 +1217,7 @@ footer .wrap {
 		background: #50D0BF;
 		width: 35px;
 		height: 35px;
-		font-size: 0px;
-		text-indent: -99999px;
+		color: white;
 		text-decoration: none;
 		-moz-border-radius: 100px;
 		-webkit-border-radius: 100px;
@@ -1221,7 +1229,7 @@ footer .wrap {
 		transition: .25s;
 	}
 
-	header .social a:after {
+	/* header .social a:after {
 		color: #FFF;
 		font-family: 'entypo';
 		display: block;
@@ -1235,7 +1243,7 @@ footer .wrap {
 		text-indent: 0;
 		line-height: 35px;
 		text-decoration: none;
-	}
+	} */
 
 	.block.timeline .wrap {
     padding-bottom: 0;
@@ -1282,8 +1290,8 @@ footer .wrap {
 		display: inline-block;
 		width: 32px;
 		height: 32px;
-		font-size: 0px;
-		text-indent: -99999px;
+		/* font-size: 0px;
+		text-indent: -99999px; */
 		-moz-border-radius: 100px;
 		-webkit-border-radius: 100px;
 		border-radius: 100px;

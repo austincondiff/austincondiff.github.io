@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -19016,7 +19016,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
 /* harmony import */ var _Blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(25);
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37);
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48);
 
 
 
@@ -19034,6 +19034,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks__WEBPACK_IMPORTED_MODULE_2__["Work"], null),
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks__WEBPACK_IMPORTED_MODULE_2__["Timeline"], null),
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks__WEBPACK_IMPORTED_MODULE_2__["Connect"], null),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks__WEBPACK_IMPORTED_MODULE_2__["FindMe"], null),
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], null)
     );
   }
@@ -19127,13 +19128,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _Header__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _MissionStatement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34);
+/* harmony import */ var _MissionStatement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(45);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MissionStatement", function() { return _MissionStatement__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _Timeline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(35);
+/* harmony import */ var _Timeline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(46);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Timeline", function() { return _Timeline__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
-/* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(36);
+/* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(47);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Work", function() { return _Work__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
 
@@ -19451,6 +19452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34);
+
 
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -19498,7 +19501,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
             'a',
             { target: '_blank', href: 'https://twitter.com/austincondiff', className: 'twitter' },
-            'Twitter'
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], { type: 'twitter' })
           ),
           react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
             'a',
@@ -19538,6 +19541,1493 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const files = __webpack_require__(35);
+files.keys().forEach(files);
+
+const Icon = ({ type, className }) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  'svg',
+  { height: '1em', width: '1em' },
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('use', { xlinkHref: `#${type}` })
+);
+
+/* harmony default export */ __webpack_exports__["default"] = (Icon);
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./dribbble.svg": 36,
+	"./facebook.svg": 40,
+	"./google-plus.svg": 41,
+	"./linkedin.svg": 42,
+	"./spotify.svg": 43,
+	"./twitter.svg": 44
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	var module = __webpack_require__(id);
+	return module;
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error('Cannot find module "' + req + '".');
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 35;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "dribbble",
+  "use": "dribbble-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"dribbble\"><path d=\"M16.42,18.42C16,16.5 15.5,14.73 15,13.17C15.5,13.1 16,13.06 16.58,13.06H16.6V13.06H16.6C17.53,13.06 18.55,13.18 19.66,13.43C19.28,15.5 18.08,17.27 16.42,18.42M12,19.8C10.26,19.8 8.66,19.23 7.36,18.26C7.64,17.81 8.23,16.94 9.18,16.04C10.14,15.11 11.5,14.15 13.23,13.58C13.82,15.25 14.36,17.15 14.77,19.29C13.91,19.62 13,19.8 12,19.8M4.2,12C4.2,11.96 4.2,11.93 4.2,11.89C4.42,11.9 4.71,11.9 5.05,11.9H5.06C6.62,11.89 9.36,11.76 12.14,10.89C12.29,11.22 12.44,11.56 12.59,11.92C10.73,12.54 9.27,13.53 8.19,14.5C7.16,15.46 6.45,16.39 6.04,17C4.9,15.66 4.2,13.91 4.2,12M8.55,5C9.1,5.65 10.18,7.06 11.34,9.25C9,9.96 6.61,10.12 5.18,10.12C5.14,10.12 5.1,10.12 5.06,10.12H5.05C4.81,10.12 4.6,10.12 4.43,10.11C5,7.87 6.5,6 8.55,5M12,4.2C13.84,4.2 15.53,4.84 16.86,5.91C15.84,7.14 14.5,8 13.03,8.65C12,6.67 11,5.25 10.34,4.38C10.88,4.27 11.43,4.2 12,4.2M18.13,7.18C19.1,8.42 19.71,9.96 19.79,11.63C18.66,11.39 17.6,11.28 16.6,11.28V11.28H16.59C15.79,11.28 15.04,11.35 14.33,11.47C14.16,11.05 14,10.65 13.81,10.26C15.39,9.57 16.9,8.58 18.13,7.18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
+	 true ? module.exports = factory() :
+	undefined;
+}(this, (function () { 'use strict';
+
+var SpriteSymbol = function SpriteSymbol(ref) {
+  var id = ref.id;
+  var viewBox = ref.viewBox;
+  var content = ref.content;
+
+  this.id = id;
+  this.viewBox = viewBox;
+  this.content = content;
+};
+
+/**
+ * @return {string}
+ */
+SpriteSymbol.prototype.stringify = function stringify () {
+  return this.content;
+};
+
+/**
+ * @return {string}
+ */
+SpriteSymbol.prototype.toString = function toString () {
+  return this.stringify();
+};
+
+SpriteSymbol.prototype.destroy = function destroy () {
+    var this$1 = this;
+
+  ['id', 'viewBox', 'content'].forEach(function (prop) { return delete this$1[prop]; });
+};
+
+/**
+ * @param {string} content
+ * @return {Element}
+ */
+var parse = function (content) {
+  var hasImportNode = !!document.importNode;
+  var doc = new DOMParser().parseFromString(content, 'image/svg+xml').documentElement;
+
+  /**
+   * Fix for browser which are throwing WrongDocumentError
+   * if you insert an element which is not part of the document
+   * @see http://stackoverflow.com/a/7986519/4624403
+   */
+  if (hasImportNode) {
+    return document.importNode(doc, true);
+  }
+
+  return doc;
+};
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var deepmerge = createCommonjsModule(function (module, exports) {
+(function (root, factory) {
+    if (false) {} else {
+        module.exports = factory();
+    }
+}(commonjsGlobal, function () {
+
+function isMergeableObject(val) {
+    var nonNullObject = val && typeof val === 'object';
+
+    return nonNullObject
+        && Object.prototype.toString.call(val) !== '[object RegExp]'
+        && Object.prototype.toString.call(val) !== '[object Date]'
+}
+
+function emptyTarget(val) {
+    return Array.isArray(val) ? [] : {}
+}
+
+function cloneIfNecessary(value, optionsArgument) {
+    var clone = optionsArgument && optionsArgument.clone === true;
+    return (clone && isMergeableObject(value)) ? deepmerge(emptyTarget(value), value, optionsArgument) : value
+}
+
+function defaultArrayMerge(target, source, optionsArgument) {
+    var destination = target.slice();
+    source.forEach(function(e, i) {
+        if (typeof destination[i] === 'undefined') {
+            destination[i] = cloneIfNecessary(e, optionsArgument);
+        } else if (isMergeableObject(e)) {
+            destination[i] = deepmerge(target[i], e, optionsArgument);
+        } else if (target.indexOf(e) === -1) {
+            destination.push(cloneIfNecessary(e, optionsArgument));
+        }
+    });
+    return destination
+}
+
+function mergeObject(target, source, optionsArgument) {
+    var destination = {};
+    if (isMergeableObject(target)) {
+        Object.keys(target).forEach(function (key) {
+            destination[key] = cloneIfNecessary(target[key], optionsArgument);
+        });
+    }
+    Object.keys(source).forEach(function (key) {
+        if (!isMergeableObject(source[key]) || !target[key]) {
+            destination[key] = cloneIfNecessary(source[key], optionsArgument);
+        } else {
+            destination[key] = deepmerge(target[key], source[key], optionsArgument);
+        }
+    });
+    return destination
+}
+
+function deepmerge(target, source, optionsArgument) {
+    var array = Array.isArray(source);
+    var options = optionsArgument || { arrayMerge: defaultArrayMerge };
+    var arrayMerge = options.arrayMerge || defaultArrayMerge;
+
+    if (array) {
+        return Array.isArray(target) ? arrayMerge(target, source, optionsArgument) : cloneIfNecessary(source, optionsArgument)
+    } else {
+        return mergeObject(target, source, optionsArgument)
+    }
+}
+
+deepmerge.all = function deepmergeAll(array, optionsArgument) {
+    if (!Array.isArray(array) || array.length < 2) {
+        throw new Error('first argument should be an array with at least two elements')
+    }
+
+    // we are sure there are at least 2 values, so it is safe to have no initial value
+    return array.reduce(function(prev, next) {
+        return deepmerge(prev, next, optionsArgument)
+    })
+};
+
+return deepmerge
+
+}));
+});
+
+var namespaces_1 = createCommonjsModule(function (module, exports) {
+var namespaces = {
+  svg: {
+    name: 'xmlns',
+    uri: 'http://www.w3.org/2000/svg'
+  },
+  xlink: {
+    name: 'xmlns:xlink',
+    uri: 'http://www.w3.org/1999/xlink'
+  }
+};
+
+exports.default = namespaces;
+module.exports = exports.default;
+});
+
+/**
+ * @param {Object} attrs
+ * @return {string}
+ */
+var objectToAttrsString = function (attrs) {
+  return Object.keys(attrs).map(function (attr) {
+    var value = attrs[attr].toString().replace(/"/g, '&quot;');
+    return (attr + "=\"" + value + "\"");
+  }).join(' ');
+};
+
+var svg = namespaces_1.svg;
+var xlink = namespaces_1.xlink;
+
+var defaultAttrs = {};
+defaultAttrs[svg.name] = svg.uri;
+defaultAttrs[xlink.name] = xlink.uri;
+
+/**
+ * @param {string} [content]
+ * @param {Object} [attributes]
+ * @return {string}
+ */
+var wrapInSvgString = function (content, attributes) {
+  if ( content === void 0 ) content = '';
+
+  var attrs = deepmerge(defaultAttrs, attributes || {});
+  var attrsRendered = objectToAttrsString(attrs);
+  return ("<svg " + attrsRendered + ">" + content + "</svg>");
+};
+
+var BrowserSpriteSymbol = (function (SpriteSymbol$$1) {
+  function BrowserSpriteSymbol () {
+    SpriteSymbol$$1.apply(this, arguments);
+  }
+
+  if ( SpriteSymbol$$1 ) BrowserSpriteSymbol.__proto__ = SpriteSymbol$$1;
+  BrowserSpriteSymbol.prototype = Object.create( SpriteSymbol$$1 && SpriteSymbol$$1.prototype );
+  BrowserSpriteSymbol.prototype.constructor = BrowserSpriteSymbol;
+
+  var prototypeAccessors = { isMounted: {} };
+
+  prototypeAccessors.isMounted.get = function () {
+    return !!this.node;
+  };
+
+  /**
+   * @param {Element} node
+   * @return {BrowserSpriteSymbol}
+   */
+  BrowserSpriteSymbol.createFromExistingNode = function createFromExistingNode (node) {
+    return new BrowserSpriteSymbol({
+      id: node.getAttribute('id'),
+      viewBox: node.getAttribute('viewBox'),
+      content: node.outerHTML
+    });
+  };
+
+  BrowserSpriteSymbol.prototype.destroy = function destroy () {
+    if (this.isMounted) {
+      this.unmount();
+    }
+    SpriteSymbol$$1.prototype.destroy.call(this);
+  };
+
+  /**
+   * @param {Element|string} target
+   * @return {Element}
+   */
+  BrowserSpriteSymbol.prototype.mount = function mount (target) {
+    if (this.isMounted) {
+      return this.node;
+    }
+
+    var mountTarget = typeof target === 'string' ? document.querySelector(target) : target;
+    var node = this.render();
+    this.node = node;
+
+    mountTarget.appendChild(node);
+
+    return node;
+  };
+
+  /**
+   * @return {Element}
+   */
+  BrowserSpriteSymbol.prototype.render = function render () {
+    var content = this.stringify();
+    return parse(wrapInSvgString(content)).childNodes[0];
+  };
+
+  BrowserSpriteSymbol.prototype.unmount = function unmount () {
+    this.node.parentNode.removeChild(this.node);
+  };
+
+  Object.defineProperties( BrowserSpriteSymbol.prototype, prototypeAccessors );
+
+  return BrowserSpriteSymbol;
+}(SpriteSymbol));
+
+return BrowserSpriteSymbol;
+
+})));
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(38)))
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
+	 true ? module.exports = factory() :
+	undefined;
+}(this, (function () { 'use strict';
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var deepmerge = createCommonjsModule(function (module, exports) {
+(function (root, factory) {
+    if (false) {} else {
+        module.exports = factory();
+    }
+}(commonjsGlobal, function () {
+
+function isMergeableObject(val) {
+    var nonNullObject = val && typeof val === 'object';
+
+    return nonNullObject
+        && Object.prototype.toString.call(val) !== '[object RegExp]'
+        && Object.prototype.toString.call(val) !== '[object Date]'
+}
+
+function emptyTarget(val) {
+    return Array.isArray(val) ? [] : {}
+}
+
+function cloneIfNecessary(value, optionsArgument) {
+    var clone = optionsArgument && optionsArgument.clone === true;
+    return (clone && isMergeableObject(value)) ? deepmerge(emptyTarget(value), value, optionsArgument) : value
+}
+
+function defaultArrayMerge(target, source, optionsArgument) {
+    var destination = target.slice();
+    source.forEach(function(e, i) {
+        if (typeof destination[i] === 'undefined') {
+            destination[i] = cloneIfNecessary(e, optionsArgument);
+        } else if (isMergeableObject(e)) {
+            destination[i] = deepmerge(target[i], e, optionsArgument);
+        } else if (target.indexOf(e) === -1) {
+            destination.push(cloneIfNecessary(e, optionsArgument));
+        }
+    });
+    return destination
+}
+
+function mergeObject(target, source, optionsArgument) {
+    var destination = {};
+    if (isMergeableObject(target)) {
+        Object.keys(target).forEach(function (key) {
+            destination[key] = cloneIfNecessary(target[key], optionsArgument);
+        });
+    }
+    Object.keys(source).forEach(function (key) {
+        if (!isMergeableObject(source[key]) || !target[key]) {
+            destination[key] = cloneIfNecessary(source[key], optionsArgument);
+        } else {
+            destination[key] = deepmerge(target[key], source[key], optionsArgument);
+        }
+    });
+    return destination
+}
+
+function deepmerge(target, source, optionsArgument) {
+    var array = Array.isArray(source);
+    var options = optionsArgument || { arrayMerge: defaultArrayMerge };
+    var arrayMerge = options.arrayMerge || defaultArrayMerge;
+
+    if (array) {
+        return Array.isArray(target) ? arrayMerge(target, source, optionsArgument) : cloneIfNecessary(source, optionsArgument)
+    } else {
+        return mergeObject(target, source, optionsArgument)
+    }
+}
+
+deepmerge.all = function deepmergeAll(array, optionsArgument) {
+    if (!Array.isArray(array) || array.length < 2) {
+        throw new Error('first argument should be an array with at least two elements')
+    }
+
+    // we are sure there are at least 2 values, so it is safe to have no initial value
+    return array.reduce(function(prev, next) {
+        return deepmerge(prev, next, optionsArgument)
+    })
+};
+
+return deepmerge
+
+}));
+});
+
+//      
+// An event handler can take an optional event argument
+// and should not return a value
+                                          
+// An array of all currently registered event handlers for a type
+                                            
+// A map of event types and their corresponding event handlers.
+                        
+                                   
+  
+
+/** Mitt: Tiny (~200b) functional event emitter / pubsub.
+ *  @name mitt
+ *  @returns {Mitt}
+ */
+function mitt(all                 ) {
+	all = all || Object.create(null);
+
+	return {
+		/**
+		 * Register an event handler for the given type.
+		 *
+		 * @param  {String} type	Type of event to listen for, or `"*"` for all events
+		 * @param  {Function} handler Function to call in response to given event
+		 * @memberOf mitt
+		 */
+		on: function on(type        , handler              ) {
+			(all[type] || (all[type] = [])).push(handler);
+		},
+
+		/**
+		 * Remove an event handler for the given type.
+		 *
+		 * @param  {String} type	Type of event to unregister `handler` from, or `"*"`
+		 * @param  {Function} handler Handler function to remove
+		 * @memberOf mitt
+		 */
+		off: function off(type        , handler              ) {
+			if (all[type]) {
+				all[type].splice(all[type].indexOf(handler) >>> 0, 1);
+			}
+		},
+
+		/**
+		 * Invoke all handlers for the given type.
+		 * If present, `"*"` handlers are invoked after type-matched handlers.
+		 *
+		 * @param {String} type  The event type to invoke
+		 * @param {Any} [evt]  Any value (object is recommended and powerful), passed to each handler
+		 * @memberof mitt
+		 */
+		emit: function emit(type        , evt     ) {
+			(all[type] || []).map(function (handler) { handler(evt); });
+			(all['*'] || []).map(function (handler) { handler(type, evt); });
+		}
+	};
+}
+
+var namespaces_1 = createCommonjsModule(function (module, exports) {
+var namespaces = {
+  svg: {
+    name: 'xmlns',
+    uri: 'http://www.w3.org/2000/svg'
+  },
+  xlink: {
+    name: 'xmlns:xlink',
+    uri: 'http://www.w3.org/1999/xlink'
+  }
+};
+
+exports.default = namespaces;
+module.exports = exports.default;
+});
+
+/**
+ * @param {Object} attrs
+ * @return {string}
+ */
+var objectToAttrsString = function (attrs) {
+  return Object.keys(attrs).map(function (attr) {
+    var value = attrs[attr].toString().replace(/"/g, '&quot;');
+    return (attr + "=\"" + value + "\"");
+  }).join(' ');
+};
+
+var svg = namespaces_1.svg;
+var xlink = namespaces_1.xlink;
+
+var defaultAttrs = {};
+defaultAttrs[svg.name] = svg.uri;
+defaultAttrs[xlink.name] = xlink.uri;
+
+/**
+ * @param {string} [content]
+ * @param {Object} [attributes]
+ * @return {string}
+ */
+var wrapInSvgString = function (content, attributes) {
+  if ( content === void 0 ) content = '';
+
+  var attrs = deepmerge(defaultAttrs, attributes || {});
+  var attrsRendered = objectToAttrsString(attrs);
+  return ("<svg " + attrsRendered + ">" + content + "</svg>");
+};
+
+var svg$1 = namespaces_1.svg;
+var xlink$1 = namespaces_1.xlink;
+
+var defaultConfig = {
+  attrs: ( obj = {
+    style: ['position: absolute', 'width: 0', 'height: 0'].join('; ')
+  }, obj[svg$1.name] = svg$1.uri, obj[xlink$1.name] = xlink$1.uri, obj )
+};
+var obj;
+
+var Sprite = function Sprite(config) {
+  this.config = deepmerge(defaultConfig, config || {});
+  this.symbols = [];
+};
+
+/**
+ * Add new symbol. If symbol with the same id exists it will be replaced.
+ * @param {SpriteSymbol} symbol
+ * @return {boolean} `true` - symbol was added, `false` - replaced
+ */
+Sprite.prototype.add = function add (symbol) {
+  var ref = this;
+    var symbols = ref.symbols;
+  var existing = this.find(symbol.id);
+
+  if (existing) {
+    symbols[symbols.indexOf(existing)] = symbol;
+    return false;
+  }
+
+  symbols.push(symbol);
+  return true;
+};
+
+/**
+ * Remove symbol & destroy it
+ * @param {string} id
+ * @return {boolean} `true` - symbol was found & successfully destroyed, `false` - otherwise
+ */
+Sprite.prototype.remove = function remove (id) {
+  var ref = this;
+    var symbols = ref.symbols;
+  var symbol = this.find(id);
+
+  if (symbol) {
+    symbols.splice(symbols.indexOf(symbol), 1);
+    symbol.destroy();
+    return true;
+  }
+
+  return false;
+};
+
+/**
+ * @param {string} id
+ * @return {SpriteSymbol|null}
+ */
+Sprite.prototype.find = function find (id) {
+  return this.symbols.filter(function (s) { return s.id === id; })[0] || null;
+};
+
+/**
+ * @param {string} id
+ * @return {boolean}
+ */
+Sprite.prototype.has = function has (id) {
+  return this.find(id) !== null;
+};
+
+/**
+ * @return {string}
+ */
+Sprite.prototype.stringify = function stringify () {
+  var ref = this.config;
+    var attrs = ref.attrs;
+  var stringifiedSymbols = this.symbols.map(function (s) { return s.stringify(); }).join('');
+  return wrapInSvgString(stringifiedSymbols, attrs);
+};
+
+/**
+ * @return {string}
+ */
+Sprite.prototype.toString = function toString () {
+  return this.stringify();
+};
+
+Sprite.prototype.destroy = function destroy () {
+  this.symbols.forEach(function (s) { return s.destroy(); });
+};
+
+var SpriteSymbol = function SpriteSymbol(ref) {
+  var id = ref.id;
+  var viewBox = ref.viewBox;
+  var content = ref.content;
+
+  this.id = id;
+  this.viewBox = viewBox;
+  this.content = content;
+};
+
+/**
+ * @return {string}
+ */
+SpriteSymbol.prototype.stringify = function stringify () {
+  return this.content;
+};
+
+/**
+ * @return {string}
+ */
+SpriteSymbol.prototype.toString = function toString () {
+  return this.stringify();
+};
+
+SpriteSymbol.prototype.destroy = function destroy () {
+    var this$1 = this;
+
+  ['id', 'viewBox', 'content'].forEach(function (prop) { return delete this$1[prop]; });
+};
+
+/**
+ * @param {string} content
+ * @return {Element}
+ */
+var parse = function (content) {
+  var hasImportNode = !!document.importNode;
+  var doc = new DOMParser().parseFromString(content, 'image/svg+xml').documentElement;
+
+  /**
+   * Fix for browser which are throwing WrongDocumentError
+   * if you insert an element which is not part of the document
+   * @see http://stackoverflow.com/a/7986519/4624403
+   */
+  if (hasImportNode) {
+    return document.importNode(doc, true);
+  }
+
+  return doc;
+};
+
+var BrowserSpriteSymbol = (function (SpriteSymbol$$1) {
+  function BrowserSpriteSymbol () {
+    SpriteSymbol$$1.apply(this, arguments);
+  }
+
+  if ( SpriteSymbol$$1 ) BrowserSpriteSymbol.__proto__ = SpriteSymbol$$1;
+  BrowserSpriteSymbol.prototype = Object.create( SpriteSymbol$$1 && SpriteSymbol$$1.prototype );
+  BrowserSpriteSymbol.prototype.constructor = BrowserSpriteSymbol;
+
+  var prototypeAccessors = { isMounted: {} };
+
+  prototypeAccessors.isMounted.get = function () {
+    return !!this.node;
+  };
+
+  /**
+   * @param {Element} node
+   * @return {BrowserSpriteSymbol}
+   */
+  BrowserSpriteSymbol.createFromExistingNode = function createFromExistingNode (node) {
+    return new BrowserSpriteSymbol({
+      id: node.getAttribute('id'),
+      viewBox: node.getAttribute('viewBox'),
+      content: node.outerHTML
+    });
+  };
+
+  BrowserSpriteSymbol.prototype.destroy = function destroy () {
+    if (this.isMounted) {
+      this.unmount();
+    }
+    SpriteSymbol$$1.prototype.destroy.call(this);
+  };
+
+  /**
+   * @param {Element|string} target
+   * @return {Element}
+   */
+  BrowserSpriteSymbol.prototype.mount = function mount (target) {
+    if (this.isMounted) {
+      return this.node;
+    }
+
+    var mountTarget = typeof target === 'string' ? document.querySelector(target) : target;
+    var node = this.render();
+    this.node = node;
+
+    mountTarget.appendChild(node);
+
+    return node;
+  };
+
+  /**
+   * @return {Element}
+   */
+  BrowserSpriteSymbol.prototype.render = function render () {
+    var content = this.stringify();
+    return parse(wrapInSvgString(content)).childNodes[0];
+  };
+
+  BrowserSpriteSymbol.prototype.unmount = function unmount () {
+    this.node.parentNode.removeChild(this.node);
+  };
+
+  Object.defineProperties( BrowserSpriteSymbol.prototype, prototypeAccessors );
+
+  return BrowserSpriteSymbol;
+}(SpriteSymbol));
+
+var defaultConfig$1 = {
+  /**
+   * Should following options be automatically configured:
+   * - `syncUrlsWithBaseTag`
+   * - `locationChangeAngularEmitter`
+   * - `moveGradientsOutsideSymbol`
+   * @type {boolean}
+   */
+  autoConfigure: true,
+
+  /**
+   * Default mounting selector
+   * @type {string}
+   */
+  mountTo: 'body',
+
+  /**
+   * Fix disappearing SVG elements when <base href> exists.
+   * Executes when sprite mounted.
+   * @see http://stackoverflow.com/a/18265336/796152
+   * @see https://github.com/everdimension/angular-svg-base-fix
+   * @see https://github.com/angular/angular.js/issues/8934#issuecomment-56568466
+   * @type {boolean}
+   */
+  syncUrlsWithBaseTag: false,
+
+  /**
+   * Should sprite listen custom location change event
+   * @type {boolean}
+   */
+  listenLocationChangeEvent: true,
+
+  /**
+   * Custom window event name which should be emitted to update sprite urls
+   * @type {string}
+   */
+  locationChangeEvent: 'locationChange',
+
+  /**
+   * Emit location change event in Angular automatically
+   * @type {boolean}
+   */
+  locationChangeAngularEmitter: false,
+
+  /**
+   * Selector to find symbols usages when updating sprite urls
+   * @type {string}
+   */
+  usagesToUpdate: 'use[*|href]',
+
+  /**
+   * Fix Firefox bug when gradients and patterns don't work if they are within a symbol.
+   * Executes when sprite is rendered, but not mounted.
+   * @see https://bugzilla.mozilla.org/show_bug.cgi?id=306674
+   * @see https://bugzilla.mozilla.org/show_bug.cgi?id=353575
+   * @see https://bugzilla.mozilla.org/show_bug.cgi?id=1235364
+   * @type {boolean}
+   */
+  moveGradientsOutsideSymbol: false
+};
+
+/**
+ * @param {*} arrayLike
+ * @return {Array}
+ */
+var arrayFrom = function (arrayLike) {
+  return Array.prototype.slice.call(arrayLike, 0);
+};
+
+var ua = navigator.userAgent;
+
+var browser = {
+  isChrome: /chrome/i.test(ua),
+  isFirefox: /firefox/i.test(ua),
+
+  // https://msdn.microsoft.com/en-us/library/ms537503(v=vs.85).aspx
+  isIE: /msie/i.test(ua) || /trident/i.test(ua),
+  isEdge: /edge/i.test(ua)
+};
+
+/**
+ * @param {string} name
+ * @param {*} data
+ */
+var dispatchEvent = function (name, data) {
+  var event = document.createEvent('CustomEvent');
+  event.initCustomEvent(name, false, false, data);
+  window.dispatchEvent(event);
+};
+
+/**
+ * IE doesn't evaluate <style> tags in SVGs that are dynamically added to the page.
+ * This trick will trigger IE to read and use any existing SVG <style> tags.
+ * @see https://github.com/iconic/SVGInjector/issues/23
+ * @see https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/10898469/
+ *
+ * @param {Element} node DOM Element to search <style> tags in
+ * @return {Array<HTMLStyleElement>}
+ */
+var evalStylesIEWorkaround = function (node) {
+  var updatedNodes = [];
+
+  arrayFrom(node.querySelectorAll('style'))
+    .forEach(function (style) {
+      style.textContent += '';
+      updatedNodes.push(style);
+    });
+
+  return updatedNodes;
+};
+
+/**
+ * @param {string} [url] If not provided - current URL will be used
+ * @return {string}
+ */
+var getUrlWithoutFragment = function (url) {
+  return (url || window.location.href).split('#')[0];
+};
+
+/* global angular */
+/**
+ * @param {string} eventName
+ */
+var locationChangeAngularEmitter = function (eventName) {
+  angular.module('ng').run(['$rootScope', function ($rootScope) {
+    $rootScope.$on('$locationChangeSuccess', function (e, newUrl, oldUrl) {
+      dispatchEvent(eventName, { oldUrl: oldUrl, newUrl: newUrl });
+    });
+  }]);
+};
+
+var defaultSelector = 'linearGradient, radialGradient, pattern';
+
+/**
+ * @param {Element} svg
+ * @param {string} [selector]
+ * @return {Element}
+ */
+var moveGradientsOutsideSymbol = function (svg, selector) {
+  if ( selector === void 0 ) selector = defaultSelector;
+
+  arrayFrom(svg.querySelectorAll('symbol')).forEach(function (symbol) {
+    arrayFrom(symbol.querySelectorAll(selector)).forEach(function (node) {
+      symbol.parentNode.insertBefore(node, symbol);
+    });
+  });
+  return svg;
+};
+
+/**
+ * @param {NodeList} nodes
+ * @param {Function} [matcher]
+ * @return {Attr[]}
+ */
+function selectAttributes(nodes, matcher) {
+  var attrs = arrayFrom(nodes).reduce(function (acc, node) {
+    if (!node.attributes) {
+      return acc;
+    }
+
+    var arrayfied = arrayFrom(node.attributes);
+    var matched = matcher ? arrayfied.filter(matcher) : arrayfied;
+    return acc.concat(matched);
+  }, []);
+
+  return attrs;
+}
+
+/**
+ * @param {NodeList|Node} nodes
+ * @param {boolean} [clone=true]
+ * @return {string}
+ */
+
+var xLinkNS = namespaces_1.xlink.uri;
+var xLinkAttrName = 'xlink:href';
+
+// eslint-disable-next-line no-useless-escape
+var specialUrlCharsPattern = /[{}|\\\^\[\]`"<>]/g;
+
+function encoder(url) {
+  return url.replace(specialUrlCharsPattern, function (match) {
+    return ("%" + (match[0].charCodeAt(0).toString(16).toUpperCase()));
+  });
+}
+
+/**
+ * @param {NodeList} nodes
+ * @param {string} startsWith
+ * @param {string} replaceWith
+ * @return {NodeList}
+ */
+function updateReferences(nodes, startsWith, replaceWith) {
+  arrayFrom(nodes).forEach(function (node) {
+    var href = node.getAttribute(xLinkAttrName);
+    if (href && href.indexOf(startsWith) === 0) {
+      var newUrl = href.replace(startsWith, replaceWith);
+      node.setAttributeNS(xLinkNS, xLinkAttrName, newUrl);
+    }
+  });
+
+  return nodes;
+}
+
+/**
+ * List of SVG attributes to update url() target in them
+ */
+var attList = [
+  'clipPath',
+  'colorProfile',
+  'src',
+  'cursor',
+  'fill',
+  'filter',
+  'marker',
+  'markerStart',
+  'markerMid',
+  'markerEnd',
+  'mask',
+  'stroke',
+  'style'
+];
+
+var attSelector = attList.map(function (attr) { return ("[" + attr + "]"); }).join(',');
+
+/**
+ * Update URLs in svg image (like `fill="url(...)"`) and update referencing elements
+ * @param {Element} svg
+ * @param {NodeList} references
+ * @param {string|RegExp} startsWith
+ * @param {string} replaceWith
+ * @return {void}
+ *
+ * @example
+ * const sprite = document.querySelector('svg.sprite');
+ * const usages = document.querySelectorAll('use');
+ * updateUrls(sprite, usages, '#', 'prefix#');
+ */
+var updateUrls = function (svg, references, startsWith, replaceWith) {
+  var startsWithEncoded = encoder(startsWith);
+  var replaceWithEncoded = encoder(replaceWith);
+
+  var nodes = svg.querySelectorAll(attSelector);
+  var attrs = selectAttributes(nodes, function (ref) {
+    var localName = ref.localName;
+    var value = ref.value;
+
+    return attList.indexOf(localName) !== -1 && value.indexOf(("url(" + startsWithEncoded)) !== -1;
+  });
+
+  attrs.forEach(function (attr) { return attr.value = attr.value.replace(startsWithEncoded, replaceWithEncoded); });
+  updateReferences(references, startsWithEncoded, replaceWithEncoded);
+};
+
+/**
+ * Internal emitter events
+ * @enum
+ * @private
+ */
+var Events = {
+  MOUNT: 'mount',
+  SYMBOL_MOUNT: 'symbol_mount'
+};
+
+var BrowserSprite = (function (Sprite$$1) {
+  function BrowserSprite(cfg) {
+    var this$1 = this;
+    if ( cfg === void 0 ) cfg = {};
+
+    Sprite$$1.call(this, deepmerge(defaultConfig$1, cfg));
+
+    var emitter = mitt();
+    this._emitter = emitter;
+    this.node = null;
+
+    var ref = this;
+    var config = ref.config;
+
+    if (config.autoConfigure) {
+      this._autoConfigure(cfg);
+    }
+
+    if (config.syncUrlsWithBaseTag) {
+      var baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
+      emitter.on(Events.MOUNT, function () { return this$1.updateUrls('#', baseUrl); });
+    }
+
+    var handleLocationChange = this._handleLocationChange.bind(this);
+    this._handleLocationChange = handleLocationChange;
+
+    // Provide way to update sprite urls externally via dispatching custom window event
+    if (config.listenLocationChangeEvent) {
+      window.addEventListener(config.locationChangeEvent, handleLocationChange);
+    }
+
+    // Emit location change event in Angular automatically
+    if (config.locationChangeAngularEmitter) {
+      locationChangeAngularEmitter(config.locationChangeEvent);
+    }
+
+    // After sprite mounted
+    emitter.on(Events.MOUNT, function (spriteNode) {
+      if (config.moveGradientsOutsideSymbol) {
+        moveGradientsOutsideSymbol(spriteNode);
+      }
+    });
+
+    // After symbol mounted into sprite
+    emitter.on(Events.SYMBOL_MOUNT, function (symbolNode) {
+      if (config.moveGradientsOutsideSymbol) {
+        moveGradientsOutsideSymbol(symbolNode.parentNode);
+      }
+
+      if (browser.isIE || browser.isEdge) {
+        evalStylesIEWorkaround(symbolNode);
+      }
+    });
+  }
+
+  if ( Sprite$$1 ) BrowserSprite.__proto__ = Sprite$$1;
+  BrowserSprite.prototype = Object.create( Sprite$$1 && Sprite$$1.prototype );
+  BrowserSprite.prototype.constructor = BrowserSprite;
+
+  var prototypeAccessors = { isMounted: {} };
+
+  /**
+   * @return {boolean}
+   */
+  prototypeAccessors.isMounted.get = function () {
+    return !!this.node;
+  };
+
+  /**
+   * Automatically configure following options
+   * - `syncUrlsWithBaseTag`
+   * - `locationChangeAngularEmitter`
+   * - `moveGradientsOutsideSymbol`
+   * @param {Object} cfg
+   * @private
+   */
+  BrowserSprite.prototype._autoConfigure = function _autoConfigure (cfg) {
+    var ref = this;
+    var config = ref.config;
+
+    if (typeof cfg.syncUrlsWithBaseTag === 'undefined') {
+      config.syncUrlsWithBaseTag = typeof document.getElementsByTagName('base')[0] !== 'undefined';
+    }
+
+    if (typeof cfg.locationChangeAngularEmitter === 'undefined') {
+      config.locationChangeAngularEmitter = 'angular' in window;
+    }
+
+    if (typeof cfg.moveGradientsOutsideSymbol === 'undefined') {
+      config.moveGradientsOutsideSymbol = browser.isFirefox;
+    }
+  };
+
+  /**
+   * @param {Event} event
+   * @param {Object} event.detail
+   * @param {string} event.detail.oldUrl
+   * @param {string} event.detail.newUrl
+   * @private
+   */
+  BrowserSprite.prototype._handleLocationChange = function _handleLocationChange (event) {
+    var ref = event.detail;
+    var oldUrl = ref.oldUrl;
+    var newUrl = ref.newUrl;
+    this.updateUrls(oldUrl, newUrl);
+  };
+
+  /**
+   * Add new symbol. If symbol with the same id exists it will be replaced.
+   * If sprite already mounted - `symbol.mount(sprite.node)` will be called.
+   * @fires Events#SYMBOL_MOUNT
+   * @param {BrowserSpriteSymbol} symbol
+   * @return {boolean} `true` - symbol was added, `false` - replaced
+   */
+  BrowserSprite.prototype.add = function add (symbol) {
+    var sprite = this;
+    var isNewSymbol = Sprite$$1.prototype.add.call(this, symbol);
+
+    if (this.isMounted && isNewSymbol) {
+      symbol.mount(sprite.node);
+      this._emitter.emit(Events.SYMBOL_MOUNT, symbol.node);
+    }
+
+    return isNewSymbol;
+  };
+
+  /**
+   * Attach to existing DOM node
+   * @param {string|Element} target
+   * @return {Element|null} attached DOM Element. null if node to attach not found.
+   */
+  BrowserSprite.prototype.attach = function attach (target) {
+    var this$1 = this;
+
+    var sprite = this;
+
+    if (sprite.isMounted) {
+      return sprite.node;
+    }
+
+    /** @type Element */
+    var node = typeof target === 'string' ? document.querySelector(target) : target;
+    sprite.node = node;
+
+    // Already added symbols needs to be mounted
+    this.symbols.forEach(function (symbol) {
+      symbol.mount(sprite.node);
+      this$1._emitter.emit(Events.SYMBOL_MOUNT, symbol.node);
+    });
+
+    // Create symbols from existing DOM nodes, add and mount them
+    arrayFrom(node.querySelectorAll('symbol'))
+      .forEach(function (symbolNode) {
+        var symbol = BrowserSpriteSymbol.createFromExistingNode(symbolNode);
+        symbol.node = symbolNode; // hack to prevent symbol mounting to sprite when adding
+        sprite.add(symbol);
+      });
+
+    this._emitter.emit(Events.MOUNT, node);
+
+    return node;
+  };
+
+  BrowserSprite.prototype.destroy = function destroy () {
+    var ref = this;
+    var config = ref.config;
+    var symbols = ref.symbols;
+    var _emitter = ref._emitter;
+
+    symbols.forEach(function (s) { return s.destroy(); });
+
+    _emitter.off('*');
+    window.removeEventListener(config.locationChangeEvent, this._handleLocationChange);
+
+    if (this.isMounted) {
+      this.unmount();
+    }
+  };
+
+  /**
+   * @fires Events#MOUNT
+   * @param {string|Element} [target]
+   * @param {boolean} [prepend=false]
+   * @return {Element|null} rendered sprite node. null if mount node not found.
+   */
+  BrowserSprite.prototype.mount = function mount (target, prepend) {
+    if ( target === void 0 ) target = this.config.mountTo;
+    if ( prepend === void 0 ) prepend = false;
+
+    var sprite = this;
+
+    if (sprite.isMounted) {
+      return sprite.node;
+    }
+
+    var mountNode = typeof target === 'string' ? document.querySelector(target) : target;
+    var node = sprite.render();
+    this.node = node;
+
+    if (prepend && mountNode.childNodes[0]) {
+      mountNode.insertBefore(node, mountNode.childNodes[0]);
+    } else {
+      mountNode.appendChild(node);
+    }
+
+    this._emitter.emit(Events.MOUNT, node);
+
+    return node;
+  };
+
+  /**
+   * @return {Element}
+   */
+  BrowserSprite.prototype.render = function render () {
+    return parse(this.stringify());
+  };
+
+  /**
+   * Detach sprite from the DOM
+   */
+  BrowserSprite.prototype.unmount = function unmount () {
+    this.node.parentNode.removeChild(this.node);
+  };
+
+  /**
+   * Update URLs in sprite and usage elements
+   * @param {string} oldUrl
+   * @param {string} newUrl
+   * @return {boolean} `true` - URLs was updated, `false` - sprite is not mounted
+   */
+  BrowserSprite.prototype.updateUrls = function updateUrls$1 (oldUrl, newUrl) {
+    if (!this.isMounted) {
+      return false;
+    }
+
+    var usages = document.querySelectorAll(this.config.usagesToUpdate);
+
+    updateUrls(
+      this.node,
+      usages,
+      ((getUrlWithoutFragment(oldUrl)) + "#"),
+      ((getUrlWithoutFragment(newUrl)) + "#")
+    );
+
+    return true;
+  };
+
+  Object.defineProperties( BrowserSprite.prototype, prototypeAccessors );
+
+  return BrowserSprite;
+}(Sprite));
+
+var ready$1 = createCommonjsModule(function (module) {
+/*!
+  * domready (c) Dustin Diaz 2014 - License MIT
+  */
+!function (name, definition) {
+
+  { module.exports = definition(); }
+
+}('domready', function () {
+
+  var fns = [], listener
+    , doc = document
+    , hack = doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState);
+
+
+  if (!loaded)
+  { doc.addEventListener(domContentLoaded, listener = function () {
+    doc.removeEventListener(domContentLoaded, listener);
+    loaded = 1;
+    while (listener = fns.shift()) { listener(); }
+  }); }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn);
+  }
+
+});
+});
+
+var spriteNodeId = '__SVG_SPRITE_NODE__';
+var spriteGlobalVarName = '__SVG_SPRITE__';
+var isSpriteExists = !!window[spriteGlobalVarName];
+
+// eslint-disable-next-line import/no-mutable-exports
+var sprite;
+
+if (isSpriteExists) {
+  sprite = window[spriteGlobalVarName];
+} else {
+  sprite = new BrowserSprite({ attrs: { id: spriteNodeId } });
+  window[spriteGlobalVarName] = sprite;
+}
+
+var loadSprite = function () {
+  /**
+   * Check for page already contains sprite node
+   * If found - attach to and reuse it's content
+   * If not - render and mount the new sprite
+   */
+  var existing = document.getElementById(spriteNodeId);
+
+  if (existing) {
+    sprite.attach(existing);
+  } else {
+    sprite.mount(document.body, true);
+  }
+};
+
+if (document.body) {
+  loadSprite();
+} else {
+  ready$1(loadSprite);
+}
+
+var sprite$1 = sprite;
+
+return sprite$1;
+
+})));
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(38)))
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "facebook",
+  "use": "facebook-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"facebook\"><path d=\"M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "google-plus",
+  "use": "google-plus-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"google-plus\"><path d=\"M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "linkedin",
+  "use": "linkedin-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"linkedin\"><path d=\"M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "spotify",
+  "use": "spotify-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"spotify\"><path d=\"M17.9,10.9C14.7,9 9.35,8.8 6.3,9.75C5.8,9.9 5.3,9.6 5.15,9.15C5,8.65 5.3,8.15 5.75,8C9.3,6.95 15.15,7.15 18.85,9.35C19.3,9.6 19.45,10.2 19.2,10.65C18.95,11 18.35,11.15 17.9,10.9M17.8,13.7C17.55,14.05 17.1,14.2 16.75,13.95C14.05,12.3 9.95,11.8 6.8,12.8C6.4,12.9 5.95,12.7 5.85,12.3C5.75,11.9 5.95,11.45 6.35,11.35C10,10.25 14.5,10.8 17.6,12.7C17.9,12.85 18.05,13.35 17.8,13.7M16.6,16.45C16.4,16.75 16.05,16.85 15.75,16.65C13.4,15.2 10.45,14.9 6.95,15.7C6.6,15.8 6.3,15.55 6.2,15.25C6.1,14.9 6.35,14.6 6.65,14.5C10.45,13.65 13.75,14 16.35,15.6C16.7,15.75 16.75,16.15 16.6,16.45M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "twitter",
+  "use": "twitter-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"twitter\"><path d=\"M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MissionStatement; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -19562,7 +21052,7 @@ class MissionStatement extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 35 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19828,7 +21318,7 @@ class Timeline extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 36 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19858,7 +21348,7 @@ class Work extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 37 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19887,11 +21377,11 @@ class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 38 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(39);
+var content = __webpack_require__(50);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -19905,29 +21395,29 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(45)(content, options);
+var update = __webpack_require__(56)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 39 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(40);
-exports = module.exports = __webpack_require__(41)(false);
+var escape = __webpack_require__(51);
+exports = module.exports = __webpack_require__(52)(false);
 // imports
 
 
 // module
-exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\tbackground: rgba(49, 52, 63, 1);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.5);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: #50d0bf;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n\t   -moz-border-radius: 200px;\n    -webkit-border-radius: 200px;\n            border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(42)) + ") no-repeat;\n\tbackground-size: cover;\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50D0BF;\n}\n\nheader .social {\n\tmargin: 50px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\ttext-decoration: none;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    -webkit-transition: .25s;\n    -moz-transition: .25s;\n    -ms-transition: .25s;\n    transition: .25s;\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tfont-family: 'entypo';\n\tfont-style: normal;\n\tcontent: '\\E764';\n\tfont-size: 24px;\n\tcolor: white;\n\t-webkit-animation: bounce 2s infinite;\n\t-moz-animation: bounce 2s infinite;\n\t-ms-animation: bounce 2s infinite;\n\tanimation: bounce 2s infinite;\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);    }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);    }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);    }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #50d0bf;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: #3A3C47;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: white;\n\tfont-weight: 300;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 16px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 8px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n}\n\n.block.work ul li a img {\n\twidth: 100%;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(" + escape(__webpack_require__(43)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(" + escape(__webpack_require__(43)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n}\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\n\n\nul.timeline {\n\tmargin-left: 455px;\n/*\tmargin-left: -webkit-calc(50% - 5px);\n\tmargin-left: -moz-calc(50% - 5px);\n\tmargin-left: calc(50% - 5px);\n*/\tmargin-top: -55px;\n\tborder-left: 10px solid white;\n\tpadding: 65px 0;\n\tposition: relative;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 20px;\n\t   -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n            border-radius: 5px;\n    position: relative;\n    text-align: left;\n    z-index: 1;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -153px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -104px;\n}\nul.timeline li.usana {\n\tmargin-top: -75px;\n}\nul.timeline li.now {\n\tmargin-top: 0;\n  width: 170px;\n  margin-left: -211px !important;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -146px;\n}\nul.timeline li.rss {\n\tmargin-top: -8px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\n\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n}\n\nul.timeline li .company {\n\tfont-size: 21px;\n\tfont-weight: 300;\n\tmargin-bottom: 6px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 10px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 15px;\n\tright: 15px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tfloat: left;\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n}\n\nform.contact ul li.message {\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.submit {\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n\tcolor: #3A3C47;\n\tbackground: #f5f6f7;\n\tfont-size: 16px;\n\tline-height: 1.25;\n\tfont-weight: 300;\n\tpadding: 15px;\n\tfont-family: 'Roboto', sans-serif;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tborder: 0;\n\t-webkit-box-shadow: 0 0 0 8px transparent;\n\tbox-shadow: 0 0 0 8px transparent;\n\ttransition: .2s;\n\tresize: none;\n\t-webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(44)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\nheader .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n}\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n}\n\n.find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; }\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me.twitter .find-txt,\n.find-me.dribbble .find-txt,\n.find-me.linkedin .find-txt,\n.find-me.gplus .find-txt,\n.find-me.facebook .find-txt,\n.find-me.instagram .find-txt,\n.find-me.rdio .find-txt { color: white; }\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    text-decoration: none;\n}\n\n.find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a:hover:after {\n\tcolor: white;\n}\n\n.social a.twitter:after {\n\tcontent: '\\F309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\F31B';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\F318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\F30F';\n}\n\n.social a.facebook:after {\n\tcontent: '\\F30C';\n}\n\n.social a.instagram:after {\n\tcontent: '\\F32D';\n}\n\n.social a.rdio:after {\n\tcontent: '\\F324';\n}\n\nfooter {\n\tbackground: #3A3C47;\n\tcolor: rgba(255,255,255,.5);\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n\t\tfont-size: 12px;\n\t\tborder: 2px solid white;\n\t\tposition: absolute;\n\t\tpadding: 10px 12px;\n\t\tright: 15px;\n\t\ttop: 30px;\n\t\t-webkit-transition: .5s;\n\t\t-moz-transition: .5s;\n\t\t-ms-transition: .5s;\n\t\ttransition: .5s;\n\t}\n\n\tnav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid #50d0bf;\n\t}\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 15px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 18px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\tdisplay: inline-block;\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tfont-size: 0px;\n\t\ttext-indent: -99999px;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\theader .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t}\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tfont-size: 0px;\n\t\ttext-indent: -99999px;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
+exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\tbackground: rgba(49, 52, 63, 1);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.5);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: #50d0bf;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n\t   -moz-border-radius: 200px;\n    -webkit-border-radius: 200px;\n            border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(53)) + ") no-repeat;\n\tbackground-size: cover;\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50D0BF;\n}\n\nheader .social {\n\tmargin: 50px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\ttext-decoration: none;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    -webkit-transition: .25s;\n    -moz-transition: .25s;\n    -ms-transition: .25s;\n    transition: .25s;\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tcontent: '';\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  transform: rotate(45deg);\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);      }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);      }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);      }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #50d0bf;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: #3A3C47;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: white;\n\tfont-weight: 300;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 16px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 8px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n}\n\n.block.work ul li a img {\n\twidth: 100%;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(" + escape(__webpack_require__(54)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(" + escape(__webpack_require__(54)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n}\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\n\n\nul.timeline {\n\tmargin-left: 455px;\n/*\tmargin-left: -webkit-calc(50% - 5px);\n\tmargin-left: -moz-calc(50% - 5px);\n\tmargin-left: calc(50% - 5px);\n*/\tmargin-top: -55px;\n\tborder-left: 10px solid white;\n\tpadding: 65px 0;\n\tposition: relative;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 20px;\n\t   -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n            border-radius: 5px;\n    position: relative;\n    text-align: left;\n    z-index: 1;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -153px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -104px;\n}\nul.timeline li.usana {\n\tmargin-top: -75px;\n}\nul.timeline li.now {\n\tmargin-top: 0;\n  width: 170px;\n  margin-left: -211px !important;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -146px;\n}\nul.timeline li.rss {\n\tmargin-top: -8px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\n\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n}\n\nul.timeline li .company {\n\tfont-size: 21px;\n\tfont-weight: 300;\n\tmargin-bottom: 6px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 10px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 15px;\n\tright: 15px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tfloat: left;\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n}\n\nform.contact ul li.message {\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.submit {\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n\tcolor: #3A3C47;\n\tbackground: #f5f6f7;\n\tfont-size: 16px;\n\tline-height: 1.25;\n\tfont-weight: 300;\n\tpadding: 15px;\n\tfont-family: 'Roboto', sans-serif;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tborder: 0;\n\t-webkit-box-shadow: 0 0 0 8px transparent;\n\tbox-shadow: 0 0 0 8px transparent;\n\ttransition: .2s;\n\tresize: none;\n\t-webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(55)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\nheader .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n}\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n}\n\n.find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; }\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me.twitter .find-txt,\n.find-me.dribbble .find-txt,\n.find-me.linkedin .find-txt,\n.find-me.gplus .find-txt,\n.find-me.facebook .find-txt,\n.find-me.instagram .find-txt,\n.find-me.rdio .find-txt { color: white; }\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    text-decoration: none;\n}\n\n.find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a:hover:after {\n\tcolor: white;\n}\n\n.social a.twitter:after {\n\tcontent: '\\F309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\F31B';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\F318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\F30F';\n}\n\n.social a.facebook:after {\n\tcontent: '\\F30C';\n}\n\n.social a.instagram:after {\n\tcontent: '\\F32D';\n}\n\n.social a.rdio:after {\n\tcontent: '\\F324';\n}\n\nfooter {\n\tbackground: #3A3C47;\n\tcolor: rgba(255,255,255,.5);\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n\t\tfont-size: 12px;\n\t\tborder: 2px solid white;\n\t\tposition: absolute;\n\t\tpadding: 10px 12px;\n\t\tright: 15px;\n\t\ttop: 30px;\n\t\t-webkit-transition: .5s;\n\t\t-moz-transition: .5s;\n\t\t-ms-transition: .5s;\n\t\ttransition: .5s;\n\t}\n\n\tnav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid #50d0bf;\n\t}\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 15px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 18px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\tdisplay: inline-block;\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\t/* header .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t} */\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tfont-size: 0px;\n\t\ttext-indent: -99999px;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 40 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -19949,7 +21439,7 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 41 */
+/* 52 */
 /***/ (function(module, exports) {
 
 /*
@@ -20031,25 +21521,25 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 42 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/profile.jpg";
 
 /***/ }),
-/* 43 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/link.svg";
 
 /***/ }),
-/* 44 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/bg-hero.jpg";
 
 /***/ }),
-/* 45 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -20115,7 +21605,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(46);
+var	fixUrls = __webpack_require__(57);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -20435,7 +21925,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 46 */
+/* 57 */
 /***/ (function(module, exports) {
 
 

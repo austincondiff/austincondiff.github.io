@@ -24,7 +24,7 @@ export default class Nav extends Component {
     			<a className="work" href="#work">Work</a>
     			<a className="timeline" href="#timeline">Timeline</a>
     			<a className="connect" href="#connect">Connect</a>
-    			<a href="files/resume-2017.pdf" target="_blank" className="resume">Download Resume</a>
+    			<a href="/assets/resume-2018.pdf" target="_blank" className="resume">Download Resume</a>
     		</div>
     	</nav>
     )
