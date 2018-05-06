@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(79);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -19016,7 +19016,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
 /* harmony import */ var _Blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(25);
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48);
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(78);
 
 
 
@@ -19096,7 +19096,7 @@ class Nav extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
           'a',
-          { href: 'files/resume-2017.pdf', target: '_blank', className: 'resume' },
+          { href: '/assets/resume-2018.pdf', target: '_blank', className: 'resume' },
           'Download Resume'
         )
       )
@@ -19125,16 +19125,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FindMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FindMe", function() { return _FindMe__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(47);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _Header__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _MissionStatement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(45);
+/* harmony import */ var _MissionStatement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(48);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MissionStatement", function() { return _MissionStatement__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _Timeline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(46);
+/* harmony import */ var _Timeline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(49);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Timeline", function() { return _Timeline__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
-/* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(47);
+/* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(50);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Work", function() { return _Work__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
 
@@ -19389,54 +19389,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FindMe; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
+/* harmony import */ var _social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
+
+
 
 
 class FindMe extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = { currentSocial: null };
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+  }
+
+  handleMouseEnter(currentSocial) {
+    this.setState({ currentSocial: currentSocial });
+  }
+
+  handleMouseLeave() {
+    this.setState({ currentSocial: null });
+  }
+
   render() {
+    const { currentSocial } = this.state;
+
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      "div",
-      { className: "block find-me", id: "find-me" },
+      'div',
+      { className: 'block find-me', id: 'find-me', style: { backgroundColor: currentSocial && currentSocial.color } },
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        "div",
-        { className: "wrap" },
+        'div',
+        { className: 'wrap' },
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "div",
-          { className: "social" },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://twitter.com/austincondiff", className: "twitter", "data-txt": "Follow me on Twitter." },
-            "Twitter"
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://www.dribbble.com/austincondiff", className: "dribbble", "data-txt": "Check out my work on Dribbble." },
-            "Dribbble"
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://www.linkedin.com/pub/austin-condiff/19/966/b6b", className: "linkedin", "data-txt": "Connect with me on LinkedIn." },
-            "LinkedIn"
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://plus.google.com/113055989549833930913/", className: "gplus", "data-txt": "Follow me on Google+" },
-            "Google+"
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "https://www.facebook.com/acondiff", className: "facebook", "data-txt": "See what I'm up to on Facebook." },
-            "Facebook"
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            "a",
-            { target: "_blank", href: "http://instagram.com/austincondiff", className: "instagram", "data-txt": "Check out my recent photos on Instagram." },
-            "Instagram"
-          )
+          'div',
+          { className: 'social' },
+          _social__WEBPACK_IMPORTED_MODULE_2__["default"].map(s => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'a',
+            { key: s.id, target: '_blank', href: s.url, onMouseEnter: () => {
+                this.handleMouseEnter(s);
+              }, onMouseLeave: () => {
+                this.handleMouseLeave();
+              } },
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], { type: s.id })
+          ))
         ),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "p",
-          { className: "find-txt" },
-          "Find me all over the web."
+          'p',
+          { className: 'find-txt', style: { color: currentSocial && 'white' } },
+          currentSocial ? currentSocial.message : 'Find me all over the web.'
         )
       )
     );
@@ -19449,102 +19449,10 @@ class FindMe extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34);
-
-
-
-class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor() {
-    super();
-    this.state = { scrollTop: 0 };
-    this.onScroll = this.onScroll.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.onScroll);
-  }
-
-  onScroll() {
-    this.setState({ scrollTop: window.scrollY });
-  }
-
-  render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'header',
-      { id: 'about' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'bg-img', style: { top: this.state.scrollTop } }),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'div',
-        { className: 'wrap' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'photo' }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h1',
-          { className: 'name' },
-          'Austin ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'em',
-            null,
-            'Condiff'
-          )
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h2',
-          { className: 'title' },
-          'UX/UI Designer & Developer'
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'div',
-          { className: 'social' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'https://twitter.com/austincondiff', className: 'twitter' },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], { type: 'twitter' })
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'http://www.dribbble.com/austincondiff', className: 'dribbble' },
-            'Dribbble'
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b', className: 'linkedin' },
-            'LinkedIn'
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'https://plus.google.com/113055989549833930913/', className: 'gplus' },
-            'Google+'
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'https://www.facebook.com/acondiff', className: 'facebook' },
-            'Facebook'
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'a',
-            { target: '_blank', href: 'http://instagram.com/austincondiff', className: 'instagram' },
-            'Instagram'
-          )
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('i', { className: 'arrow' })
-      )
-    );
-  }
-}
-
-/***/ }),
-/* 34 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const files = __webpack_require__(35);
+const files = __webpack_require__(34);
 files.keys().forEach(files);
 
 const Icon = ({ type, className }) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
@@ -19556,16 +19464,18 @@ const Icon = ({ type, className }) => react__WEBPACK_IMPORTED_MODULE_0___default
 /* harmony default export */ __webpack_exports__["default"] = (Icon);
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dribbble.svg": 36,
-	"./facebook.svg": 40,
-	"./google-plus.svg": 41,
+	"./dribbble.svg": 35,
+	"./facebook.svg": 39,
+	"./google-plus.svg": 40,
+	"./instagram.svg": 41,
 	"./linkedin.svg": 42,
-	"./spotify.svg": 43,
-	"./twitter.svg": 44
+	"./pinterest.svg": 43,
+	"./spotify.svg": 44,
+	"./twitter.svg": 45
 };
 
 
@@ -19588,17 +19498,17 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 35;
+webpackContext.id = 34;
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -19612,7 +19522,7 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -19883,10 +19793,10 @@ return BrowserSpriteSymbol;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(38)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(37)))
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports) {
 
 var g;
@@ -19912,7 +19822,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -20915,17 +20825,17 @@ return sprite$1;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(38)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(37)))
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -20939,14 +20849,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -20960,14 +20870,35 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "instagram",
+  "use": "instagram-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"instagram\"><path d=\"M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
 /* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -20986,9 +20917,30 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "pinterest",
+  "use": "pinterest-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"pinterest\"><path d=\"M9.04,21.54C10,21.83 10.97,22 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12C2,16.25 4.67,19.9 8.44,21.34C8.35,20.56 8.26,19.27 8.44,18.38L9.59,13.44C9.59,13.44 9.3,12.86 9.3,11.94C9.3,10.56 10.16,9.53 11.14,9.53C12,9.53 12.4,10.16 12.4,10.97C12.4,11.83 11.83,13.06 11.54,14.24C11.37,15.22 12.06,16.08 13.06,16.08C14.84,16.08 16.22,14.18 16.22,11.5C16.22,9.1 14.5,7.46 12.03,7.46C9.21,7.46 7.55,9.56 7.55,11.77C7.55,12.63 7.83,13.5 8.29,14.07C8.38,14.13 8.38,14.21 8.35,14.36L8.06,15.45C8.06,15.62 7.95,15.68 7.78,15.56C6.5,15 5.76,13.18 5.76,11.71C5.76,8.55 8,5.68 12.32,5.68C15.76,5.68 18.44,8.15 18.44,11.43C18.44,14.87 16.31,17.63 13.26,17.63C12.29,17.63 11.34,17.11 11,16.5L10.33,18.87C10.1,19.73 9.47,20.88 9.04,21.57V21.54Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -21002,14 +20954,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -21023,7 +20975,124 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 45 */
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  id: 'twitter',
+  url: 'https://twitter.com/austincondiff',
+  message: 'Follow me on Twitter.',
+  color: '#00ACEE'
+}, {
+  id: 'dribbble',
+  url: 'http://www.dribbble.com/austincondiff',
+  message: 'Check out my work on Dribbble.',
+  color: '#ea4c89'
+}, {
+  id: 'linkedin',
+  url: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b',
+  message: 'Connect with me on LinkedIn.',
+  color: '#0077b5'
+}, {
+  id: 'google-plus',
+  url: 'https://plus.google.com/113055989549833930913/',
+  message: 'Follow me on Google+.',
+  color: '#D34836'
+}, {
+  id: 'facebook',
+  url: 'https://www.facebook.com/acondiff',
+  message: 'See what I\'m up to on Facebook.',
+  color: '#4c66a4'
+}, {
+  id: 'instagram',
+  url: 'http://instagram.com/austincondiff',
+  message: 'Check out my recent photos on Instagram.',
+  color: '#d93175'
+}, {
+  id: 'pinterest',
+  url: 'https://www.pinterest.com/austincondiff/',
+  message: 'Find out what I\'ve recently pinned on Pinterest.',
+  color: '#bd081c'
+}, {
+  id: 'spotify',
+  url: 'https://open.spotify.com/user/acondiff',
+  message: 'Jam with me on Spotify.',
+  color: '#1db954'
+}]);
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
+/* harmony import */ var _social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
+
+
+
+
+class Header extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = { scrollTop: 0 };
+    this.onScroll = this.onScroll.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  onScroll() {
+    this.setState({ scrollTop: window.scrollY });
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      'header',
+      { id: 'about' },
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'bg-img', style: { top: this.state.scrollTop } }),
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        'div',
+        { className: 'wrap' },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'photo' }),
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'h1',
+          { className: 'name' },
+          'Austin ',
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'em',
+            null,
+            'Condiff'
+          )
+        ),
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'h2',
+          { className: 'title' },
+          'UX/UI Designer & Developer'
+        ),
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'div',
+          { className: 'social' },
+          _social__WEBPACK_IMPORTED_MODULE_2__["default"].map(s => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'a',
+            { key: s.id, target: '_blank', href: s.url },
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], { type: s.id })
+          ))
+        ),
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('i', { className: 'arrow' })
+      )
+    );
+  }
+}
+
+/***/ }),
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21052,7 +21121,7 @@ class MissionStatement extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21290,7 +21359,7 @@ class Timeline extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
               "div",
               { className: "date" },
-              "2016 - Present"
+              "2016"
             ),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
               "div",
@@ -21299,6 +21368,34 @@ class Timeline extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
                 "p",
                 null,
                 "At Intuit, I worked on a product that helps accountants better communicate and get documents from their clients. I helped in the transition from AngularJS to ReactJS and refreshed the design of both their accountant and client-facing apps. "
+              )
+            )
+          ),
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            "li",
+            { className: "verizon" },
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              "h4",
+              { className: "company" },
+              "Verizon"
+            ),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              "h5",
+              { className: "job-title" },
+              "Creative UI Engineer"
+            ),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              "div",
+              { className: "date" },
+              "2017 - Present"
+            ),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              "div",
+              { className: "description" },
+              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+                "p",
+                null,
+                "At Verizon, I created a design system, developed a story map (or user flow) based on user input, and arechetected a frontend project from the ground up based on ReactJS for hardware operations. "
               )
             )
           ),
@@ -21318,7 +21415,7 @@ class Timeline extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21326,29 +21423,1834 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Work; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 class Work extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = { shots: null };
+  }
+
+  componentDidMount() {
+    const accessToken = '2be1a15ac090f92db56b9a01afd8a0b704628a20398072179636680b24e4215a';
+    axios__WEBPACK_IMPORTED_MODULE_1___default()({
+      url: 'https://api.dribbble.com/v2/user/shots?per_page=48',
+      dataType: 'json',
+      type: 'GET',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }).then(data => {
+      console.log(data.data);
+      if (data.data.length > 0) {
+        this.setState({ shots: data.data });
+      } else {
+        this.setState({ shots: null });
+      }
+    });
+  }
+
   render() {
+    const { shots } = this.state;
+
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      "div",
-      { className: "block work", id: "work" },
+      'div',
+      { className: 'block work', id: 'work' },
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        "div",
-        { className: "work-grid" },
+        'div',
+        { className: 'work-grid' },
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          "h3",
-          { className: "title" },
-          "Recent Work"
+          'h3',
+          { className: 'title' },
+          'Recent Work'
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", { className: "recent-work" })
+        shots ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'ul',
+          { className: 'recent-work' },
+          shots && shots.map(shot => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'li',
+            null,
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              'a',
+              { href: shot.html_url, target: '_blank' },
+              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('img', { src: shot.images.hidpi !== null ? shot.images.hidpi : shot.images.normal, alt: shot.title })
+            )
+          ))
+        ) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'div',
+          null,
+          'We hit a tiny snag. No work to display at the moment.'
+        )
       )
     );
   }
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(52);
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+var bind = __webpack_require__(54);
+var Axios = __webpack_require__(56);
+var defaults = __webpack_require__(57);
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(75);
+axios.CancelToken = __webpack_require__(76);
+axios.isCancel = __webpack_require__(72);
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(77);
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(54);
+var isBuffer = __webpack_require__(55);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(57);
+var utils = __webpack_require__(53);
+var InterceptorManager = __webpack_require__(69);
+var dispatchRequest = __webpack_require__(70);
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(53);
+var normalizeHeaderName = __webpack_require__(59);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(60);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(60);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(58)))
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+var settle = __webpack_require__(61);
+var buildURL = __webpack_require__(64);
+var parseHeaders = __webpack_require__(65);
+var isURLSameOrigin = __webpack_require__(66);
+var createError = __webpack_require__(62);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(67);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if ("none" !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(68);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var createError = __webpack_require__(62);
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(63);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+function E() {
+  this.message = 'String contains an invalid character';
+}
+E.prototype = new Error;
+E.prototype.code = 5;
+E.prototype.name = 'InvalidCharacterError';
+
+function btoa(input) {
+  var str = String(input);
+  var output = '';
+  for (
+    // initialize result and counter
+    var block, charCode, idx = 0, map = chars;
+    // if the next str index does not exist:
+    //   change the mapping table to "="
+    //   check if d has no fractional digits
+    str.charAt(idx | 0) || (map = '=', idx % 1);
+    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
+    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+  ) {
+    charCode = str.charCodeAt(idx += 3 / 4);
+    if (charCode > 0xFF) {
+      throw new E();
+    }
+    block = block << 8 | charCode;
+  }
+  return output;
+}
+
+module.exports = btoa;
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+var transformData = __webpack_require__(71);
+var isCancel = __webpack_require__(72);
+var defaults = __webpack_require__(57);
+var isAbsoluteURL = __webpack_require__(73);
+var combineURLs = __webpack_require__(74);
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(53);
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(75);
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+
+/***/ }),
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21377,11 +23279,11 @@ class Footer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /***/ }),
-/* 49 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(50);
+var content = __webpack_require__(80);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -21395,29 +23297,29 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(56)(content, options);
+var update = __webpack_require__(86)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 50 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(51);
-exports = module.exports = __webpack_require__(52)(false);
+var escape = __webpack_require__(81);
+exports = module.exports = __webpack_require__(82)(false);
 // imports
 
 
 // module
-exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\tbackground: rgba(49, 52, 63, 1);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.5);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: #50d0bf;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n\t   -moz-border-radius: 200px;\n    -webkit-border-radius: 200px;\n            border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(53)) + ") no-repeat;\n\tbackground-size: cover;\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50D0BF;\n}\n\nheader .social {\n\tmargin: 50px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\ttext-decoration: none;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    -webkit-transition: .25s;\n    -moz-transition: .25s;\n    -ms-transition: .25s;\n    transition: .25s;\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tcontent: '';\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  transform: rotate(45deg);\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);      }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);      }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);      }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #50d0bf;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: #3A3C47;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: white;\n\tfont-weight: 300;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 16px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 8px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n}\n\n.block.work ul li a img {\n\twidth: 100%;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(" + escape(__webpack_require__(54)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(" + escape(__webpack_require__(54)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n}\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\n\n\nul.timeline {\n\tmargin-left: 455px;\n/*\tmargin-left: -webkit-calc(50% - 5px);\n\tmargin-left: -moz-calc(50% - 5px);\n\tmargin-left: calc(50% - 5px);\n*/\tmargin-top: -55px;\n\tborder-left: 10px solid white;\n\tpadding: 65px 0;\n\tposition: relative;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 20px;\n\t   -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n            border-radius: 5px;\n    position: relative;\n    text-align: left;\n    z-index: 1;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -153px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -104px;\n}\nul.timeline li.usana {\n\tmargin-top: -75px;\n}\nul.timeline li.now {\n\tmargin-top: 0;\n  width: 170px;\n  margin-left: -211px !important;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -146px;\n}\nul.timeline li.rss {\n\tmargin-top: -8px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\n\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n}\n\nul.timeline li .company {\n\tfont-size: 21px;\n\tfont-weight: 300;\n\tmargin-bottom: 6px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 10px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 15px;\n\tright: 15px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tfloat: left;\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n}\n\nform.contact ul li.message {\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.submit {\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n\tcolor: #3A3C47;\n\tbackground: #f5f6f7;\n\tfont-size: 16px;\n\tline-height: 1.25;\n\tfont-weight: 300;\n\tpadding: 15px;\n\tfont-family: 'Roboto', sans-serif;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tborder: 0;\n\t-webkit-box-shadow: 0 0 0 8px transparent;\n\tbox-shadow: 0 0 0 8px transparent;\n\ttransition: .2s;\n\tresize: none;\n\t-webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(55)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\nheader .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n}\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n}\n\n.find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; }\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me.twitter .find-txt,\n.find-me.dribbble .find-txt,\n.find-me.linkedin .find-txt,\n.find-me.gplus .find-txt,\n.find-me.facebook .find-txt,\n.find-me.instagram .find-txt,\n.find-me.rdio .find-txt { color: white; }\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\tfont-size: 0px;\n\ttext-indent: -99999px;\n\t   -moz-border-radius: 100px;\n    -webkit-border-radius: 100px;\n            border-radius: 100px;\n    margin: 0 8px;\n    text-decoration: none;\n}\n\n.find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a:hover:after {\n\tcolor: white;\n}\n\n.social a.twitter:after {\n\tcontent: '\\F309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\F31B';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\F318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\F30F';\n}\n\n.social a.facebook:after {\n\tcontent: '\\F30C';\n}\n\n.social a.instagram:after {\n\tcontent: '\\F32D';\n}\n\n.social a.rdio:after {\n\tcontent: '\\F324';\n}\n\nfooter {\n\tbackground: #3A3C47;\n\tcolor: rgba(255,255,255,.5);\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n\t\tfont-size: 12px;\n\t\tborder: 2px solid white;\n\t\tposition: absolute;\n\t\tpadding: 10px 12px;\n\t\tright: 15px;\n\t\ttop: 30px;\n\t\t-webkit-transition: .5s;\n\t\t-moz-transition: .5s;\n\t\t-ms-transition: .5s;\n\t\ttransition: .5s;\n\t}\n\n\tnav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid #50d0bf;\n\t}\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 15px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 18px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\tdisplay: inline-block;\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\t/* header .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t} */\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tfont-size: 0px;\n\t\ttext-indent: -99999px;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
+exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\tbackground: rgba(49, 52, 63, 1);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.5);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: #50d0bf;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n\t   -moz-border-radius: 200px;\n    -webkit-border-radius: 200px;\n            border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(83)) + ") no-repeat;\n\tbackground-size: cover;\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50D0BF;\n}\n\nheader .social {\n\tmargin: 50px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  color: white;\n  border-radius: 100px;\n  margin: 0 8px;\n  -webkit-transition: .25s;\n  -moz-transition: .25s;\n  -ms-transition: .25s;\n  transition: .25s;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tcontent: '';\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  transform: rotate(45deg);\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);      }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);      }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);      }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #50d0bf;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: #3A3C47;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: white;\n\tfont-weight: 300;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 16px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 8px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n  padding-top: calc(75% - 15px);\n}\n\n.block.work ul li a img {\n\twidth: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(" + escape(__webpack_require__(84)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(" + escape(__webpack_require__(84)) + ");\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n}\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\nul.timeline {\n  margin-left: 455px;\n  margin-top: -56px;\n  border-left: 10px solid white;\n  padding: 48px 0 0 0;\n  position: relative;\n  margin-bottom: 48px;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;``\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 24px;\n  border-radius: 5px;\n  position: relative;\n  text-align: left;\n  z-index: 1;\n}\n\nul.timeline li p {\n  line-height: 1.8;\n  font-weight: 400;\n  letter-spacing: .25px;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -203px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -130px;\n}\nul.timeline li.usana {\n\tmargin-top: -90px;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -179px;\n}\nul.timeline li.rss {\n\tmargin-top: -10px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\nul.timeline li.verizon {\n\tmargin-top: -30px;\n}\nul.timeline li.now {\n  margin-top: -73px;\n  width: 196px;\n  /* margin-left: -237px !important; */\n}\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n  position: absolute;\n  left: 0;\n  bottom: -40px;\n}\n\nul.timeline li .company {\n\tfont-size: 24px;\n\tfont-weight: 300;\n\tmargin-bottom: 8px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 16px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 24px;\n\tright: 24px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tfloat: left;\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n}\n\nform.contact ul li.message {\n\tmargin-bottom: 14px;\n}\n\nform.contact ul li.submit {\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n\tcolor: #3A3C47;\n\tbackground: #f5f6f7;\n\tfont-size: 16px;\n\tline-height: 1.25;\n\tfont-weight: 300;\n\tpadding: 15px;\n\tfont-family: 'Roboto', sans-serif;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tborder: 0;\n\t-webkit-box-shadow: 0 0 0 8px transparent;\n\tbox-shadow: 0 0 0 8px transparent;\n\ttransition: .2s;\n\tresize: none;\n\t-webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(85)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\n/* header .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n} */\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n  font-size: 0;\n}\n\n/* .find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; } */\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  border-radius: 100px;\n  padding: 0 8px;\n  text-decoration: none;\n  font-size: 32px;\n  color: rgba(0,0,0,0.4);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  transition: .25s;\n  box-sizing: content-box;\n}\n\n/* .find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n} */\n\n.find-me .social a:hover {\n\tcolor: white;\n}\n\n/* .social a.twitter:after {\n\tcontent: '\\f309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\f31b';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\f318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\f30f';\n}\n\n.social a.facebook:after {\n\tcontent: '\\f30c';\n}\n\n.social a.instagram:after {\n\tcontent: '\\f32d';\n}\n\n.social a.rdio:after {\n\tcontent: '\\f324';\n} */\n\nfooter {\n\tbackground: #3A3C47;\n\tcolor: rgba(255,255,255,.5);\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n\t\tfont-size: 12px;\n\t\tborder: 2px solid white;\n\t\tposition: absolute;\n\t\tpadding: 10px 12px;\n\t\tright: 15px;\n\t\ttop: 30px;\n\t\t-webkit-transition: .5s;\n\t\t-moz-transition: .5s;\n\t\t-ms-transition: .5s;\n\t\ttransition: .5s;\n\t}\n\n\tnav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid #50d0bf;\n\t}\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 15px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 18px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\tdisplay: inline-block;\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\t/* header .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t} */\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\t/* font-size: 0px;\n\t\ttext-indent: -99999px; */\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 51 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -21439,7 +23341,7 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 52 */
+/* 82 */
 /***/ (function(module, exports) {
 
 /*
@@ -21521,25 +23423,25 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 53 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/profile.jpg";
 
 /***/ }),
-/* 54 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/link.svg";
 
 /***/ }),
-/* 55 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/bg-hero.jpg";
 
 /***/ }),
-/* 56 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -21605,7 +23507,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(57);
+var	fixUrls = __webpack_require__(87);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -21925,7 +23827,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 57 */
+/* 87 */
 /***/ (function(module, exports) {
 
 
