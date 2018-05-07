@@ -640,25 +640,28 @@ form.contact {
 	margin: 30px 0;
 }
 
-form.contact ul li.name,
+form.contact ul li.first-name,
+form.contact ul li.last-name,
 form.contact ul li.email {
-	width: 50%;
-	float: left;
-	margin-bottom: 14px;
+	width: 33.33%;
+	display: inline-block;
+	/* margin-bottom: 14px; */
+  padding: 8px;
 }
 
-form.contact ul li.name {
+/* form.contact ul li.name {
 	padding-right: 7px;
 }
 form.contact ul li.email {
 	padding-left: 7px;
-}
+} */
 
 form.contact ul li.message {
-	margin-bottom: 14px;
+  padding: 8px;
 }
 
 form.contact ul li.submit {
+  padding: 8px;
 	text-align: right;
 	-webkit-appearance: none;
 }
