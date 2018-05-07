@@ -2,13 +2,33 @@ import React, { Component } from 'react'
 import Nav from './Nav'
 import { About, Connect, FindMe, Header, MissionStatement, Timeline, Work } from './Blocks'
 import Footer from './Footer'
-import NavBar, { ElementWrapper } from 'react-scrolling-nav';
 
 export default class App extends Component {
   constructor() {
     super()
+    this.state = { scrollTop: 0 }
     this.sections = {}
+    this.onScroll = this.onScroll.bind(this)
+    this.updateScroll = this.updateScroll.bind(this)
+    this.ticking = false
   }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll)
+  }
+
+  onScroll() {
+    if(!this.ticking) {
+      window.requestAnimationFrame(this.updateScroll)
+      this.ticking = true
+    }
+  }
+
+  updateScroll() {
+    this.setState({ scrollTop: window.scrollY })
+    this.ticking = false
+  }
+
   render() {
     const navBarItems = [{
       label: "About",
@@ -25,9 +45,9 @@ export default class App extends Component {
     } ]
     return (
       <div>
-        <Nav sections={ this.sections } />
+        <Nav scrollTop={this.state.scrollTop} sections={ this.sections } />
         <div ref={section => { this.sections.about = section }}>
-          <Header />
+          <Header scrollTop={this.state.scrollTop} />
           <MissionStatement />
           <About />
         </div>

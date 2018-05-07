@@ -37,9 +37,12 @@ export default class Work extends Component {
           { shots ?
             <ul className="recent-work">
               {shots && shots.map(shot =>
-                <li>
-                  <a href={ shot.html_url } target="_blank">
-                    <img src={ (shot.images.hidpi !== null) ? shot.images.hidpi : shot.images.normal } alt={ shot.title } />
+                <li key={shot.html_url}>
+                  <a href={ shot.html_url } target="_blank" style={{
+                    backgroundImage: `url(${(shot.images.hidpi !== null) ? shot.images.hidpi : shot.images.normal})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>
                   </a>
                 </li>
               )}

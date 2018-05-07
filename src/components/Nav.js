@@ -1,27 +1,12 @@
 import React, { Component } from 'react'
 
 export default class Nav extends Component {
-  constructor() {
-    super()
-    this.state = { scrollTop: 0 }
-    this.onScroll = this.onScroll.bind(this)
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.onScroll)
-    console.log('this.props.sections', this.props.sections)
-
-  }
-
-  onScroll() {
-    this.setState({ scrollTop: window.scrollY })
-  }
 
   isScrollTopWithinSection(section) {
     const offset = 5
     if(this.props.sections[section]
-    && this.state.scrollTop > this.props.sections[section].offsetTop - offset
-    && this.state.scrollTop < (this.props.sections[section].offsetTop + this.props.sections[section].offsetHeight) - offset) {
+    && this.props.scrollTop > this.props.sections[section].offsetTop - offset
+    && this.props.scrollTop < (this.props.sections[section].offsetTop + this.props.sections[section].offsetHeight) - offset) {
       return true
     }
     return false
@@ -29,7 +14,7 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <nav className={'block' + (this.state.scrollTop > 0 ? ' scrolled' : '')}>
+      <nav className={'block' + (this.props.scrollTop > 0 ? ' scrolled' : '')}>
     		<div className='wrap'>
           <img src={ require('../assets/img/logo.svg') } alt="" id="logo"/>
     			<a className={'about' + (this.isScrollTopWithinSection('about') ? ' current' : '')} href="#about">About</a>

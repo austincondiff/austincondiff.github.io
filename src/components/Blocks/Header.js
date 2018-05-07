@@ -3,24 +3,11 @@ import Icon from '../Icon'
 import social from '../../social'
 
 export default class Header extends Component {
-  constructor() {
-    super()
-    this.state = { scrollTop: 0 }
-    this.onScroll = this.onScroll.bind(this)
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.onScroll)
-  }
-
-  onScroll() {
-    this.setState({ scrollTop: window.scrollY })
-  }
 
   render() {
     return (
       <header id="about">
-        <div className="bg-img" style={{top: this.state.scrollTop}}></div>
+        <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
         <div className="wrap">
           <div className="photo"></div>
           <h1 className="name">Austin <em>Condiff</em></h1>
