@@ -640,10 +640,9 @@ form.contact {
 	margin: 30px 0;
 }
 
-form.contact ul li.first-name,
-form.contact ul li.last-name,
+form.contact ul li.name,
 form.contact ul li.email {
-	width: 33.33%;
+	width: 50%;
 	display: inline-block;
 	/* margin-bottom: 14px; */
   padding: 8px;
