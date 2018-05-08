@@ -38,7 +38,7 @@ export default class Header extends Component {
                 <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
               </div>
               <div className="wrap" style={{
-                transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.75)',
+                transform: transitionState === 'entered' ? 'scale(1)' : 'scale(3)',
                 opacity: transitionState === 'entered' ? 1 : 0,
                 // filter: transitionState === 'entered' ? 'blur(0)' :  'blur(8px)',
                 transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
