@@ -25478,7 +25478,7 @@ var MissionStatement = function (_Component) {
           { className: "wrap" },
           _react2.default.createElement(
             "h3",
-            { className: "title description" },
+            { className: "description" },
             "I design and develop beautiful yet functional interactive user experiences that provide both customer value and product success. "
           ),
           _react2.default.createElement(
