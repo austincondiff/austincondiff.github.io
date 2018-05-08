@@ -77,7 +77,7 @@ export default class Timeline extends Component {
       					<h4 className="company">{job.company}</h4>
       					<h5 className="job-title">{job.title}</h5>
       					<div className="date">{job.date}</div>
-      					<div className="description">
+      					<div className="desc">
       						<p>{job.description}</p>
       					</div>
       				</li>
