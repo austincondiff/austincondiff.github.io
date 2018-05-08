@@ -190,11 +190,10 @@ header .photo {
 	width: 175px;
 	height: 175px;
 	margin: 0px auto 30px auto;
-	   -moz-border-radius: 200px;
-    -webkit-border-radius: 200px;
-            border-radius: 200px;
+  border-radius: 200px;
 	background: url(./assets/img/profile.jpg) no-repeat;
 	background-size: cover;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2);
 }
 
 header .name {
@@ -218,7 +217,7 @@ header .title {
 }
 
 header .social {
-	margin: 50px 0;
+	margin: 64px 0;
 }
 
 header .social a {
