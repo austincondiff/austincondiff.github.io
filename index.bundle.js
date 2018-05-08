@@ -25382,7 +25382,7 @@ var Header = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'wrap', style: {
-                    transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.75)',
+                    transform: transitionState === 'entered' ? 'scale(1)' : 'scale(3)',
                     opacity: transitionState === 'entered' ? 1 : 0,
                     // filter: transitionState === 'entered' ? 'blur(0)' :  'blur(8px)',
                     transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
@@ -25479,17 +25479,17 @@ var MissionStatement = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "I craft and deliver beautiful and simple user interfaces, brand identities, and interactive user experiences. "
+            "I design and develop beautiful yet functional interactive user experiences that provide both customer value and product success. "
           ),
           _react2.default.createElement(
             "p",
             null,
-            "For the past fifteen years I have been designing and developing interactive user experiences using the best design techniques and the latest front-end technologies to ensure quality work is delivered."
+            "For the past fifteen years I have been designing and developing mobile and web based user experiences for small businesses and Fortune 500 companies using the best design techniques and the latest front-end technologies."
           ),
           _react2.default.createElement(
             "p",
             null,
-            "What started as a favor at the age of fourteen to create a simple website for my parents\u2019 small photography business later turned into a passion and life-long dream. What has gone from a skill or career path has grown into a passion."
+            "I strive to ensure that the designs and code I produce with the team I am working with is of the highest quality while being delivered on time, scalable, and maintanable."
           )
         )
       );
