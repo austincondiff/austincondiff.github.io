@@ -12,16 +12,16 @@ export default [
     color: '#ea4c89'
   },
   {
+    id: 'github',
+    url: 'http://www.github.com/austincondiff',
+    message: 'Dig through my repos on Github.',
+    color: '#24292e'
+  },
+  {
     id: 'linkedin',
     url: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b',
     message: 'Connect with me on LinkedIn.',
     color: '#0077b5'
-  },
-  {
-    id: 'google-plus',
-    url: 'https://plus.google.com/113055989549833930913/',
-    message: 'Follow me on Google+.',
-    color: '#D34836'
   },
   {
     id: 'facebook',

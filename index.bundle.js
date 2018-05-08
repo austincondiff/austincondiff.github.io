@@ -88,7 +88,7 @@ var _App = __webpack_require__(22);
 
 var _App2 = _interopRequireDefault(_App);
 
-__webpack_require__(79);
+__webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19030,9 +19030,9 @@ var _Nav = __webpack_require__(23);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Blocks = __webpack_require__(25);
+var _Blocks = __webpack_require__(37);
 
-var _Footer = __webpack_require__(78);
+var _Footer = __webpack_require__(91);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -19153,11 +19153,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactTransitionGroup = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19188,70 +19192,85 @@ var Nav = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var styles = {
+        borderSide: {
+          position: 'fixed',
+          background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+          backgroundAttachment: 'fixed',
+          transition: '1000ms'
+        }
+      };
       return _react2.default.createElement(
-        'nav',
-        { className: 'block' + (this.props.scrollTop > 0 ? ' scrolled' : '') },
+        _reactTransitionGroup.TransitionGroup,
+        null,
         _react2.default.createElement(
-          'div',
-          { style: { opacity: this.props.scrollTop > 0 ? 1 : 1, transition: '.5s' } },
-          _react2.default.createElement('div', { style: {
-              position: 'fixed',
-              top: 0, right: 0, left: 0, height: this.props.scrollTop > 0 ? 104 : 20,
-              background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
-              backgroundAttachment: 'fixed',
-              transition: '.5s'
-            } }),
-          _react2.default.createElement('div', { style: {
-              position: 'fixed',
-              top: 0, right: 0, bottom: 0, width: 20,
-              background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
-              backgroundAttachment: 'fixed',
-              transition: '.5s'
-            } }),
-          _react2.default.createElement('div', { style: {
-              position: 'fixed',
-              right: 0, bottom: 0, left: 0, height: 20,
-              background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
-              backgroundAttachment: 'fixed',
-              transition: '.5s'
-            } }),
-          _react2.default.createElement('div', { style: {
-              position: 'fixed',
-              top: 0, bottom: 0, left: 0, width: 20,
-              background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
-              backgroundAttachment: 'fixed',
-              transition: '.5s'
-            } })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'wrap' },
-          _react2.default.createElement('img', { src: __webpack_require__(24), alt: '', id: 'logo' }),
-          _react2.default.createElement(
-            'a',
-            { className: 'about' + (this.isScrollTopWithinSection('about') ? ' current' : ''), href: '#about' },
-            'About'
-          ),
-          _react2.default.createElement(
-            'a',
-            { className: 'work' + (this.isScrollTopWithinSection('work') ? ' current' : ''), href: '#work' },
-            'Work'
-          ),
-          _react2.default.createElement(
-            'a',
-            { className: 'timeline' + (this.isScrollTopWithinSection('timeline') ? ' current' : ''), href: '#timeline' },
-            'Timeline'
-          ),
-          _react2.default.createElement(
-            'a',
-            { className: 'connect' + (this.isScrollTopWithinSection('connect') ? ' current' : ''), href: '#connect' },
-            'Connect'
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '/assets/resume-2018.pdf', target: '_blank', className: 'resume' },
-            'Download Resume'
-          )
+          _reactTransitionGroup.Transition,
+          { timeout: 500, appear: true },
+          function (transitionState) {
+            return _react2.default.createElement(
+              'nav',
+              { className: 'block' + (_this2.props.scrollTop > 0 ? ' scrolled' : '') },
+              _react2.default.createElement(
+                'div',
+                { style: { opacity: _this2.props.scrollTop > 0 ? 1 : 1, transition: '.5s' } },
+                _react2.default.createElement('div', { style: _extends({}, styles.borderSide, {
+                    top: 0, right: 0, left: 0,
+                    height: transitionState === 'entered' ? _this2.props.scrollTop > 0 ? 104 : 20 : 0,
+                    transition: transitionState === 'entered' ? '400ms' : '1000ms'
+                  }) }),
+                _react2.default.createElement('div', { style: _extends({}, styles.borderSide, {
+                    top: 0, right: 0, bottom: 0,
+                    width: transitionState === 'entered' ? 20 : 0
+                  }) }),
+                _react2.default.createElement('div', { style: _extends({}, styles.borderSide, {
+                    right: 0, bottom: 0, left: 0,
+                    height: transitionState === 'entered' ? 20 : 0
+                  }) }),
+                _react2.default.createElement('div', { style: _extends({}, styles.borderSide, {
+                    top: 0, bottom: 0, left: 0,
+                    width: transitionState === 'entered' ? 20 : 0
+                  }) })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'wrap', style: {
+                    transition: '1000ms',
+                    // transitionDelay: '100ms',
+                    transform: transitionState === 'entered' ? 'translateY(0)' : 'translateY(-100%)',
+                    opacity: transitionState === 'entered' ? 1 : 0,
+                    width: '100%'
+                  } },
+                _react2.default.createElement('img', { src: __webpack_require__(36), alt: '', id: 'logo' }),
+                _react2.default.createElement(
+                  'a',
+                  { className: 'about' + (_this2.isScrollTopWithinSection('about') ? ' current' : ''), href: '#about' },
+                  'About'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { className: 'work' + (_this2.isScrollTopWithinSection('work') ? ' current' : ''), href: '#work' },
+                  'Work'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { className: 'timeline' + (_this2.isScrollTopWithinSection('timeline') ? ' current' : ''), href: '#timeline' },
+                  'Timeline'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { className: 'connect' + (_this2.isScrollTopWithinSection('connect') ? ' current' : ''), href: '#connect' },
+                  'Connect'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '/assets/resume-2018.pdf', target: '_blank', className: 'resume' },
+                  'Download Resume'
+                )
+              )
+            );
+          }
         )
       );
     }
@@ -19266,10 +19285,2133 @@ exports.default = Nav;
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/logo.svg";
+"use strict";
+
+
+var _CSSTransition = __webpack_require__(25);
+
+var _CSSTransition2 = _interopRequireDefault(_CSSTransition);
+
+var _ReplaceTransition = __webpack_require__(33);
+
+var _ReplaceTransition2 = _interopRequireDefault(_ReplaceTransition);
+
+var _TransitionGroup = __webpack_require__(34);
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+var _Transition = __webpack_require__(31);
+
+var _Transition2 = _interopRequireDefault(_Transition);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  Transition: _Transition2.default,
+  TransitionGroup: _TransitionGroup2.default,
+  ReplaceTransition: _ReplaceTransition2.default,
+  CSSTransition: _CSSTransition2.default
+};
 
 /***/ }),
 /* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _propTypes = __webpack_require__(26);
+
+var PropTypes = _interopRequireWildcard(_propTypes);
+
+var _addClass = __webpack_require__(28);
+
+var _addClass2 = _interopRequireDefault(_addClass);
+
+var _removeClass = __webpack_require__(30);
+
+var _removeClass2 = _interopRequireDefault(_removeClass);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Transition = __webpack_require__(31);
+
+var _Transition2 = _interopRequireDefault(_Transition);
+
+var _PropTypes = __webpack_require__(32);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var addClass = function addClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return (0, _addClass2.default)(node, c);
+  });
+};
+var removeClass = function removeClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return (0, _removeClass2.default)(node, c);
+  });
+};
+
+var propTypes = _extends({}, _Transition2.default.propTypes, {
+
+  /**
+   * The animation classNames applied to the component as it enters, exits or has finished the transition.
+   * A single name can be provided and it will be suffixed for each stage: e.g.
+   *
+   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`, `fade-enter-done`,
+   * `fade-exit`, `fade-exit-active`, `fade-exit-done`, `fade-appear`, and `fade-appear-active`.
+   * Each individual classNames can also be specified independently like:
+   *
+   * ```js
+   * classNames={{
+   *  appear: 'my-appear',
+   *  appearActive: 'my-active-appear',
+   *  enter: 'my-enter',
+   *  enterActive: 'my-active-enter',
+   *  enterDone: 'my-done-enter',
+   *  exit: 'my-exit',
+   *  exitActive: 'my-active-exit',
+   *  exitDone: 'my-done-exit',
+   * }}
+   * ```
+   *
+   * @type {string | {
+   *  appear?: string,
+   *  appearActive?: string,
+   *  enter?: string,
+   *  enterActive?: string,
+   *  enterDone?: string,
+   *  exit?: string,
+   *  exitActive?: string,
+   *  exitDone?: string,
+   * }}
+   */
+  classNames: _PropTypes.classNamesShape,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
+   * applied.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEnter: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter-active' or
+   * 'appear-active' class is applied.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEntering: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter' or
+   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEntered: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit' class is
+   * applied.
+   *
+   * @type Function(node: HtmlElement)
+   */
+  onExit: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+   *
+   * @type Function(node: HtmlElement
+   */
+  onExiting: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit' classes
+   * are **removed** and the `exit-done` class is added to the DOM node.
+   *
+   * @type Function(node: HtmlElement)
+   */
+  onExited: PropTypes.func
+});
+
+/**
+ * A `Transition` component using CSS transitions and animations.
+ * It's inspired by the excellent [ng-animate](http://www.nganimate.org/) library.
+ *
+ * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+ * and `exit` stages of the transition. The first class is applied and then a
+ * second "active" class in order to activate the css animation. After the animation,
+ * matching `done` class names are applied to persist the animation state.
+ *
+ * When the `in` prop is toggled to `true` the Component will get
+ * the `example-enter` CSS class and the `example-enter-active` CSS class
+ * added in the next tick. This is a convention based on the `classNames` prop.
+ *
+ * ## Example
+ *
+ * <iframe src="https://codesandbox.io/embed/m77l2vp00x?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+ */
+
+var CSSTransition = function (_React$Component) {
+  _inherits(CSSTransition, _React$Component);
+
+  function CSSTransition() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CSSTransition);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.onEnter = function (node, appearing) {
+      var _this$getClassNames = _this.getClassNames(appearing ? 'appear' : 'enter'),
+          className = _this$getClassNames.className;
+
+      _this.removeClasses(node, 'exit');
+      addClass(node, className);
+
+      if (_this.props.onEnter) {
+        _this.props.onEnter(node);
+      }
+    }, _this.onEntering = function (node, appearing) {
+      var _this$getClassNames2 = _this.getClassNames(appearing ? 'appear' : 'enter'),
+          activeClassName = _this$getClassNames2.activeClassName;
+
+      _this.reflowAndAddClass(node, activeClassName);
+
+      if (_this.props.onEntering) {
+        _this.props.onEntering(node);
+      }
+    }, _this.onEntered = function (node, appearing) {
+      var _this$getClassNames3 = _this.getClassNames('enter'),
+          doneClassName = _this$getClassNames3.doneClassName;
+
+      _this.removeClasses(node, appearing ? 'appear' : 'enter');
+      addClass(node, doneClassName);
+
+      if (_this.props.onEntered) {
+        _this.props.onEntered(node);
+      }
+    }, _this.onExit = function (node) {
+      var _this$getClassNames4 = _this.getClassNames('exit'),
+          className = _this$getClassNames4.className;
+
+      _this.removeClasses(node, 'appear');
+      _this.removeClasses(node, 'enter');
+      addClass(node, className);
+
+      if (_this.props.onExit) {
+        _this.props.onExit(node);
+      }
+    }, _this.onExiting = function (node) {
+      var _this$getClassNames5 = _this.getClassNames('exit'),
+          activeClassName = _this$getClassNames5.activeClassName;
+
+      _this.reflowAndAddClass(node, activeClassName);
+
+      if (_this.props.onExiting) {
+        _this.props.onExiting(node);
+      }
+    }, _this.onExited = function (node) {
+      var _this$getClassNames6 = _this.getClassNames('exit'),
+          doneClassName = _this$getClassNames6.doneClassName;
+
+      _this.removeClasses(node, 'exit');
+      addClass(node, doneClassName);
+
+      if (_this.props.onExited) {
+        _this.props.onExited(node);
+      }
+    }, _this.getClassNames = function (type) {
+      var classNames = _this.props.classNames;
+
+
+      var className = typeof classNames !== 'string' ? classNames[type] : classNames + '-' + type;
+
+      var activeClassName = typeof classNames !== 'string' ? classNames[type + 'Active'] : className + '-active';
+
+      var doneClassName = typeof classNames !== 'string' ? classNames[type + 'Done'] : className + '-done';
+
+      return {
+        className: className,
+        activeClassName: activeClassName,
+        doneClassName: doneClassName
+      };
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  CSSTransition.prototype.removeClasses = function removeClasses(node, type) {
+    var _getClassNames = this.getClassNames(type),
+        className = _getClassNames.className,
+        activeClassName = _getClassNames.activeClassName,
+        doneClassName = _getClassNames.doneClassName;
+
+    className && removeClass(node, className);
+    activeClassName && removeClass(node, activeClassName);
+    doneClassName && removeClass(node, doneClassName);
+  };
+
+  CSSTransition.prototype.reflowAndAddClass = function reflowAndAddClass(node, className) {
+    // This is for to force a repaint,
+    // which is necessary in order to transition styles when adding a class name.
+    /* eslint-disable no-unused-expressions */
+    node && node.scrollTop;
+    /* eslint-enable no-unused-expressions */
+    addClass(node, className);
+  };
+
+  CSSTransition.prototype.render = function render() {
+    var props = _extends({}, this.props);
+
+    delete props.classNames;
+
+    return _react2.default.createElement(_Transition2.default, _extends({}, props, {
+      onEnter: this.onEnter,
+      onEntered: this.onEntered,
+      onEntering: this.onEntering,
+      onExit: this.onExit,
+      onExiting: this.onExiting,
+      onExited: this.onExited
+    }));
+  };
+
+  return CSSTransition;
+}(_react2.default.Component);
+
+CSSTransition.propTypes =  true ? propTypes : undefined;
+
+exports.default = CSSTransition;
+module.exports = exports['default'];
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(27)(isValidElement, throwOnDirectAccess);
+} else {}
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var emptyFunction = __webpack_require__(7);
+var invariant = __webpack_require__(4);
+var warning = __webpack_require__(6);
+var assign = __webpack_require__(3);
+
+var ReactPropTypesSecret = __webpack_require__(9);
+var checkPropTypes = __webpack_require__(8);
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          invariant(
+            false,
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+        } else if ("none" !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            warning(
+              false,
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `%s` prop on `%s`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
+              propFullName,
+              componentName
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+       true ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : undefined;
+      return emptyFunction.thatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues);
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (propValue.hasOwnProperty(key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;
+      return emptyFunction.thatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = addClass;
+
+var _hasClass = __webpack_require__(29);
+
+var _hasClass2 = _interopRequireDefault(_hasClass);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!(0, _hasClass2.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = hasClass;
+function hasClass(element, className) {
+  if (element.classList) return !!className && element.classList.contains(className);else return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
+}
+module.exports = exports["default"];
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function replaceClassName(origClass, classToRemove) {
+  return origClass.replace(new RegExp('(^|\\s)' + classToRemove + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
+}
+
+module.exports = function removeClass(element, className) {
+  if (element.classList) element.classList.remove(className);else if (typeof element.className === 'string') element.className = replaceClassName(element.className, className);else element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.EXITING = exports.ENTERED = exports.ENTERING = exports.EXITED = exports.UNMOUNTED = undefined;
+
+var _propTypes = __webpack_require__(26);
+
+var PropTypes = _interopRequireWildcard(_propTypes);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(10);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _PropTypes = __webpack_require__(32);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UNMOUNTED = exports.UNMOUNTED = 'unmounted';
+var EXITED = exports.EXITED = 'exited';
+var ENTERING = exports.ENTERING = 'entering';
+var ENTERED = exports.ENTERED = 'entered';
+var EXITING = exports.EXITING = 'exiting';
+
+/**
+ * The Transition component lets you describe a transition from one component
+ * state to another _over time_ with a simple declarative API. Most commonly
+ * it's used to animate the mounting and unmounting of a component, but can also
+ * be used to describe in-place transition states as well.
+ *
+ * By default the `Transition` component does not alter the behavior of the
+ * component it renders, it only tracks "enter" and "exit" states for the components.
+ * It's up to you to give meaning and effect to those states. For example we can
+ * add styles to a component when it enters or exits:
+ *
+ * ```jsx
+ * import Transition from 'react-transition-group/Transition';
+ *
+ * const duration = 300;
+ *
+ * const defaultStyle = {
+ *   transition: `opacity ${duration}ms ease-in-out`,
+ *   opacity: 0,
+ * }
+ *
+ * const transitionStyles = {
+ *   entering: { opacity: 0 },
+ *   entered:  { opacity: 1 },
+ * };
+ *
+ * const Fade = ({ in: inProp }) => (
+ *   <Transition in={inProp} timeout={duration}>
+ *     {(state) => (
+ *       <div style={{
+ *         ...defaultStyle,
+ *         ...transitionStyles[state]
+ *       }}>
+ *         I'm a fade Transition!
+ *       </div>
+ *     )}
+ *   </Transition>
+ * );
+ * ```
+ *
+ * As noted the `Transition` component doesn't _do_ anything by itself to its child component.
+ * What it does do is track transition states over time so you can update the
+ * component (such as by adding styles or classes) when it changes states.
+ *
+ * There are 4 main states a Transition can be in:
+ *  - `'entering'`
+ *  - `'entered'`
+ *  - `'exiting'`
+ *  - `'exited'`
+ *
+ * Transition state is toggled via the `in` prop. When `true` the component begins the
+ * "Enter" stage. During this stage, the component will shift from its current transition state,
+ * to `'entering'` for the duration of the transition and then to the `'entered'` stage once
+ * it's complete. Let's take the following example:
+ *
+ * ```jsx
+ * state = { in: false };
+ *
+ * toggleEnterState = () => {
+ *   this.setState({ in: true });
+ * }
+ *
+ * render() {
+ *   return (
+ *     <div>
+ *       <Transition in={this.state.in} timeout={500} />
+ *       <button onClick={this.toggleEnterState}>Click to Enter</button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the button is clicked the component will shift to the `'entering'` state and
+ * stay there for 500ms (the value of `timeout`) before it finally switches to `'entered'`.
+ *
+ * When `in` is `false` the same thing happens except the state moves from `'exiting'` to `'exited'`.
+ *
+ * ## Timing
+ *
+ * Timing is often the trickiest part of animation, mistakes can result in slight delays
+ * that are hard to pin down. A common example is when you want to add an exit transition,
+ * you should set the desired final styles when the state is `'exiting'`. That's when the
+ * transition to those styles will start and, if you matched the `timeout` prop with the
+ * CSS Transition duration, it will end exactly when the state changes to `'exited'`.
+ *
+ * > **Note**: For simpler transitions the `Transition` component might be enough, but
+ * > take into account that it's platform-agnostic, while the `CSSTransition` component
+ * > [forces reflows](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+ * > in order to make more complex transitions more predictable. For example, even though
+ * > classes `example-enter` and `example-enter-active` are applied immediately one after
+ * > another, you can still transition from one to the other because of the forced reflow
+ * > (read [this issue](https://github.com/reactjs/react-transition-group/issues/159#issuecomment-322761171)
+ * > for more info). Take this into account when choosing between `Transition` and
+ * > `CSSTransition`.
+ *
+ * ## Example
+ *
+ * <iframe src="https://codesandbox.io/embed/741op4mmj0?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+ *
+ */
+
+var Transition = function (_React$Component) {
+  _inherits(Transition, _React$Component);
+
+  function Transition(props, context) {
+    _classCallCheck(this, Transition);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    var parentGroup = context.transitionGroup;
+    // In the context of a TransitionGroup all enters are really appears
+    var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
+
+    var initialStatus = void 0;
+    _this.nextStatus = null;
+
+    if (props.in) {
+      if (appear) {
+        initialStatus = EXITED;
+        _this.nextStatus = ENTERING;
+      } else {
+        initialStatus = ENTERED;
+      }
+    } else {
+      if (props.unmountOnExit || props.mountOnEnter) {
+        initialStatus = UNMOUNTED;
+      } else {
+        initialStatus = EXITED;
+      }
+    }
+
+    _this.state = { status: initialStatus };
+
+    _this.nextCallback = null;
+    return _this;
+  }
+
+  Transition.prototype.getChildContext = function getChildContext() {
+    return { transitionGroup: null }; // allows for nested Transitions
+  };
+
+  Transition.prototype.componentDidMount = function componentDidMount() {
+    this.updateStatus(true);
+  };
+
+  Transition.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var _ref = this.pendingState || this.state,
+        status = _ref.status;
+
+    if (nextProps.in) {
+      if (status === UNMOUNTED) {
+        this.setState({ status: EXITED });
+      }
+      if (status !== ENTERING && status !== ENTERED) {
+        this.nextStatus = ENTERING;
+      }
+    } else {
+      if (status === ENTERING || status === ENTERED) {
+        this.nextStatus = EXITING;
+      }
+    }
+  };
+
+  Transition.prototype.componentDidUpdate = function componentDidUpdate() {
+    this.updateStatus();
+  };
+
+  Transition.prototype.componentWillUnmount = function componentWillUnmount() {
+    this.cancelNextCallback();
+  };
+
+  Transition.prototype.getTimeouts = function getTimeouts() {
+    var timeout = this.props.timeout;
+
+    var exit = void 0,
+        enter = void 0,
+        appear = void 0;
+
+    exit = enter = appear = timeout;
+
+    if (timeout != null && typeof timeout !== 'number') {
+      exit = timeout.exit;
+      enter = timeout.enter;
+      appear = timeout.appear;
+    }
+    return { exit: exit, enter: enter, appear: appear };
+  };
+
+  Transition.prototype.updateStatus = function updateStatus() {
+    var mounting = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+    var nextStatus = this.nextStatus;
+
+    if (nextStatus !== null) {
+      this.nextStatus = null;
+      // nextStatus will always be ENTERING or EXITING.
+      this.cancelNextCallback();
+      var node = _reactDom2.default.findDOMNode(this);
+
+      if (nextStatus === ENTERING) {
+        this.performEnter(node, mounting);
+      } else {
+        this.performExit(node);
+      }
+    } else if (this.props.unmountOnExit && this.state.status === EXITED) {
+      this.setState({ status: UNMOUNTED });
+    }
+  };
+
+  Transition.prototype.performEnter = function performEnter(node, mounting) {
+    var _this2 = this;
+
+    var enter = this.props.enter;
+
+    var appearing = this.context.transitionGroup ? this.context.transitionGroup.isMounting : mounting;
+
+    var timeouts = this.getTimeouts();
+
+    // no enter animation skip right to ENTERED
+    // if we are mounting and running this it means appear _must_ be set
+    if (!mounting && !enter) {
+      this.safeSetState({ status: ENTERED }, function () {
+        _this2.props.onEntered(node);
+      });
+      return;
+    }
+
+    this.props.onEnter(node, appearing);
+
+    this.safeSetState({ status: ENTERING }, function () {
+      _this2.props.onEntering(node, appearing);
+
+      // FIXME: appear timeout?
+      _this2.onTransitionEnd(node, timeouts.enter, function () {
+        _this2.safeSetState({ status: ENTERED }, function () {
+          _this2.props.onEntered(node, appearing);
+        });
+      });
+    });
+  };
+
+  Transition.prototype.performExit = function performExit(node) {
+    var _this3 = this;
+
+    var exit = this.props.exit;
+
+    var timeouts = this.getTimeouts();
+
+    // no exit animation skip right to EXITED
+    if (!exit) {
+      this.safeSetState({ status: EXITED }, function () {
+        _this3.props.onExited(node);
+      });
+      return;
+    }
+    this.props.onExit(node);
+
+    this.safeSetState({ status: EXITING }, function () {
+      _this3.props.onExiting(node);
+
+      _this3.onTransitionEnd(node, timeouts.exit, function () {
+        _this3.safeSetState({ status: EXITED }, function () {
+          _this3.props.onExited(node);
+        });
+      });
+    });
+  };
+
+  Transition.prototype.cancelNextCallback = function cancelNextCallback() {
+    if (this.nextCallback !== null) {
+      this.nextCallback.cancel();
+      this.nextCallback = null;
+    }
+  };
+
+  Transition.prototype.safeSetState = function safeSetState(nextState, callback) {
+    var _this4 = this;
+
+    // We need to track pending updates for instances where a cWRP fires quickly
+    // after cDM and before the state flushes, which would double trigger a
+    // transition
+    this.pendingState = nextState;
+
+    // This shouldn't be necessary, but there are weird race conditions with
+    // setState callbacks and unmounting in testing, so always make sure that
+    // we can cancel any pending setState callbacks after we unmount.
+    callback = this.setNextCallback(callback);
+    this.setState(nextState, function () {
+      _this4.pendingState = null;
+      callback();
+    });
+  };
+
+  Transition.prototype.setNextCallback = function setNextCallback(callback) {
+    var _this5 = this;
+
+    var active = true;
+
+    this.nextCallback = function (event) {
+      if (active) {
+        active = false;
+        _this5.nextCallback = null;
+
+        callback(event);
+      }
+    };
+
+    this.nextCallback.cancel = function () {
+      active = false;
+    };
+
+    return this.nextCallback;
+  };
+
+  Transition.prototype.onTransitionEnd = function onTransitionEnd(node, timeout, handler) {
+    this.setNextCallback(handler);
+
+    if (node) {
+      if (this.props.addEndListener) {
+        this.props.addEndListener(node, this.nextCallback);
+      }
+      if (timeout != null) {
+        setTimeout(this.nextCallback, timeout);
+      }
+    } else {
+      setTimeout(this.nextCallback, 0);
+    }
+  };
+
+  Transition.prototype.render = function render() {
+    var status = this.state.status;
+    if (status === UNMOUNTED) {
+      return null;
+    }
+
+    var _props = this.props,
+        children = _props.children,
+        childProps = _objectWithoutProperties(_props, ['children']);
+    // filter props for Transtition
+
+
+    delete childProps.in;
+    delete childProps.mountOnEnter;
+    delete childProps.unmountOnExit;
+    delete childProps.appear;
+    delete childProps.enter;
+    delete childProps.exit;
+    delete childProps.timeout;
+    delete childProps.addEndListener;
+    delete childProps.onEnter;
+    delete childProps.onEntering;
+    delete childProps.onEntered;
+    delete childProps.onExit;
+    delete childProps.onExiting;
+    delete childProps.onExited;
+
+    if (typeof children === 'function') {
+      return children(status, childProps);
+    }
+
+    var child = _react2.default.Children.only(children);
+    return _react2.default.cloneElement(child, childProps);
+  };
+
+  return Transition;
+}(_react2.default.Component);
+
+Transition.contextTypes = {
+  transitionGroup: PropTypes.object
+};
+Transition.childContextTypes = {
+  transitionGroup: function transitionGroup() {}
+};
+
+
+Transition.propTypes =  true ? {
+  /**
+   * A `function` child can be used instead of a React element.
+   * This function is called with the current transition status
+   * ('entering', 'entered', 'exiting', 'exited', 'unmounted'), which can be used
+   * to apply context specific props to a component.
+   *
+   * ```jsx
+   * <Transition timeout={150}>
+   *   {(status) => (
+   *     <MyComponent className={`fade fade-${status}`} />
+   *   )}
+   * </Transition>
+   * ```
+   */
+  children: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.element.isRequired]).isRequired,
+
+  /**
+   * Show the component; triggers the enter or exit states
+   */
+  in: PropTypes.bool,
+
+  /**
+   * By default the child component is mounted immediately along with
+   * the parent `Transition` component. If you want to "lazy mount" the component on the
+   * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
+   * mounted, even on "exited", unless you also specify `unmountOnExit`.
+   */
+  mountOnEnter: PropTypes.bool,
+
+  /**
+   * By default the child component stays mounted after it reaches the `'exited'` state.
+   * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
+   */
+  unmountOnExit: PropTypes.bool,
+
+  /**
+   * Normally a component is not transitioned if it is shown when the `<Transition>` component mounts.
+   * If you want to transition on the first mount set `appear` to `true`, and the
+   * component will transition in as soon as the `<Transition>` mounts.
+   *
+   * > Note: there are no specific "appear" states. `appear` only adds an additional `enter` transition.
+   */
+  appear: PropTypes.bool,
+
+  /**
+   * Enable or disable enter transitions.
+   */
+  enter: PropTypes.bool,
+
+  /**
+   * Enable or disable exit transitions.
+   */
+  exit: PropTypes.bool,
+
+  /**
+   * The duration of the transition, in milliseconds.
+   * Required unless `addEndListener` is provided
+   *
+   * You may specify a single timeout for all transitions like: `timeout={500}`,
+   * or individually like:
+   *
+   * ```jsx
+   * timeout={{
+   *  enter: 300,
+   *  exit: 500,
+   * }}
+   * ```
+   *
+   * @type {number | { enter?: number, exit?: number }}
+   */
+  timeout: function timeout(props) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var pt = _PropTypes.timeoutsShape;
+    if (!props.addEndListener) pt = pt.isRequired;
+    return pt.apply(undefined, [props].concat(args));
+  },
+
+  /**
+   * Add a custom transition end trigger. Called with the transitioning
+   * DOM node and a `done` callback. Allows for more fine grained transition end
+   * logic. **Note:** Timeouts are still used as a fallback if provided.
+   *
+   * ```jsx
+   * addEndListener={(node, done) => {
+   *   // use the css transitionend event to mark the finish of a transition
+   *   node.addEventListener('transitionend', done, false);
+   * }}
+   * ```
+   */
+  addEndListener: PropTypes.func,
+
+  /**
+   * Callback fired before the "entering" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool) -> void
+   */
+  onEnter: PropTypes.func,
+
+  /**
+   * Callback fired after the "entering" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEntering: PropTypes.func,
+
+  /**
+   * Callback fired after the "entered" status is applied. An extra parameter
+   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool) -> void
+   */
+  onEntered: PropTypes.func,
+
+  /**
+   * Callback fired before the "exiting" status is applied.
+   *
+   * @type Function(node: HtmlElement) -> void
+   */
+  onExit: PropTypes.func,
+
+  /**
+   * Callback fired after the "exiting" status is applied.
+   *
+   * @type Function(node: HtmlElement) -> void
+   */
+  onExiting: PropTypes.func,
+
+  /**
+   * Callback fired after the "exited" status is applied.
+   *
+   * @type Function(node: HtmlElement) -> void
+   */
+  onExited: PropTypes.func
+} : undefined;
+
+// Name the function so it is clearer in the documentation
+function noop() {}
+
+Transition.defaultProps = {
+  in: false,
+  mountOnEnter: false,
+  unmountOnExit: false,
+  appear: false,
+  enter: true,
+  exit: true,
+
+  onEnter: noop,
+  onEntering: noop,
+  onEntered: noop,
+
+  onExit: noop,
+  onExiting: noop,
+  onExited: noop
+};
+
+Transition.UNMOUNTED = 0;
+Transition.EXITED = 1;
+Transition.ENTERING = 2;
+Transition.ENTERED = 3;
+Transition.EXITING = 4;
+
+exports.default = Transition;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.classNamesShape = exports.timeoutsShape = undefined;
+exports.transitionTimeout = transitionTimeout;
+
+var _propTypes = __webpack_require__(26);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function transitionTimeout(transitionType) {
+  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+  var enabledPropName = 'transition' + transitionType;
+
+  return function (props) {
+    // If the transition is enabled
+    if (props[enabledPropName]) {
+      // If no timeout duration is provided
+      if (props[timeoutPropName] == null) {
+        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+        // If the duration isn't a number
+      } else if (typeof props[timeoutPropName] !== 'number') {
+        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+      }
+    }
+
+    return null;
+  };
+}
+
+var timeoutsShape = exports.timeoutsShape = _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.shape({
+  enter: _propTypes2.default.number,
+  exit: _propTypes2.default.number
+}).isRequired]);
+
+var classNamesShape = exports.classNamesShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  exit: _propTypes2.default.string,
+  active: _propTypes2.default.string
+}), _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  enterDone: _propTypes2.default.string,
+  enterActive: _propTypes2.default.string,
+  exit: _propTypes2.default.string,
+  exitDone: _propTypes2.default.string,
+  exitActive: _propTypes2.default.string
+})]);
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _propTypes = __webpack_require__(26);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(10);
+
+var _TransitionGroup = __webpack_require__(34);
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  in: _propTypes2.default.bool.isRequired,
+  children: function children(props, propName) {
+    if (_react2.default.Children.count(props[propName]) !== 2) return new Error('"' + propName + '" must be exactly two transition components.');
+
+    return null;
+  }
+};
+
+/**
+ * The `<ReplaceTransition>` component is a specialized `Transition` component
+ * that animates between two children.
+ *
+ * ```jsx
+ * <ReplaceTransition in>
+ *   <Fade><div>I appear first</div></Fade>
+ *   <Fade><div>I replace the above</div></Fade>
+ * </ReplaceTransition>
+ * ```
+ */
+
+var ReplaceTransition = function (_React$Component) {
+  _inherits(ReplaceTransition, _React$Component);
+
+  function ReplaceTransition() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ReplaceTransition);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _initialiseProps.call(_this), _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  ReplaceTransition.prototype.handleLifecycle = function handleLifecycle(handler, idx, originalArgs) {
+    var _child$props;
+
+    var children = this.props.children;
+
+    var child = _react2.default.Children.toArray(children)[idx];
+
+    if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
+    if (this.props[handler]) this.props[handler]((0, _reactDom.findDOMNode)(this));
+  };
+
+  ReplaceTransition.prototype.render = function render() {
+    var _props = this.props,
+        children = _props.children,
+        inProp = _props.in,
+        props = _objectWithoutProperties(_props, ['children', 'in']);
+
+    var _React$Children$toArr = _react2.default.Children.toArray(children),
+        first = _React$Children$toArr[0],
+        second = _React$Children$toArr[1];
+
+    delete props.onEnter;
+    delete props.onEntering;
+    delete props.onEntered;
+    delete props.onExit;
+    delete props.onExiting;
+    delete props.onExited;
+
+    return _react2.default.createElement(
+      _TransitionGroup2.default,
+      props,
+      inProp ? _react2.default.cloneElement(first, {
+        key: 'first',
+        onEnter: this.handleEnter,
+        onEntering: this.handleEntering,
+        onEntered: this.handleEntered
+
+      }) : _react2.default.cloneElement(second, {
+        key: 'second',
+        onEnter: this.handleExit,
+        onEntering: this.handleExiting,
+        onEntered: this.handleExited
+      })
+    );
+  };
+
+  return ReplaceTransition;
+}(_react2.default.Component);
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.handleEnter = function () {
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return _this2.handleLifecycle('onEnter', 0, args);
+  };
+
+  this.handleEntering = function () {
+    for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    return _this2.handleLifecycle('onEntering', 0, args);
+  };
+
+  this.handleEntered = function () {
+    for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      args[_key4] = arguments[_key4];
+    }
+
+    return _this2.handleLifecycle('onEntered', 0, args);
+  };
+
+  this.handleExit = function () {
+    for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    return _this2.handleLifecycle('onExit', 1, args);
+  };
+
+  this.handleExiting = function () {
+    for (var _len6 = arguments.length, args = Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+      args[_key6] = arguments[_key6];
+    }
+
+    return _this2.handleLifecycle('onExiting', 1, args);
+  };
+
+  this.handleExited = function () {
+    for (var _len7 = arguments.length, args = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+      args[_key7] = arguments[_key7];
+    }
+
+    return _this2.handleLifecycle('onExited', 1, args);
+  };
+};
+
+ReplaceTransition.propTypes =  true ? propTypes : undefined;
+
+exports.default = ReplaceTransition;
+module.exports = exports['default'];
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _propTypes = __webpack_require__(26);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ChildMapping = __webpack_require__(35);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var values = Object.values || function (obj) {
+  return Object.keys(obj).map(function (k) {
+    return obj[k];
+  });
+};
+
+var propTypes = {
+  /**
+   * `<TransitionGroup>` renders a `<div>` by default. You can change this
+   * behavior by providing a `component` prop.
+   * If you use React v16+ and would like to avoid a wrapping `<div>` element
+   * you can pass in `component={null}`. This is useful if the wrapping div
+   * borks your css styles.
+   */
+  component: _propTypes2.default.any,
+  /**
+   * A set of `<Transition>` components, that are toggled `in` and out as they
+   * leave. the `<TransitionGroup>` will inject specific transition props, so
+   * remember to spread them through if you are wrapping the `<Transition>` as
+   * with our `<Fade>` example.
+   */
+  children: _propTypes2.default.node,
+
+  /**
+   * A convenience prop that enables or disables appear animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  appear: _propTypes2.default.bool,
+  /**
+   * A convenience prop that enables or disables enter animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  enter: _propTypes2.default.bool,
+  /**
+    * A convenience prop that enables or disables exit animations
+    * for all children. Note that specifying this will override any defaults set
+    * on individual children Transitions.
+    */
+  exit: _propTypes2.default.bool,
+
+  /**
+   * You may need to apply reactive updates to a child as it is exiting.
+   * This is generally done by using `cloneElement` however in the case of an exiting
+   * child the element has already been removed and not accessible to the consumer.
+   *
+   * If you do need to update a child as it leaves you can provide a `childFactory`
+   * to wrap every child, even the ones that are leaving.
+   *
+   * @type Function(child: ReactElement) -> ReactElement
+   */
+  childFactory: _propTypes2.default.func
+};
+
+var defaultProps = {
+  component: 'div',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+};
+
+/**
+ * The `<TransitionGroup>` component manages a set of `<Transition>` components
+ * in a list. Like with the `<Transition>` component, `<TransitionGroup>`, is a
+ * state machine for managing the mounting and unmounting of components over
+ * time.
+ *
+ * Consider the example below using the `Fade` CSS transition from before.
+ * As items are removed or added to the TodoList the `in` prop is toggled
+ * automatically by the `<TransitionGroup>`. You can use _any_ `<Transition>`
+ * component in a `<TransitionGroup>`, not just css.
+ *
+ * ## Example
+ *
+ * <iframe src="https://codesandbox.io/embed/00rqyo26kn?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+ *
+ * Note that `<TransitionGroup>`  does not define any animation behavior!
+ * Exactly _how_ a list item animates is up to the individual `<Transition>`
+ * components. This means you can mix and match animations across different
+ * list items.
+ */
+
+var TransitionGroup = function (_React$Component) {
+  _inherits(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    _classCallCheck(this, TransitionGroup);
+
+    // Initial children should all be entering, dependent on appear
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.state = {
+      children: (0, _ChildMapping.getChildMapping)(props.children, function (child) {
+        return (0, _react.cloneElement)(child, {
+          onExited: _this.handleExited.bind(_this, child),
+          in: true,
+          appear: _this.getProp(child, 'appear'),
+          enter: _this.getProp(child, 'enter'),
+          exit: _this.getProp(child, 'exit')
+        });
+      })
+    };
+    return _this;
+  }
+
+  TransitionGroup.prototype.getChildContext = function getChildContext() {
+    return {
+      transitionGroup: { isMounting: !this.appeared }
+    };
+  };
+  // use child config unless explictly set by the Group
+
+
+  TransitionGroup.prototype.getProp = function getProp(child, prop) {
+    var props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.props;
+
+    return props[prop] != null ? props[prop] : child.props[prop];
+  };
+
+  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
+    this.appeared = true;
+  };
+
+  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var _this2 = this;
+
+    var prevChildMapping = this.state.children;
+    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
+
+    var children = (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping);
+
+    Object.keys(children).forEach(function (key) {
+      var child = children[key];
+
+      if (!(0, _react.isValidElement)(child)) return;
+
+      var hasPrev = key in prevChildMapping;
+      var hasNext = key in nextChildMapping;
+
+      var prevChild = prevChildMapping[key];
+      var isLeaving = (0, _react.isValidElement)(prevChild) && !prevChild.props.in;
+
+      // item is new (entering)
+      if (hasNext && (!hasPrev || isLeaving)) {
+        // console.log('entering', key)
+        children[key] = (0, _react.cloneElement)(child, {
+          onExited: _this2.handleExited.bind(_this2, child),
+          in: true,
+          exit: _this2.getProp(child, 'exit', nextProps),
+          enter: _this2.getProp(child, 'enter', nextProps)
+        });
+      }
+      // item is old (exiting)
+      else if (!hasNext && hasPrev && !isLeaving) {
+          // console.log('leaving', key)
+          children[key] = (0, _react.cloneElement)(child, { in: false });
+        }
+        // item hasn't changed transition states
+        // copy over the last transition props;
+        else if (hasNext && hasPrev && (0, _react.isValidElement)(prevChild)) {
+            // console.log('unchanged', key)
+            children[key] = (0, _react.cloneElement)(child, {
+              onExited: _this2.handleExited.bind(_this2, child),
+              in: prevChild.props.in,
+              exit: _this2.getProp(child, 'exit', nextProps),
+              enter: _this2.getProp(child, 'enter', nextProps)
+            });
+          }
+    });
+
+    this.setState({ children: children });
+  };
+
+  TransitionGroup.prototype.handleExited = function handleExited(child, node) {
+    var currentChildMapping = (0, _ChildMapping.getChildMapping)(this.props.children);
+
+    if (child.key in currentChildMapping) return;
+
+    if (child.props.onExited) {
+      child.props.onExited(node);
+    }
+
+    this.setState(function (state) {
+      var children = _extends({}, state.children);
+
+      delete children[child.key];
+      return { children: children };
+    });
+  };
+
+  TransitionGroup.prototype.render = function render() {
+    var _props = this.props,
+        Component = _props.component,
+        childFactory = _props.childFactory,
+        props = _objectWithoutProperties(_props, ['component', 'childFactory']);
+
+    var children = values(this.state.children).map(childFactory);
+
+    delete props.appear;
+    delete props.enter;
+    delete props.exit;
+
+    if (Component === null) {
+      return children;
+    }
+    return _react2.default.createElement(
+      Component,
+      props,
+      children
+    );
+  };
+
+  return TransitionGroup;
+}(_react2.default.Component);
+
+TransitionGroup.childContextTypes = {
+  transitionGroup: _propTypes2.default.object.isRequired
+};
+
+
+TransitionGroup.propTypes =  true ? propTypes : undefined;
+TransitionGroup.defaultProps = defaultProps;
+
+exports.default = TransitionGroup;
+module.exports = exports['default'];
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.getChildMapping = getChildMapping;
+exports.mergeChildMappings = mergeChildMappings;
+
+var _react = __webpack_require__(1);
+
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */
+function getChildMapping(children, mapFn) {
+  var mapper = function mapper(child) {
+    return mapFn && (0, _react.isValidElement)(child) ? mapFn(child) : child;
+  };
+
+  var result = Object.create(null);
+  if (children) _react.Children.map(children, function (c) {
+    return c;
+  }).forEach(function (child) {
+    // run the map function here instead so that the key is the computed one
+    result[child.key] = mapper(child);
+  });
+  return result;
+}
+
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */
+function mergeChildMappings(prev, next) {
+  prev = prev || {};
+  next = next || {};
+
+  function getValueForKey(key) {
+    return key in next ? next[key] : prev[key];
+  }
+
+  // For each key of `next`, the list of keys to insert before that key in
+  // the combined list
+  var nextKeysPending = Object.create(null);
+
+  var pendingKeys = [];
+  for (var prevKey in prev) {
+    if (prevKey in next) {
+      if (pendingKeys.length) {
+        nextKeysPending[prevKey] = pendingKeys;
+        pendingKeys = [];
+      }
+    } else {
+      pendingKeys.push(prevKey);
+    }
+  }
+
+  var i = void 0;
+  var childMapping = {};
+  for (var nextKey in next) {
+    if (nextKeysPending[nextKey]) {
+      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+        var pendingNextKey = nextKeysPending[nextKey][i];
+        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+      }
+    }
+    childMapping[nextKey] = getValueForKey(nextKey);
+  }
+
+  // Finally, add the keys which didn't appear before any key in `next`
+  for (i = 0; i < pendingKeys.length; i++) {
+    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+  }
+
+  return childMapping;
+}
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/logo.svg";
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19279,7 +21421,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _About = __webpack_require__(26);
+var _About = __webpack_require__(38);
 
 Object.defineProperty(exports, 'About', {
   enumerable: true,
@@ -19288,7 +21430,7 @@ Object.defineProperty(exports, 'About', {
   }
 });
 
-var _Connect = __webpack_require__(31);
+var _Connect = __webpack_require__(43);
 
 Object.defineProperty(exports, 'Connect', {
   enumerable: true,
@@ -19297,7 +21439,7 @@ Object.defineProperty(exports, 'Connect', {
   }
 });
 
-var _FindMe = __webpack_require__(59);
+var _FindMe = __webpack_require__(71);
 
 Object.defineProperty(exports, 'FindMe', {
   enumerable: true,
@@ -19306,7 +21448,7 @@ Object.defineProperty(exports, 'FindMe', {
   }
 });
 
-var _Header = __webpack_require__(74);
+var _Header = __webpack_require__(87);
 
 Object.defineProperty(exports, 'Header', {
   enumerable: true,
@@ -19315,7 +21457,7 @@ Object.defineProperty(exports, 'Header', {
   }
 });
 
-var _MissionStatement = __webpack_require__(75);
+var _MissionStatement = __webpack_require__(88);
 
 Object.defineProperty(exports, 'MissionStatement', {
   enumerable: true,
@@ -19324,7 +21466,7 @@ Object.defineProperty(exports, 'MissionStatement', {
   }
 });
 
-var _Timeline = __webpack_require__(76);
+var _Timeline = __webpack_require__(89);
 
 Object.defineProperty(exports, 'Timeline', {
   enumerable: true,
@@ -19333,7 +21475,7 @@ Object.defineProperty(exports, 'Timeline', {
   }
 });
 
-var _Work = __webpack_require__(77);
+var _Work = __webpack_require__(90);
 
 Object.defineProperty(exports, 'Work', {
   enumerable: true,
@@ -19345,7 +21487,7 @@ Object.defineProperty(exports, 'Work', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 26 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19393,7 +21535,7 @@ var About = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              _react2.default.createElement("img", { src: __webpack_require__(27) }),
+              _react2.default.createElement("img", { src: __webpack_require__(39) }),
               _react2.default.createElement(
                 "div",
                 null,
@@ -19409,7 +21551,7 @@ var About = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              _react2.default.createElement("img", { src: __webpack_require__(28) }),
+              _react2.default.createElement("img", { src: __webpack_require__(40) }),
               _react2.default.createElement(
                 "div",
                 null,
@@ -19425,7 +21567,7 @@ var About = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              _react2.default.createElement("img", { src: __webpack_require__(29) }),
+              _react2.default.createElement("img", { src: __webpack_require__(41) }),
               _react2.default.createElement(
                 "div",
                 null,
@@ -19441,7 +21583,7 @@ var About = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              _react2.default.createElement("img", { src: __webpack_require__(30) }),
+              _react2.default.createElement("img", { src: __webpack_require__(42) }),
               _react2.default.createElement(
                 "div",
                 null,
@@ -19466,31 +21608,31 @@ var About = function (_Component) {
 exports.default = About;
 
 /***/ }),
-/* 27 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/pixel-perfect.svg";
 
 /***/ }),
-/* 28 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/design.svg";
 
 /***/ }),
-/* 29 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/lightbulb.svg";
 
 /***/ }),
-/* 30 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/cog.svg";
 
 /***/ }),
-/* 31 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19508,7 +21650,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(32);
+var _axios = __webpack_require__(44);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -19673,22 +21815,22 @@ var Connect = function (_Component) {
 exports.default = Connect;
 
 /***/ }),
-/* 32 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(33);
+module.exports = __webpack_require__(45);
 
 /***/ }),
-/* 33 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
-var bind = __webpack_require__(35);
-var Axios = __webpack_require__(37);
-var defaults = __webpack_require__(38);
+var utils = __webpack_require__(46);
+var bind = __webpack_require__(47);
+var Axios = __webpack_require__(49);
+var defaults = __webpack_require__(50);
 
 /**
  * Create an instance of Axios
@@ -19721,15 +21863,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(56);
-axios.CancelToken = __webpack_require__(57);
-axios.isCancel = __webpack_require__(53);
+axios.Cancel = __webpack_require__(68);
+axios.CancelToken = __webpack_require__(69);
+axios.isCancel = __webpack_require__(65);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(58);
+axios.spread = __webpack_require__(70);
 
 module.exports = axios;
 
@@ -19738,14 +21880,14 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 34 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(35);
-var isBuffer = __webpack_require__(36);
+var bind = __webpack_require__(47);
+var isBuffer = __webpack_require__(48);
 
 /*global toString:true*/
 
@@ -20048,7 +22190,7 @@ module.exports = {
 
 
 /***/ }),
-/* 35 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20066,7 +22208,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 36 */
+/* 48 */
 /***/ (function(module, exports) {
 
 /*!
@@ -20093,16 +22235,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 37 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(38);
-var utils = __webpack_require__(34);
-var InterceptorManager = __webpack_require__(50);
-var dispatchRequest = __webpack_require__(51);
+var defaults = __webpack_require__(50);
+var utils = __webpack_require__(46);
+var InterceptorManager = __webpack_require__(62);
+var dispatchRequest = __webpack_require__(63);
 
 /**
  * Create a new instance of Axios
@@ -20179,14 +22321,14 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 38 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(34);
-var normalizeHeaderName = __webpack_require__(40);
+var utils = __webpack_require__(46);
+var normalizeHeaderName = __webpack_require__(52);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -20202,10 +22344,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(41);
+    adapter = __webpack_require__(53);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(41);
+    adapter = __webpack_require__(53);
   }
   return adapter;
 }
@@ -20280,10 +22422,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(39)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(51)))
 
 /***/ }),
-/* 39 */
+/* 51 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -20473,13 +22615,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 40 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -20492,19 +22634,19 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 41 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
-var settle = __webpack_require__(42);
-var buildURL = __webpack_require__(45);
-var parseHeaders = __webpack_require__(46);
-var isURLSameOrigin = __webpack_require__(47);
-var createError = __webpack_require__(43);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(48);
+var utils = __webpack_require__(46);
+var settle = __webpack_require__(54);
+var buildURL = __webpack_require__(57);
+var parseHeaders = __webpack_require__(58);
+var isURLSameOrigin = __webpack_require__(59);
+var createError = __webpack_require__(55);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(60);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -20601,7 +22743,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(49);
+      var cookies = __webpack_require__(61);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -20679,13 +22821,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 42 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(43);
+var createError = __webpack_require__(55);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -20712,13 +22854,13 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 43 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(44);
+var enhanceError = __webpack_require__(56);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -20737,7 +22879,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 44 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20765,13 +22907,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 45 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -20838,13 +22980,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 46 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -20898,13 +23040,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 47 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -20973,7 +23115,7 @@ module.exports = (
 
 
 /***/ }),
-/* 48 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21016,13 +23158,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 49 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -21076,13 +23218,13 @@ module.exports = (
 
 
 /***/ }),
-/* 50 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -21135,18 +23277,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 51 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
-var transformData = __webpack_require__(52);
-var isCancel = __webpack_require__(53);
-var defaults = __webpack_require__(38);
-var isAbsoluteURL = __webpack_require__(54);
-var combineURLs = __webpack_require__(55);
+var utils = __webpack_require__(46);
+var transformData = __webpack_require__(64);
+var isCancel = __webpack_require__(65);
+var defaults = __webpack_require__(50);
+var isAbsoluteURL = __webpack_require__(66);
+var combineURLs = __webpack_require__(67);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -21228,13 +23370,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 52 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(34);
+var utils = __webpack_require__(46);
 
 /**
  * Transform the data for a request or a response
@@ -21255,7 +23397,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 53 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21267,7 +23409,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 54 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21288,7 +23430,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 55 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21309,7 +23451,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 56 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21335,13 +23477,13 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 57 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(56);
+var Cancel = __webpack_require__(68);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -21399,7 +23541,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 58 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21433,7 +23575,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 59 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21449,11 +23591,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Icon = __webpack_require__(60);
+var _Icon = __webpack_require__(72);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _social = __webpack_require__(73);
+var _social = __webpack_require__(86);
 
 var _social2 = _interopRequireDefault(_social);
 
@@ -21534,7 +23676,7 @@ var FindMe = function (_Component) {
 exports.default = FindMe;
 
 /***/ }),
-/* 60 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21550,7 +23692,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var files = __webpack_require__(61);
+var files = __webpack_require__(73);
 files.keys().forEach(files);
 
 var Icon = function Icon(_ref) {
@@ -21566,18 +23708,19 @@ var Icon = function Icon(_ref) {
 exports.default = Icon;
 
 /***/ }),
-/* 61 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dribbble.svg": 62,
-	"./facebook.svg": 66,
-	"./google-plus.svg": 67,
-	"./instagram.svg": 68,
-	"./linkedin.svg": 69,
-	"./pinterest.svg": 70,
-	"./spotify.svg": 71,
-	"./twitter.svg": 72
+	"./dribbble.svg": 74,
+	"./facebook.svg": 78,
+	"./github.svg": 79,
+	"./google-plus.svg": 80,
+	"./instagram.svg": 81,
+	"./linkedin.svg": 82,
+	"./pinterest.svg": 83,
+	"./spotify.svg": 84,
+	"./twitter.svg": 85
 };
 
 
@@ -21600,17 +23743,17 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 61;
+webpackContext.id = 73;
 
 /***/ }),
-/* 62 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -21624,7 +23767,7 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 63 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -21895,10 +24038,10 @@ return BrowserSpriteSymbol;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(64)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(76)))
 
 /***/ }),
-/* 64 */
+/* 76 */
 /***/ (function(module, exports) {
 
 var g;
@@ -21924,7 +24067,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 65 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -22927,17 +25070,17 @@ return sprite$1;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(64)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(76)))
 
 /***/ }),
-/* 66 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -22951,14 +25094,35 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 67 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "github",
+  "use": "github-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol fill=\"currentColor\" viewBox=\"0 0 24 24\" id=\"github\"><path d=\"M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z\" /></symbol>"
+});
+var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -22972,14 +25136,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 68 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -22993,14 +25157,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 69 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -23014,14 +25178,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 70 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -23035,14 +25199,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 71 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -23056,14 +25220,14 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 72 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg_baker_runtime_browser_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -23077,7 +25241,7 @@ var result = svg_sprite_loader_runtime_browser_sprite_build__WEBPACK_IMPORTED_MO
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 73 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23097,15 +25261,15 @@ exports.default = [{
   message: 'Check out my work on Dribbble.',
   color: '#ea4c89'
 }, {
+  id: 'github',
+  url: 'http://www.github.com/austincondiff',
+  message: 'Dig through my repos on Github.',
+  color: '#24292e'
+}, {
   id: 'linkedin',
   url: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b',
   message: 'Connect with me on LinkedIn.',
   color: '#0077b5'
-}, {
-  id: 'google-plus',
-  url: 'https://plus.google.com/113055989549833930913/',
-  message: 'Follow me on Google+.',
-  color: '#D34836'
 }, {
   id: 'facebook',
   url: 'https://www.facebook.com/acondiff',
@@ -23129,7 +25293,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 74 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23145,13 +25309,15 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Icon = __webpack_require__(60);
+var _Icon = __webpack_require__(72);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _social = __webpack_require__(73);
+var _social = __webpack_require__(86);
 
 var _social2 = _interopRequireDefault(_social);
+
+var _reactTransitionGroup = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23173,42 +25339,90 @@ var Header = function (_Component) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
-        'header',
-        { id: 'about', style: { background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)' } },
-        _react2.default.createElement('div', { className: 'bg-img', style: { transform: 'translateY(' + this.props.scrollTop / 2 + 'px)' } }),
+        _reactTransitionGroup.TransitionGroup,
+        null,
         _react2.default.createElement(
-          'div',
-          { className: 'wrap' },
-          _react2.default.createElement('div', { className: 'photo' }),
-          _react2.default.createElement(
-            'h1',
-            { className: 'name' },
-            'Austin ',
-            _react2.default.createElement(
-              'em',
-              null,
-              'Condiff'
-            )
-          ),
-          _react2.default.createElement(
-            'h2',
-            { className: 'title' },
-            'UX/UI Designer & Developer'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'social' },
-            _social2.default.map(function (s) {
-              return _react2.default.createElement(
-                'a',
-                { key: s.id, target: '_blank', href: s.url },
-                _react2.default.createElement(_Icon2.default, { type: s.id })
-              );
-            })
-          )
-        ),
-        _react2.default.createElement('i', { className: 'arrow' })
+          _reactTransitionGroup.Transition,
+          { timeout: 500, appear: true },
+          function (transitionState) {
+            return _react2.default.createElement(
+              'header',
+              { id: 'about', style: {
+                  background: 'linear-gradient(135deg, #3A3C47 0%, #6B6F81 100%)'
+                } },
+              _react2.default.createElement('div', { style: {
+                  background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+                  opacity: transitionState === 'entered' ? 1 : 0,
+                  transition: '1200ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  transitionDelay: '400ms'
+                } }),
+              _react2.default.createElement(
+                'div',
+                { style: {
+                    transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.5)',
+                    opacity: transitionState === 'entered' ? 1 : 0,
+                    transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                    transitionDelay: '300ms'
+                  } },
+                _react2.default.createElement('div', { className: 'bg-img', style: { transform: 'translateY(' + _this2.props.scrollTop / 2 + 'px)' } })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'wrap', style: {
+                    transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.75)',
+                    opacity: transitionState === 'entered' ? 1 : 0,
+                    transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                    transitionDelay: '600ms'
+                  } },
+                _react2.default.createElement('div', { className: 'photo' }),
+                _react2.default.createElement(
+                  'h1',
+                  { className: 'name' },
+                  'Austin ',
+                  _react2.default.createElement(
+                    'em',
+                    null,
+                    'Condiff'
+                  )
+                ),
+                _react2.default.createElement(
+                  'h2',
+                  { className: 'title' },
+                  'UX/UI Designer & Developer'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'social' },
+                  _social2.default.map(function (s) {
+                    return _react2.default.createElement(
+                      'a',
+                      { key: s.id, target: '_blank', href: s.url },
+                      _react2.default.createElement(_Icon2.default, { type: s.id })
+                    );
+                  })
+                )
+              ),
+              _react2.default.createElement('i', { className: 'arrow', style: {
+                  opacity: transitionState === 'entered' ? 1 : 0,
+                  transition: '1600ms',
+                  transitionDelay: '1600ms'
+                } })
+            );
+          }
+        )
       );
     }
   }]);
@@ -23219,7 +25433,7 @@ var Header = function (_Component) {
 exports.default = Header;
 
 /***/ }),
-/* 75 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23277,7 +25491,7 @@ var MissionStatement = function (_Component) {
 exports.default = MissionStatement;
 
 /***/ }),
-/* 76 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23433,7 +25647,7 @@ var Timeline = function (_Component) {
 exports.default = Timeline;
 
 /***/ }),
-/* 77 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23449,7 +25663,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(32);
+var _axios = __webpack_require__(44);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -23542,7 +25756,7 @@ var Work = function (_Component) {
 exports.default = Work;
 
 /***/ }),
-/* 78 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23600,11 +25814,11 @@ var Footer = function (_Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 79 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(80);
+var content = __webpack_require__(93);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -23618,29 +25832,29 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(85)(content, options);
+var update = __webpack_require__(98)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 80 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(81);
-exports = module.exports = __webpack_require__(82)(false);
+var escape = __webpack_require__(94);
+exports = module.exports = __webpack_require__(95)(false);
 // imports
 
 
 // module
-exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 20px;\n\tleft: 20px;\n\tright: 20px;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\t/* background: rgba(49, 52, 63, 1); */\n\ttext-align: center;\n\tposition: fixed;\n\t/* top: 0;\n\tleft: 0; */\n\t/* width: 100%; */\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.6);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 13px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 24px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .15em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: #50d0bf;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n  border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(83)) + ") no-repeat;\n\tbackground-size: cover;\n  box-shadow: 0 16px 32px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2);\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50d0bf;\n}\n\nheader .social {\n\tmargin: 64px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  color: white;\n  border-radius: 100px;\n  margin: 0 8px;\n  -webkit-transition: .25s;\n  -moz-transition: .25s;\n  -ms-transition: .25s;\n  transition: .25s;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(94, 219, 203, 0);\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n  box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 4px 8px rgba(94, 219, 203, 0.5);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n  position: absolute;\n  left: 50%;\n  bottom: 84px;\n  margin-left: -10px;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tcontent: '';\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  transform: rotate(45deg);\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);      }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);      }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);      }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #50d0bf;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: white;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: #6B6F81;\n\tfont-weight: 300;\n  padding: 16px 0;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 20px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 12px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n  padding-top: calc(75% - 15px);\n  transform: scale(1);\n  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 - rgba(0,0,0,0);\n  transition: .25s;\n}\n\n.block.work ul li a:hover {\n  transform: scale(1.125);\n  box-shadow: 0 16px 32px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.1);\n  z-index: 5\n}\n\n/* .block.work ul li a img {\n\twidth: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(./assets/img/link.svg);\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(assets/img/link.svg);\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n} */\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\nul.timeline {\n  margin-left: 455px;\n  margin-top: -56px;\n  border-left: 10px solid white;\n  padding: 48px 0 0 0;\n  position: relative;\n  margin-bottom: 48px;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;``\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 24px;\n  border-radius: 5px;\n  position: relative;\n  text-align: left;\n  z-index: 1;\n}\n\nul.timeline li p {\n  line-height: 1.8;\n  font-weight: 400;\n  letter-spacing: .25px;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -203px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -130px;\n}\nul.timeline li.usana {\n\tmargin-top: -90px;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -179px;\n}\nul.timeline li.rss {\n\tmargin-top: -10px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\nul.timeline li.verizon {\n\tmargin-top: -30px;\n}\nul.timeline li.now {\n  margin-top: -73px;\n  width: 196px;\n  /* margin-left: -237px !important; */\n}\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n  position: absolute;\n  left: 0;\n  bottom: -40px;\n}\n\nul.timeline li .company {\n\tfont-size: 24px;\n\tfont-weight: 300;\n\tmargin-bottom: 8px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 16px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 24px;\n\tright: 24px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tdisplay: inline-block;\n\t/* margin-bottom: 14px; */\n  padding: 8px;\n}\n\n/* form.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n} */\n\nform.contact ul li.message {\n  padding: 8px;\n}\n\nform.contact ul li.submit {\n  padding: 8px;\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n  border-radius: 24px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\ttransition: .25s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(94, 219, 203, 0.5);;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n\tcolor: #3A3C47;\n\tbackground: #f5f6f7;\n\tfont-size: 16px;\n\tline-height: 1.25;\n\tfont-weight: 300;\n\tpadding: 15px;\n\tfont-family: 'Roboto', sans-serif;\n\t\t   -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n            border-radius: 3px;\n\toutline: none;\n\tmargin: 0;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tborder: 0;\n\t-webkit-box-shadow: 0 0 0 8px transparent;\n\tbox-shadow: 0 0 0 8px transparent;\n\ttransition: .2s;\n\tresize: none;\n\t-webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n  overflow: hidden;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(84)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\n/* header .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n} */\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n  font-size: 0;\n}\n\n/* .find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; } */\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  border-radius: 100px;\n  padding: 0 8px;\n  text-decoration: none;\n  font-size: 32px;\n  color: rgba(0,0,0,0.4);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  transition: .25s;\n  box-sizing: content-box;\n}\n\n/* .find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n} */\n\n.find-me .social a:hover {\n\tcolor: white;\n}\n\n/* .social a.twitter:after {\n\tcontent: '\\f309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\f31b';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\f318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\f30f';\n}\n\n.social a.facebook:after {\n\tcontent: '\\f30c';\n}\n\n.social a.instagram:after {\n\tcontent: '\\f32d';\n}\n\n.social a.rdio:after {\n\tcontent: '\\f324';\n} */\n\nfooter {\n  background: linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%);\n  background-attachment: fixed;\n\tcolor: white;\n  position: relative;\n  z-index: 500;\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n    font-size: 12px;\n    border: 2px solid white;\n    position: absolute;\n    padding: 12px 20px;\n    right: 15px;\n    top: 30px;\n    -webkit-transition: .5s;\n    -moz-transition: .5s;\n    -ms-transition: .5s;\n    transition: .5s;\n    border-radius: 24px;\n\t}\n\n  nav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid white;\n    background: white;\n    box-shadow: 0 8px 16px rgba(0,0,0,0.2)\n\t}\n\n  nav.block a.resume:active,\n  nav.block.scrolled a.resume:active {\n    color: #37af9f;\n    border: 2px solid white;\n    background: #f4f4f4;\n    box-shadow: 0 4px 8px rgba(0,0,0,0.3)\n  }\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 12px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 20px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\t/* display: inline-block; */\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\t/* header .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t} */\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\t/* font-size: 0px;\n\t\ttext-indent: -99999px; */\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
+exports.push([module.i, "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video, input {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n\t-webkit-box-sizing: border-box;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\n\n\n/*-------------------------------------*/\n\n\n\nbody {\n\tfont-family: 'Open Sans', sans-serif;\n\tcolor: #94a1ab;\n\tfont-weight: 300;\n\tfont-size: 14px;\n}\n\n.hide {\n\tdisplay: none;\n}\n\np {\n\tline-height: 1.6;\n\tfont-weight: 400;\n}\n\n.block {\n\tposition: relative;\n}\n\n.wrap {\n\tmargin: 0px auto;\n\tpadding: 80px 0;\n\twidth: 920px;\n\ttext-align: center;\n}\n\n.block.mission-statement .wrap {\n\tpadding: 60px 0;\n}\n\nnav.block {\n\tbackground: rgba(49, 52, 63, 0);\n\ttext-align: center;\n\tposition: fixed;\n\ttop: 20px;\n\tleft: 20px;\n\tright: 20px;\n\tz-index: 500;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.block.scrolled {\n\t/* background: rgba(49, 52, 63, 1); */\n\ttext-align: center;\n\tposition: fixed;\n\t/* top: 0;\n\tleft: 0; */\n\t/* width: 100%; */\n\tz-index: 500;\n}\n\nnav.block #logo {\n  height: 36px;\n  position: absolute;\n  left: 30px;\n  top: 32px;\n  -webkit-transition: .5s;\n  -moz-transition: .5s;\n  -ms-transition: .5s;\n  transition: .5s;\n}\n\nnav.block.scrolled #logo {\n  top: 18px;\n}\n\nnav.block.scrolled a {\n\tcolor: rgba(255,255,255,.6);\n}\n\nnav .wrap {\n\tpadding: 40px 0;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n}\n\nnav.scrolled .wrap {\n\tpadding: 25px 0;\n}\n\nnav.block a {\n\tfont-size: 13px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 24px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .15em;\n\tdisplay: inline-block;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\nnav.block a:hover {\n\tcolor: white;\n}\n\nnav.block a.current:hover {\n\tcolor: white;\n}\n\nnav.block a.current {\n\tfont-weight: 600;\n\tcursor: default;\n}\n\nnav.block.scrolled a.current {\n\tcolor: white;\n}\n\nheader {\n\tbackground: #333947;\n\tcolor:white;\n\tpadding-top: 50px;\n\tposition: relative;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\nheader .photo {\n\tbackground-color: #cad4df;\n\tborder: 4px solid white;\n\twidth: 175px;\n\theight: 175px;\n\tmargin: 0px auto 30px auto;\n  border-radius: 200px;\n\tbackground: url(" + escape(__webpack_require__(96)) + ") no-repeat;\n\tbackground-size: cover;\n  box-shadow: 0 16px 32px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2);\n}\n\nheader .name {\n\tfont-size: 45px;\n\tfont-weight: 300;\n\tmargin-bottom: 15px;\n\ttext-transform: lowercase;\n}\nheader .name em {\n\tfont-weight: 600;\n\tfont-style: normal;\n\tmargin-left: -.25em;\n}\nheader .title {\n\tfont-size: 16px;\n\ttext-transform: uppercase;\n\tfont-weight: 600;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tcolor: #50d0bf;\n}\n\nheader .social {\n\tmargin: 64px 0;\n}\n\nheader .social a {\n\tdisplay: inline-block;\n\tbackground: #50d0bf;\n\twidth: 45px;\n\theight: 45px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  color: white;\n  border-radius: 100px;\n  margin: 0 8px;\n  -webkit-transition: .25s;\n  -moz-transition: .25s;\n  -ms-transition: .25s;\n  transition: .25s;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(94, 219, 203, 0);\n}\n\nheader .social a:hover {\n\tbackground: #5EDBCB;\n\t-webkit-transform: scale(1.2);\n\t-moz-transform: scale(1.2);\n\t-ms-transform: scale(1.2);\n\ttransform: scale(1.2);\n  box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 4px 8px rgba(94, 219, 203, 0.5);\n}\n\nheader i.arrow {\n  display: block;\n  -webkit-animation-name: bounce;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-duration: 3s;\n  animation-name: bounce;\n  animation-iteration-count: infinite;\n  animation-duration: 3s;\n  position: absolute;\n  left: 50%;\n  bottom: 84px;\n  margin-left: -10px;\n}\n\n@-webkit-keyframes bounce {\n  from, to  {\n    bottom: 0;\n    -webkit-animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    -webkit-animation-timing-function: ease-in;\n  }\n}\n@keyframes bounce {\n  from, to  {\n    botttom: 0;\n    animation-timing-function: ease-out;\n  }\n  50% {\n    bottom: 220px;\n    animation-timing-function: ease-in;\n  }\n}\n\nheader i.arrow:after {\n\tcontent: '';\n  display: inline-block;\n  width: 16px;\n  height: 16px;\n  border-right: 2px solid white;\n  border-bottom: 2px solid white;\n  transform: rotate(45deg);\n}\n\n\n@-webkit-keyframes bounce {\n  0% \t{ -webkit-transform: translate(0,0);      }\n  50% \t{ -webkit-transform: translate(0,10px); }\n  100% \t{ -webkit-transform: translate(0,0);    }\n}\n@-moz-keyframes bounce {\n  0% \t{ -moz-transform: translateY(0);      }\n  50% \t{ -moz-transform: translateY(10px); }\n  100% \t{ -moz-transform: translateY(0);    }\n}\n@keyframes bounce {\n  0% \t{ transform: translateY(0);      }\n  50% \t{ transform: translateY(10px); }\n  100% \t{ transform: translateY(0);    }\n}\n\nh3.title {\n\tbackground: #6B6F81;\n\twidth: 500px;\n\t-moz-border-radius: 100px;\n\t-webkit-border-radius: 100px;\n\tborder-radius: 100px;\n\tcolor: white;\n\tfont-size: 16px;\n\tfont-weight: 600;\n\tpadding: 18px;\n\tposition: absolute;\n\ttop: -27px;\n\tleft: 50%;\n\tmargin-left: -250px;\n\tz-index: 5;\n\ttext-transform: uppercase;\n\ttext-align: center;\n\tletter-spacing: .1em;\n}\n\n.block.about,\n.block.timeline,\n.block.find-me {\n\tbackground: #f5f6f7;\n}\n\n.block.mission-statement {\n\tbackground: white;\n}\n\n.mission-statement h3 {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tcolor: #6B6F81;\n\tfont-weight: 300;\n  padding: 16px 0;\n}\n.block.about .wrap {\n\twidth: 100%;\n\tpadding: 5%;\n}\n\nul.theory {\n\tfont-size: 28px;\n\tline-height: 1.5;\n\tfont-weight: 300;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\nul.theory li {\n  line-height: 1.5;\n  padding: 8px;\n  display: inline-block;\n  width: 24%;\n  font-size: 20px;\n  width: 240px;\n}\n\nul.theory li img {\n  margin-bottom: 12px;\n}\n\nul.theory li em {\n\tfont-weight: 600;\n\tcolor: #E06A85;\n}\n\n\n.block.work .work-grid {\n\tpadding: 5%;\n}\n\n.block.work ul {\n\n}\n\n.block.work ul li {\n\twidth: 16.66%;\n\tdisplay: inline-block;\n}\n\n.block.work ul li a {\n\tdisplay: block;\n\tbackground: #3A3C47;\n\t-moz-border-radius: 4px;\n\t-webkit-border-radius: 4px;\n\tborder-radius: 4px;\n\tmargin: 10px;\n\tposition: relative;\n\tline-height: 0;\n\toverflow: hidden;\n  padding-top: calc(75% - 15px);\n  transform: scale(1);\n  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 - rgba(0,0,0,0);\n  transition: .25s;\n}\n\n.block.work ul li a:hover {\n  transform: scale(1.125);\n  box-shadow: 0 16px 32px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.1);\n  z-index: 5\n}\n\n/* .block.work ul li a img {\n\twidth: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.block.work ul li a[href]:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0;\n\tbackground-image: url(./assets/img/link.svg);\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\ttransform: scale(0.5);\n\tfilter: blur(20px);\n}\n\n.block.work ul li a[href]:hover:after {\n\tcontent:'';\n\tdisplay: block;\n\tposition: absolute;\n\ttop:0;right:0;bottom:0;left:0;\n\topacity: 0.75;\n\tbackground-image: url(assets/img/link.svg);\n\tbackground-position: center;\n\tbackground-repeat: no-repeat;\n\tbackground-size: 100px;\n\ttransform: scale(1);\n\tfilter: blur(0);\n} */\n\n.block.work ul li a[href] img {\n\t-webkit-transition: .5s;\n\t-moz-transition: .5s;\n\t-ms-transition: .5s;\n\ttransition: .5s;\n\t-webkit-transform: scale(1);\n\t-moz-transform: scale(1);\n\t-ms-transform: scale(1);\n\ttransform: scale(1);\n\t-webkit-filter: blur(0px);\n\t-moz-filter: blur(0px);\n\t-ms-filter: blur(0px);\n\tfilter: blur(0px);\n\n}\n.block.work ul li a[href]:hover img {\n\t-webkit-transform: scale(1.15);\n\t-moz-transform: scale(1.15);\n\t-ms-transform: scale(1.15);\n\ttransform: scale(1.15);\n\t-webkit-filter: blur(10px);\n\t-moz-filter: blur(10px);\n\t-ms-filter: blur(10px);\n\tfilter: blur(10px);\n\topacity: .5;\n}\n\nul.timeline {\n  margin-left: 455px;\n  margin-top: -56px;\n  border-left: 10px solid white;\n  padding: 48px 0 0 0;\n  position: relative;\n  margin-bottom: 48px;\n}\n\nul.timeline:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 30px;\n\theight: 90px;\n\tposition: absolute;\n\tbottom: 0;\n\tleft: -10px;``\n\tbackground: #f5f6f7;\n}\n\nul.timeline li {\n\tbackground: white;\n\tpadding: 24px;\n  border-radius: 5px;\n  position: relative;\n  text-align: left;\n  z-index: 1;\n}\n\nul.timeline li p {\n  line-height: 1.8;\n  font-weight: 400;\n  letter-spacing: .25px;\n}\n\n\nul.timeline li.mf {\n\tmargin-top: -68px;\n}\nul.timeline li.ogf {\n\tmargin-top: -203px;\n}\nul.timeline li.ancestry {\n\tmargin-top: -130px;\n}\nul.timeline li.usana {\n\tmargin-top: -90px;\n}\nul.timeline li.solutionstream {\n\tmargin-top: -179px;\n}\nul.timeline li.rss {\n\tmargin-top: -10px;\n}\nul.timeline li.intuit {\n\tmargin-top: -160px;\n}\nul.timeline li.verizon {\n\tmargin-top: -30px;\n}\nul.timeline li.now {\n  margin-top: -73px;\n  width: 196px;\n  /* margin-left: -237px !important; */\n}\n\n\nul.timeline li:nth-child(odd) {\n\tmargin-left: -465px;\n\tmargin-right: 495px;\n}\nul.timeline li:nth-child(even) {\n\tmargin-left: 30px;\n}\n\nul.timeline li:nth-child(odd):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-left: 10px solid white;\n\tposition: absolute;\n\tright: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:nth-child(even):before {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 0;\n\theight: 0;\n\tborder: 10px solid transparent;\n\tborder-right: 10px solid white;\n\tposition: absolute;\n\tleft: -20px;\n\ttop: 17px;\n}\n\nul.timeline li:after {\n\tcontent: '';\n\tdisplay: block;\n\twidth: 15px;\n\theight: 15px;\n\t   -moz-border-radius: 30px;\n    -webkit-border-radius: 30px;\n            border-radius: 30px;\n\tbackground: #8b9aa6;\n\tborder: 9px solid white;\n\tposition: absolute;\n\tleft: -52px;\n\ttop: 10px;\n}\nul.timeline li:nth-child(odd):after {\n\tleft: auto;\n\tright: -52px;\n}\n\nul.timeline li:last-child {\n\t/* width: 300px;\n\twidth: 130px;\n\ttext-align: center; */\n  position: absolute;\n  left: 0;\n  bottom: -40px;\n}\n\nul.timeline li .company {\n\tfont-size: 24px;\n\tfont-weight: 300;\n\tmargin-bottom: 8px;\n\tcolor: #6B6F81;\n}\n\nul.timeline li.now .company {\n  margin: 0;\n}\n\nul.timeline li .job-title {\n\tfont-size: 13px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: .1em;\n\topacity: 0.8;\n\tmargin-bottom: 16px;\n\tcolor: #E06A85;\n}\n\nul.timeline li .date {\n\tfont-size: 16px;\n\tfont-weight: 500;\n\topacity: 0.8;\n\tposition: absolute;\n\ttop: 24px;\n\tright: 24px;\n}\n\n.block.connect p.connect-txt,\n.block.find-me p.find-txt,\n.block p.big-txt {\n\tfont-size: 28px;\n\tfont-weight: 300;\n}\n\n.block.connect p.connect-txt.error {\n\tcolor: #f37169;\n}\n\n.block.connect p.connect-txt.success {\n\tcolor: #50d0bf;\n}\n\nform.contact {\n\tmargin: 30px 0;\n}\n\nform.contact ul li.name,\nform.contact ul li.email {\n\twidth: 50%;\n\tdisplay: inline-block;\n\t/* margin-bottom: 14px; */\n  padding: 8px;\n}\n\n/* form.contact ul li.name {\n\tpadding-right: 7px;\n}\nform.contact ul li.email {\n\tpadding-left: 7px;\n} */\n\nform.contact ul li.message {\n  padding: 8px;\n}\n\nform.contact ul li.submit {\n  padding: 8px;\n\ttext-align: right;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit {\n\tbackground: #50d0bf;\n\tfont-size: 14px;\n\tcolor: white;\n\ttext-decoration: none;\n\tmargin: 0 15px;\n\ttext-transform: uppercase;\n\tfont-weight: 500;\n\tfont-family: 'Brandon Grotesque' sans-serif;\n\tletter-spacing: .1em;\n\tpadding: 15px 25px;\n  border-radius: 24px;\n\toutline: none;\n\tmargin: 0;\n\tbox-sizing: border-box;\n\ttransition: .25s;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n}\n\nform.contact ul li.submit input.submit:hover {\n\tbackground: #4DE2CE;\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(94, 219, 203, 0.5);;\n}\n\nform.contact label {\n\tdisplay: none;\n}\n\n::-webkit-input-placeholder { /* WebKit browsers */\n    color: #b1b5bf;\n}\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n    color: #b1b5bf;\n}\n::-moz-placeholder { /* Mozilla Firefox 19+ */\n    color: #b1b5bf;\n}\n:-ms-input-placeholder { /* Internet Explorer 10+ */\n    color: #b1b5bf;\n}\n\nform.contact input[type=text],\nform.contact input[type=email],\nform.contact textarea {\n  color: #3A3C47;\n  background: #f5f6f7;\n  font-size: 16px;\n  line-height: 1.25;\n  font-weight: 300;\n  padding: 16px 24px;\n  font-family: 'Roboto', sans-serif;\n  border-radius: 25px;\n  outline: none;\n  margin: 0;\n  width: 100%;\n  box-sizing: border-box;\n  border: 0;\n  box-shadow: 0 0 0 8px transparent;\n  transition: .2s;\n  resize: none;\n  -webkit-appearance: none;\n}\n\nform.contact input[type=text]:hover,\nform.contact input[type=email]:hover,\nform.contact textarea:hover {\n\t-webkit-box-shadow: 0 0 0 2px #d1d4dc;\n\tbox-shadow: 0 0 0 2px #d1d4dc;\n}\n\nform.contact input[type=text]:focus,\nform.contact input[type=email]:focus,\nform.contact textarea:focus {\n\t-webkit-box-shadow: 0 0 0 2px #50d0bf;\n\tbox-shadow: 0 0 0 2px #50d0bf;\n\tbackground: white;\n}\n\n.block.connect p.connect-txt {\n\tmargin-bottom: 20px;\n}\n\nform.contact input[type=text].error,\nform.contact input[type=email].error,\nform.contact textarea.error {\n\tbox-shadow: 0 0 0 2px #f37169;\n\tcolor: #f37169;\n}\n\n.social a {\n\tposition: relative;\n}\n\nheader {\n\tposition: relative;\n  overflow: hidden;\n}\n\nheader .bg-img {\n\tbackground-image: url(" + escape(__webpack_require__(97)) + ");\n  background-position: center;\n\tbackground-size: cover;\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\topacity: .25;\n\t-webkit-filter: saturate(0.1) contrast(1.25);\n  filter: saturate(0.1) contrast(1.25);\n}\n\nheader .wrap {\n\tposition: relative;\n\tpadding: 80px 0 50px 0;\n}\n\n/* header .social a:after {\n\tcolor: white;\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 45px;\n\theight: 45px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 21px;\n\ttext-indent: 0;\n\tline-height: 45px;\n\ttext-decoration: none;\n} */\n\n.find-me {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social {\n\tmargin-bottom: 30px;\n  font-size: 0;\n}\n\n/* .find-me.twitter { background: #00ACEE; }\n.find-me.dribbble { background: #ea4c89; }\n.find-me.linkedin { background: #0077b5; }\n.find-me.gplus { background: #D34836; }\n.find-me.facebook { background: #4c66a4; }\n.find-me.instagram { background: #517fa4; }\n.find-me.rdio { background: #008fd5; } */\n\n.find-me .find-txt {\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n}\n\n.find-me .social a {\n\tdisplay: inline-block;\n\twidth: 60px;\n\theight: 60px;\n\t/* font-size: 0px;\n\ttext-indent: -99999px; */\n  border-radius: 100px;\n  padding: 0 8px;\n  text-decoration: none;\n  font-size: 32px;\n  color: rgba(0,0,0,0.4);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  transition: .25s;\n  box-sizing: content-box;\n}\n\n/* .find-me .social a:after {\n\tcolor: rgba(0, 0, 0, 0.3);\n\tfont-family: 'entypo';\n\tdisplay: block;\n\twidth: 60px;\n\theight: 60px;\n\tposition: absolute;\n\ttop:0;\n\tleft:0;\n\ttext-align: center;\n\tfont-size: 32px;\n\ttext-indent: 0;\n\tline-height: 60px;\n\ttext-decoration: none;\n\t-webkit-transition: .25s;\n\t-moz-transition: .25s;\n\t-ms-transition: .25s;\n\ttransition: .25s;\n} */\n\n.find-me .social a:hover {\n\tcolor: white;\n}\n\n/* .social a.twitter:after {\n\tcontent: '\\f309';\n}\n\n.social a.dribbble:after {\n\tcontent: '\\f31b';\n}\n\n.social a.linkedin:after {\n\tcontent: '\\f318';\n}\n\n.social a.gplus:after {\n\tcontent: '\\f30f';\n}\n\n.social a.facebook:after {\n\tcontent: '\\f30c';\n}\n\n.social a.instagram:after {\n\tcontent: '\\f32d';\n}\n\n.social a.rdio:after {\n\tcontent: '\\f324';\n} */\n\nfooter {\n  background: linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%);\n  background-attachment: fixed;\n\tcolor: white;\n  position: relative;\n  z-index: 500;\n}\n\nfooter .wrap {\n\tpadding: 20px 0;\n}\n\n@media (min-width: 1000px) {\n\tnav.block a.resume {\n    font-size: 12px;\n    border: 2px solid white;\n    position: absolute;\n    padding: 12px 20px;\n    right: 15px;\n    top: 30px;\n    -webkit-transition: .5s;\n    -moz-transition: .5s;\n    -ms-transition: .5s;\n    transition: .5s;\n    border-radius: 24px;\n\t}\n\n  nav.block a.resume:hover,\n\tnav.block.scrolled a.resume:hover {\n\t\tcolor: #50d0bf;\n\t\tborder: 2px solid white;\n    background: white;\n    box-shadow: 0 8px 16px rgba(0,0,0,0.2)\n\t}\n\n  nav.block a.resume:active,\n  nav.block.scrolled a.resume:active {\n    color: #37af9f;\n    border: 2px solid white;\n    background: #f4f4f4;\n    box-shadow: 0 4px 8px rgba(0,0,0,0.3)\n  }\n\n\tnav.block.scrolled a.resume {\n\t\ttop: 12px;\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1000px) {\n\n\t.wrap {\n\t\twidth: 100% !important;\n\t\tpadding-left: 20px;\n\t\tpadding-right: 20px;\n\t}\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: calc(-100% - 20px);\n\t\tmargin-right: calc(100% + 40px);\n\t}\n\tul.timeline {\n\t\tmargin-left: 50%;\n\t}\n\tul.timeline li:last-child {\n\t\twidth: 130px;\n\t\ttext-align: center;\n\t}\n\n\tfooter .wrap {\n\t\tpadding: 20px;\n\t}\n\n\t.block.work ul li {\n\t\twidth: 49%;\n\t\tdisplay: inline-block;\n\t}\n\n}\n@media (min-width: 2001px) {\n\tul.theory li {\n\t  font-size: 21px;\n\t\twidth: 20%;\n\t}\n\tul.theory li img {\n\t\twidth: 60px;\n\t}\n}\n\n@media (max-width: 2000px) {\n\t.block.work ul li {\n\t\twidth: 25%;\n\t}\n\n\tul.theory li {\n\t  padding: 8px;\n\t  display: inline-block;\n\t  font-size: 20px;\n\t\twidth: 20%;\n\t}\n}\n@media (max-width: 1439px) {\n\t.block.work ul li {\n\t\twidth: 33.33%;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\tfont-size: 16px;\n\t}\n}\n\n@media (max-width: 768px) {\n\t.block.work ul li {\n\t\twidth: 50%;\n\t}\n\tul.theory {\n\t\tdisplay: block;\n\t}\n\n\tul.theory li {\n\t\tpadding: 8px;\n\t\tdisplay: inline-block;\n\t\twidth: 38%;\n\t\tfont-size: 16px;\n\t\tbox-sizing: border-box;\n\t\tmargin: 0 5% 5% 5%;\n    vertical-align: top;\n\t}\n}\n\n@media (max-width: 600px) {\n\n\theader .bg-img {\n\t\ttop: 0 !important;\n\t}\n\n\theader .wrap {\n    padding: 60px 0 30px 0;\n\t}\n\n\theader .photo {\n\t\twidth: 120px;\n\t\theight: 120px;\n    margin: 0px auto 20px auto;\n}\n\n\theader .name {\n    font-size: 36px;\n    margin-bottom: 9px;\n\t}\n\n\theader .title {\n    font-size: 12.5px;\n\t}\n\n\tul.theory li {\n\t\tfont-size: 13px;\n    vertical-align: top;\n\t}\n\n\tul.theory li img {\n\t\twidth: 40px;\n\t}\n\n\tnav.block a.resume {\n\t\tdisplay: none;\n\t}\n\n\t.block.work ul {\n\t    margin: 20px 0;\n\t}\n\n\t.block.work ul li a {\n\t\tmargin: 4px\n\t}\n\n\t.block.timeline .wrap {\n\t\tpadding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n\t\tpadding: 55px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li:nth-child(odd) {\n\t\tmargin-left: 30px;\n\t\tmargin-right: inherit;\n\t}\n\n\tul.timeline li {\n\t\tbackground: #FFF;\n\t\tpadding: 20px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\tborder-radius: 5px;\n\t\tposition: relative;\n\t\ttext-align: left;\n\t\tz-index: 1;\n\t\tmargin-bottom: 20px;\n\t\tmargin-top: 0 !important;\n\t}\n\n\tul.timeline li:nth-child(odd):before {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder: 10px solid rgba(0, 0, 0, 0);\n\t\tborder-right: 10px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -20px;\n\t\ttop: 17px;\n\t}\n\n\tul.timeline li:nth-child(odd):after {\n\t\tleft: -52px;\n\t\tright: auto;\n\t}\n\n\tul.timeline li.now {\n\t\tmargin-left: 30px !important;\n\t\twidth: auto !important;\n\t}\n\n\tul.timeline li:after {\n\t\tcontent: '';\n\t\tdisplay: block;\n\t\twidth: 15px;\n\t\theight: 15px;\n\t\t-moz-border-radius: 30px;\n\t\t-webkit-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\tbackground: #8B9AA6;\n\t\tborder: 9px solid #FFF;\n\t\tposition: absolute;\n\t\tleft: -52px;\n\t\ttop: 10px;\n\t}\n\n\th3.title {\n\t\twidth: 80%;\n\t\tposition: absolute;\n\t\ttop: -27px;\n\t\tleft: 50%;\n\t\tmargin-left: -40%;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 21px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 21px;\n\t\tfont-weight: 300;\n\t}\n\n\tform.contact {\n\t\twidth: 100%;\n\t\tmargin: 30px auto;\n\t}\n\n\t.wrap {\n\t\tmargin: 0px auto;\n\t\tpadding: 40px 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t}\n\n\t.block.mission-statement .wrap {\n\t\tpadding: 8% 5%;\n\t}\n\n\tform.contact input[type=text], form.contact input[type=email], form.contact textarea {\n\t\tfont-size: 18px;\n\t\tpadding: 12px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t\tbox-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t}\n\n\tform.contact ul li.submit input.submit {\n\t\tbackground: #50D0BF;\n\t\tcolor: #FFF;\n\t\tfont-size: 18px;\n\t\tpadding: 12px 25px;\n\t\tmargin: 0;\n\t\twidth: 100%;\n\t}\n\n}\n\n@media (max-width: 450px) {\n\n\tnav.block #logo {\n\t\tdisplay: none;\n\t}\n\n\tnav.block a {\n\t\tfont-size: 12px;\n\t\tmargin: 0 8px;\n\t}\n\n\t.mission-statement h3, ul.theory {\n\t\tfont-size: 18px;\n\t\tline-height: 1.5;\n\t}\n\n\t.block.connect p.connect-txt, .block.find-me p.find-txt, .block p.big-txt {\n\t\tfont-size: 18px;\n\t}\n\n\theader .photo {\n\t\tbackground-color: #CAD4DF;\n\t\tborder: 3px solid white;\n    background-size: cover;\n\t}\n\n\theader .social a {\n\t\t/* display: inline-block; */\n\t\tbackground: #50D0BF;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 3px;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n\n\t/* header .social a:after {\n\t\tcolor: #FFF;\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 35px;\n\t\theight: 35px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 19px;\n\t\ttext-indent: 0;\n\t\tline-height: 35px;\n\t\ttext-decoration: none;\n\t} */\n\n\t.block.timeline .wrap {\n    padding-bottom: 0;\n\t}\n\n\tul.timeline {\n\t\tmargin-left: 0;\n\t\tmargin-top: -60px;\n\t\tborder-left: 10px solid #FFF;\n    padding: 70px 0 30px 0;\n\t\tposition: relative;\n\t}\n\n\tul.timeline li {\n\t\tpadding: 18px;\n\t}\n\n\tul.timeline li .company {\n\t\tfont-size: 16px;\n\t\tfont-weight: 500;\n\t}\n\n\tul.timeline li .job-title {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tmargin-bottom: 10px;\n\t}\n\n\tul.timeline li .date {\n\t\tfont-size: 13px;\n\t\tfont-weight: 500;\n\t\topacity: 0.8;\n\t\tposition: absolute;\n\t\ttop: 18px;\n\t\tright: 18px;\n\t}\n\n\tul.timeline li .description {\n\t\tfont-size: 12px;\n\t}\n\n\t.find-me .social a {\n\t\tdisplay: inline-block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\t/* font-size: 0px;\n\t\ttext-indent: -99999px; */\n\t\t-moz-border-radius: 100px;\n\t\t-webkit-border-radius: 100px;\n\t\tborder-radius: 100px;\n\t\tmargin: 0 5px;\n\t\ttext-decoration: none;\n\t}\n\n\t.find-me .social a:after {\n\t\tcolor: rgba(0, 0, 0, 0.3);\n\t\tfont-family: 'entypo';\n\t\tdisplay: block;\n\t\twidth: 32px;\n\t\theight: 32px;\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\ttext-align: center;\n\t\tfont-size: 24px;\n\t\ttext-indent: 0;\n\t\tline-height: 32px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: .25s;\n\t\t-moz-transition: .25s;\n\t\t-ms-transition: .25s;\n\t\ttransition: .25s;\n\t}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 81 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -23662,7 +25876,7 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 82 */
+/* 95 */
 /***/ (function(module, exports) {
 
 /*
@@ -23744,19 +25958,19 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 83 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/profile.jpg";
 
 /***/ }),
-/* 84 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/bg-hero.jpg";
 
 /***/ }),
-/* 85 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -23822,7 +26036,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(86);
+var	fixUrls = __webpack_require__(99);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24142,7 +26356,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 86 */
+/* 99 */
 /***/ (function(module, exports) {
 
 

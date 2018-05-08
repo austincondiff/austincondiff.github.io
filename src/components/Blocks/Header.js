@@ -1,25 +1,66 @@
 import React, { Component } from 'react'
 import Icon from '../Icon'
 import social from '../../social'
+import { TransitionGroup, Transition } from 'react-transition-group'
 
 export default class Header extends Component {
 
   render() {
     return (
-      <header id="about" style={{background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)'}}>
-        <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
-        <div className="wrap">
-          <div className="photo"></div>
-          <h1 className="name">Austin <em>Condiff</em></h1>
-          <h2 className="title">UX/UI Designer &amp; Developer</h2>
-          <div className="social">
-            {social.map((s) =>
-              <a key={s.id} target="_blank" href={s.url}><Icon type={s.id} /></a>
-            )}
-    			</div>
-        </div>
-        <i className="arrow"></i>
-      </header>
+      <TransitionGroup>
+        <Transition timeout={ 500 } appear>
+          { transitionState =>
+            <header id="about" style={{
+              background: 'linear-gradient(135deg, #3A3C47 0%, #6B6F81 100%)'
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+                opacity: transitionState === 'entered' ? 1 : 0,
+                transition: '1200ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                transitionDelay: '400ms'
+              }}></div>
+              <div style={{
+                transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.5)',
+                opacity: transitionState === 'entered' ? 1 : 0,
+                transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                transitionDelay: '300ms'
+              }}>
+                <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
+              </div>
+              <div className="wrap" style={{
+                transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.75)',
+                opacity: transitionState === 'entered' ? 1 : 0,
+                transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+                transitionDelay: '600ms'
+              }}>
+                <div className="photo"></div>
+                <h1 className="name">Austin <em>Condiff</em></h1>
+                <h2 className="title">UX/UI Designer &amp; Developer</h2>
+                <div className="social">
+                  {social.map((s) =>
+                    <a key={s.id} target="_blank" href={s.url}><Icon type={s.id} /></a>
+                  )}
+          			</div>
+              </div>
+              <i className="arrow" style={{
+                opacity: transitionState === 'entered' ? 1 : 0,
+                transition: '1600ms',
+                transitionDelay: '1600ms'
+              }}></i>
+            </header>
+          }
+        </Transition>
+      </TransitionGroup>
     )
   }
 }

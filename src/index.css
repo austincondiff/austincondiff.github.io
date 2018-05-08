@@ -157,7 +157,7 @@ nav.block a {
 }
 
 nav.block a:hover {
-	color: #50d0bf;
+	color: white;
 }
 
 nav.block a.current:hover {
@@ -313,7 +313,7 @@ header i.arrow:after {
 }
 
 h3.title {
-	background: #50d0bf;
+	background: #6B6F81;
 	width: 500px;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
@@ -728,27 +728,23 @@ form.contact label {
 form.contact input[type=text],
 form.contact input[type=email],
 form.contact textarea {
-	color: #3A3C47;
-	background: #f5f6f7;
-	font-size: 16px;
-	line-height: 1.25;
-	font-weight: 300;
-	padding: 15px;
-	font-family: 'Roboto', sans-serif;
-		   -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-            border-radius: 3px;
-	outline: none;
-	margin: 0;
-	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	border: 0;
-	-webkit-box-shadow: 0 0 0 8px transparent;
-	box-shadow: 0 0 0 8px transparent;
-	transition: .2s;
-	resize: none;
-	-webkit-appearance: none;
+  color: #3A3C47;
+  background: #f5f6f7;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  padding: 16px 24px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+  outline: none;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  box-shadow: 0 0 0 8px transparent;
+  transition: .2s;
+  resize: none;
+  -webkit-appearance: none;
 }
 
 form.contact input[type=text]:hover,
