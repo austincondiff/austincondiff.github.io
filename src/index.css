@@ -45,6 +45,9 @@ table {
 	border-spacing: 0;
 }
 
+strong {
+	font-weight: bold;
+}
 
 
 /*-------------------------------------*/
@@ -80,6 +83,7 @@ p {
 
 .block.mission-statement .wrap {
 	padding: 60px 0;
+	/* width: 1080px */
 }
 
 nav.block {
@@ -344,11 +348,17 @@ h3.title {
 
 .mission-statement h3 {
 	font-size: 28px;
-	line-height: 1.5;
-	color: #6B6F81;
+	line-height: 1.4;
+	color: #3A3C47;
 	font-weight: 300;
-  padding: 16px 0;
+	margin-bottom: 32px;
 }
+
+.mission-statement p {
+	margin-bottom: 12px;
+	font-size: 16px
+}
+
 .block.about .wrap {
 	width: 100%;
 	padding: 5%;
