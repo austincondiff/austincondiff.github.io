@@ -6,7 +6,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header id="about">
+      <header id="about" style={{background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)'}}>
         <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
         <div className="wrap">
           <div className="photo"></div>
@@ -17,8 +17,8 @@ export default class Header extends Component {
               <a key={s.id} target="_blank" href={s.url}><Icon type={s.id} /></a>
             )}
     			</div>
-          <i className="arrow"></i>
         </div>
+        <i className="arrow"></i>
       </header>
     )
   }

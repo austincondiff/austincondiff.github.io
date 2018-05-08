@@ -86,9 +86,9 @@ nav.block {
 	background: rgba(49, 52, 63, 0);
 	text-align: center;
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+	top: 20px;
+	left: 20px;
+	right: 20px;
 	z-index: 500;
 	-webkit-transition: .5s;
 	-moz-transition: .5s;
@@ -97,12 +97,12 @@ nav.block {
 }
 
 nav.block.scrolled {
-	background: rgba(49, 52, 63, 1);
+	/* background: rgba(49, 52, 63, 1); */
 	text-align: center;
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+	/* top: 0;
+	left: 0; */
+	/* width: 100%; */
 	z-index: 500;
 }
 
@@ -122,7 +122,7 @@ nav.block.scrolled #logo {
 }
 
 nav.block.scrolled a {
-	color: rgba(255,255,255,.5);
+	color: rgba(255,255,255,.6);
 }
 
 nav .wrap {
@@ -138,14 +138,14 @@ nav.scrolled .wrap {
 }
 
 nav.block a {
-	font-size: 14px;
+	font-size: 13px;
 	color: white;
 	text-decoration: none;
-	margin: 0 15px;
+	margin: 0 24px;
 	text-transform: uppercase;
 	font-weight: 500;
 	font-family: 'Brandon Grotesque' sans-serif;
-	letter-spacing: .1em;
+	letter-spacing: .15em;
 	display: inline-block;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
@@ -178,6 +178,10 @@ header {
 	color:white;
 	padding-top: 50px;
 	position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header .photo {
@@ -210,7 +214,7 @@ header .title {
 	font-weight: 600;
 	font-family: 'Brandon Grotesque' sans-serif;
 	letter-spacing: .1em;
-	color: #50D0BF;
+	color: #50d0bf;
 }
 
 header .social {
@@ -235,6 +239,7 @@ header .social a {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(94, 219, 203, 0);
 }
 
 header .social a:hover {
@@ -243,6 +248,7 @@ header .social a:hover {
 	-moz-transform: scale(1.2);
 	-ms-transform: scale(1.2);
 	transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 4px 8px rgba(94, 219, 203, 0.5);
 }
 
 header i.arrow {
@@ -250,10 +256,13 @@ header i.arrow {
   -webkit-animation-name: bounce;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-duration: 3s;
-
   animation-name: bounce;
   animation-iteration-count: infinite;
   animation-duration: 3s;
+  position: absolute;
+  left: 50%;
+  bottom: 84px;
+  margin-left: -10px;
 }
 
 @-webkit-keyframes bounce {
@@ -331,14 +340,15 @@ h3.title {
 }
 
 .block.mission-statement {
-	background: #3A3C47;
+	background: white;
 }
 
 .mission-statement h3 {
 	font-size: 28px;
 	line-height: 1.5;
-	color: white;
+	color: #6B6F81;
 	font-weight: 300;
+  padding: 16px 0;
 }
 .block.about .wrap {
 	width: 100%;
@@ -358,12 +368,12 @@ ul.theory li {
   padding: 8px;
   display: inline-block;
   width: 24%;
-  font-size: 16px;
+  font-size: 20px;
   width: 240px;
 }
 
 ul.theory li img {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 ul.theory li em {
@@ -685,23 +695,18 @@ form.contact ul li.submit input.submit {
 	font-family: 'Brandon Grotesque' sans-serif;
 	letter-spacing: .1em;
 	padding: 15px 25px;
-		   -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-            border-radius: 3px;
+  border-radius: 24px;
 	outline: none;
 	margin: 0;
 	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-transition: .5s;
-	-moz-transition: .5s;
-	-ms-transition: .5s;
-	transition: .5s;
+	transition: .25s;
 	cursor: pointer;
 	-webkit-appearance: none;
 }
 
 form.contact ul li.submit input.submit:hover {
 	background: #4DE2CE;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(94, 219, 203, 0.5);;
 }
 
 form.contact label {
@@ -915,8 +920,11 @@ header .wrap {
 } */
 
 footer {
-	background: #3A3C47;
-	color: rgba(255,255,255,.5);
+  background: linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%);
+  background-attachment: fixed;
+	color: white;
+  position: relative;
+  z-index: 500;
 }
 
 footer .wrap {
@@ -925,26 +933,37 @@ footer .wrap {
 
 @media (min-width: 1000px) {
 	nav.block a.resume {
-		font-size: 12px;
-		border: 2px solid white;
-		position: absolute;
-		padding: 10px 12px;
-		right: 15px;
-		top: 30px;
-		-webkit-transition: .5s;
-		-moz-transition: .5s;
-		-ms-transition: .5s;
-		transition: .5s;
+    font-size: 12px;
+    border: 2px solid white;
+    position: absolute;
+    padding: 12px 20px;
+    right: 15px;
+    top: 30px;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+    border-radius: 24px;
 	}
 
-	nav.block a.resume:hover,
+  nav.block a.resume:hover,
 	nav.block.scrolled a.resume:hover {
 		color: #50d0bf;
-		border: 2px solid #50d0bf;
+		border: 2px solid white;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2)
 	}
 
+  nav.block a.resume:active,
+  nav.block.scrolled a.resume:active {
+    color: #37af9f;
+    border: 2px solid white;
+    background: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3)
+  }
+
 	nav.block.scrolled a.resume {
-		top: 15px;
+		top: 12px;
 		color: white;
 	}
 }
@@ -996,7 +1015,7 @@ footer .wrap {
 	ul.theory li {
 	  padding: 8px;
 	  display: inline-block;
-	  font-size: 18px;
+	  font-size: 20px;
 		width: 20%;
 	}
 }
