@@ -25384,6 +25384,7 @@ var Header = function (_Component) {
                 { className: 'wrap', style: {
                     transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.75)',
                     opacity: transitionState === 'entered' ? 1 : 0,
+                    // filter: transitionState === 'entered' ? 'blur(0)' :  'blur(8px)',
                     transition: '1600ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
                     transitionDelay: '600ms'
                   } },
