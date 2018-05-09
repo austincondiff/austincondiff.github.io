@@ -32,7 +32,7 @@ export default class Work extends Component {
 
     return (
       <div className="block work" id="work">
-    		<div className="work-grid">
+    		<div className="grid">
     			<h3 className="title">Recent Work</h3>
           { shots ?
             <ul className="recent-work">

@@ -107,6 +107,7 @@ nav.block.scrolled {
 	/* top: 0;
 	left: 0; */
 	/* width: 100%; */
+	top: 16px;
 	z-index: 500;
 }
 
@@ -338,7 +339,8 @@ h3.title {
 
 .block.about,
 .block.timeline,
-.block.find-me {
+.block.find-me,
+.block.repos {
 	background: #f5f6f7;
 }
 
@@ -390,13 +392,52 @@ ul.theory li em {
 	color: #E06A85;
 }
 
+.block.skillset {
+	background-color: white;
+}
 
-.block.work .work-grid {
+.block.skillset .wrap {
+	width: 100%;
+	padding: 6%;
+}
+
+.block.skillset ul , .block.skillset h4 {
+	text-align: left;
+}
+
+.block.skillset ul li {
+	display: inline-block;
+	width: 25%;
+	font-size: 13px;
+	padding: 12px 0;
+	color: #6B6F81;
+	font-weight: bold;
+}
+
+.block.skillset ul.specialties {
+	margin-bottom: 32px;
+}
+
+.block.skillset h4 {
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	opacity: 0.8;
+	margin-bottom: 16px;
+	font-weight: bold;
+	color: #44c1c5;
+}
+
+
+
+.block.work .grid {
 	padding: 5%;
 }
 
-.block.work ul {
-
+.block.work.repos ul {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .block.work ul li {
@@ -404,7 +445,35 @@ ul.theory li em {
 	display: inline-block;
 }
 
-.block.work ul li a {
+.block.work.repos .grid > h4 {
+	font-size: 28px;
+	line-height: 1.4;
+	color: #3A3C47;
+	font-weight: 300;
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+.block.work.repos ul li > div {
+	background: white;
+	border-radius: 4px;
+	margin: 10px;
+	position: relative;
+	padding: 20px;
+  height: calc(100% - 20px);
+}
+
+.block.work.repos ul li > div h4 {
+	font-weight: bold;
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+.block.work.repos ul li > div h4 a {
+	text-decoration: none;
+	color: #44c1c5;
+}
+
+.block.work ul li > a {
 	display: block;
 	background: #3A3C47;
 	-moz-border-radius: 4px;
@@ -420,7 +489,7 @@ ul.theory li em {
   transition: .25s;
 }
 
-.block.work ul li a:hover {
+.block.work ul li > a:hover {
   transform: scale(1.125);
   box-shadow: 0 16px 32px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.1);
   z-index: 5
@@ -465,7 +534,7 @@ ul.theory li em {
 	filter: blur(0);
 } */
 
-.block.work ul li a[href] img {
+.block.work ul li > a[href] img {
 	-webkit-transition: .5s;
 	-moz-transition: .5s;
 	-ms-transition: .5s;
@@ -480,7 +549,7 @@ ul.theory li em {
 	filter: blur(0px);
 
 }
-.block.work ul li a[href]:hover img {
+.block.work ul li > a[href]:hover img {
 	-webkit-transform: scale(1.15);
 	-moz-transform: scale(1.15);
 	-ms-transform: scale(1.15);
@@ -1097,7 +1166,7 @@ footer .wrap {
 	    margin: 20px 0;
 	}
 
-	.block.work ul li a {
+	.block.work ul li > a {
 		margin: 4px
 	}
 

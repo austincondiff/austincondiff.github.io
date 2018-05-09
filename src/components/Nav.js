@@ -19,7 +19,8 @@ export default class Nav extends Component {
         position: 'fixed',
         background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
         backgroundAttachment: 'fixed',
-        transition: '1000ms'
+        transition: '1200ms',
+        transitionDelay: '200ms'
       }
     }
     return (
@@ -31,7 +32,7 @@ export default class Nav extends Component {
                 <div style={{
                   ...styles.borderSide,
                   top: 0, right: 0, left: 0,
-                  height: transitionState === 'entered' ? (this.props.scrollTop > 0 ? 104 : 20) : 0,
+                  height: transitionState === 'entered' ? (this.props.scrollTop > 0 ? 96 : 20) : 0,
                   transition: transitionState === 'entered' ? '400ms' : '1000ms'
                 }}></div>
                 <div style={{
@@ -51,7 +52,8 @@ export default class Nav extends Component {
                 }}></div>
               </div>
               <div className='wrap' style={{
-                transition: '1000ms',
+                transition: '800ms',
+                transitionDelay: '0ms',
                 // transitionDelay: '100ms',
                 transform: transitionState === 'entered' ? 'translateY(0)' :  'translateY(-100%)',
                 opacity: transitionState === 'entered' ? 1 : 0,
@@ -59,8 +61,9 @@ export default class Nav extends Component {
               }}>
                 <img src={ require('../assets/img/logo.svg') } alt="" id="logo"/>
                 <a className={'about' + (this.isScrollTopWithinSection('about') ? ' current' : '')} href="#about">About</a>
-                <a className={'work' + (this.isScrollTopWithinSection('work') ? ' current' : '')} href="#work">Work</a>
+                <a className={'skillset' + (this.isScrollTopWithinSection('skillset') ? ' current' : '')} href="#skillset">Skillset</a>
                 <a className={'timeline' + (this.isScrollTopWithinSection('timeline') ? ' current' : '')} href="#timeline">Timeline</a>
+                <a className={'work' + (this.isScrollTopWithinSection('work') ? ' current' : '')} href="#work">Work</a>
                 <a className={'connect' + (this.isScrollTopWithinSection('connect') ? ' current' : '')} href="#connect">Connect</a>
                 <a href="/assets/resume-2018.pdf" target="_blank" className="resume">Download Resume</a>
               </div>
