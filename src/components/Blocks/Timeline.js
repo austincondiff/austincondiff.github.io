@@ -73,7 +73,7 @@ export default class Timeline extends Component {
     			<h3 className="title">Timeline</h3>
     			<ul className="timeline">
             {jobs.map(job =>
-              <li className={job.id}>
+              <li key={jobs.id} className={job.id}>
       					<h4 className="company">{job.company}</h4>
       					<h5 className="job-title">{job.title}</h5>
       					<div className="date">{job.date}</div>
