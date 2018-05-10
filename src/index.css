@@ -1085,6 +1085,14 @@ footer .wrap {
 		height: auto;
 	}
 
+	header .wrap {
+	  padding: 30px 0;
+	}
+
+	header i.arrow {
+		bottom: 48px;
+	}
+
 	#logo {
 		display: none;
 	}
@@ -1177,10 +1185,10 @@ footer .wrap {
 	header .bg-img {
 		top: 0 !important;
 	}
-
+/*
 	header .wrap {
     padding: 0 0 30px 0;
-	}
+	} */
 
 	header .photo {
 		width: 160px;
@@ -1189,7 +1197,7 @@ footer .wrap {
 }
 
 	header .social {
-	  margin: 40px 0;
+    margin: 20px 0 40px 0;
 	}
 
 	header .name {
