@@ -4,7 +4,7 @@ import { TransitionGroup, Transition } from 'react-transition-group'
 export default class Nav extends Component {
 
   isScrollTopWithinSection(section) {
-    const offset = 5
+    const offset = 144
     if(this.props.sections[section]
     && this.props.scrollTop > this.props.sections[section].offsetTop - offset
     && this.props.scrollTop < (this.props.sections[section].offsetTop + this.props.sections[section].offsetHeight) - offset) {
@@ -60,11 +60,11 @@ export default class Nav extends Component {
                 width: '100%'
               }}>
                 <img src={ require('../assets/img/logo.svg') } alt="" id="logo"/>
-                <a className={'about' + (this.isScrollTopWithinSection('about') ? ' current' : '')} href="#about">About</a>
-                <a className={'skillset' + (this.isScrollTopWithinSection('skillset') ? ' current' : '')} href="#skillset">Skillset</a>
-                <a className={'timeline' + (this.isScrollTopWithinSection('timeline') ? ' current' : '')} href="#timeline">Timeline</a>
-                <a className={'work' + (this.isScrollTopWithinSection('work') ? ' current' : '')} href="#work">Work</a>
-                <a className={'connect' + (this.isScrollTopWithinSection('connect') ? ' current' : '')} href="#connect">Connect</a>
+                <a data-scroll className={'about' + (this.isScrollTopWithinSection('about') ? ' current' : '')} href="#about">About</a>
+                <a data-scroll className={'skillset' + (this.isScrollTopWithinSection('skillset') ? ' current' : '')} href="#skillset">Skillset</a>
+                <a data-scroll className={'timeline' + (this.isScrollTopWithinSection('timeline') ? ' current' : '')} href="#timeline">Timeline</a>
+                <a data-scroll className={'work' + (this.isScrollTopWithinSection('work') ? ' current' : '')} href="#work">Work</a>
+                <a data-scroll className={'connect' + (this.isScrollTopWithinSection('connect') ? ' current' : '')} href="#connect">Connect</a>
                 <a href="/assets/resume-2018.pdf" target="_blank" className="resume">Download Resume</a>
               </div>
             </nav>

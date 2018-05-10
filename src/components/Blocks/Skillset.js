@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Skillset extends Component {
   render() {
     return (
-      <div className="block skillset">
+      <div id="skillset" className="block skillset">
     		<div className="wrap">
           <h3 className="title">Skillset</h3>
           <h4>I specialize in the following.</h4>

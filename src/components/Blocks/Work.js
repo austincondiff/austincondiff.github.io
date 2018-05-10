@@ -17,7 +17,6 @@ export default class Work extends Component {
         'Authorization': `Bearer ${accessToken}`
       }
     }).then(data => {
-      console.log(data.data)
       if (data.data.length > 0) {
         this.setState({shots: data.data})
       }

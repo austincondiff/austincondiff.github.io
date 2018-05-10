@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import moment from 'moment'
 
 export default class Repositories extends Component {
   constructor() {
@@ -13,7 +14,6 @@ export default class Repositories extends Component {
       dataType: 'json',
       type: 'GET'
     }).then(data => {
-      console.log(data.data)
       if (data.data.length > 0) {
         this.setState({repositories: data.data})
       }
@@ -36,6 +36,10 @@ export default class Repositories extends Component {
                 <div>
                   <h4><a href={repo.html_url} target="_blank">{repo.name}</a></h4>
                   <p>{repo.description}</p>
+                  <div className="repo-meta">
+                    { repo.language && <div className="repo-lang">{repo.language}</div> }
+                    { repo.updated_at && <div className="repo-updated-at">Updated {moment(repo.updated_at).format('LL')}</div> }
+                  </div>
                 </div>
               </li>
             )}

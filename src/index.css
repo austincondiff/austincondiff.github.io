@@ -417,7 +417,7 @@ ul.theory li em {
 }
 
 .block.skillset ul.specialties {
-	margin-bottom: 32px;
+	margin-bottom: 48px;
 }
 
 .block.skillset h4 {
@@ -473,6 +473,21 @@ ul.theory li em {
 .block.work.repos ul li > div h4 a {
 	text-decoration: none;
 	color: #44c1c5;
+}
+
+.block.work.repos ul li > div p {
+	margin-bottom: 16px;
+}
+
+.block.work.repos ul li > div .repo-meta {
+	display: flex;
+	font-size: 12px
+}
+
+.block.work.repos ul li > div .repo-meta .repo-lang {
+	margin-right: 16px;
+}
+.block.work.repos ul li > div .repo-meta .repo-updated-at {
 }
 
 .block.work ul li > a {
