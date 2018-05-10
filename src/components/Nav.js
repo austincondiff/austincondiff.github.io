@@ -28,24 +28,24 @@ export default class Nav extends Component {
         <Transition timeout={ 500 } appear>
           { transitionState =>
             <nav className={'block' + (this.props.scrollTop > 0 ? ' scrolled' : '')}>
-              <div style={{opacity: (this.props.scrollTop > 0 ? 1 : 1), transition: '.5s'}}>
-                <div style={{
+              <div className="page-border" style={{opacity: (this.props.scrollTop > 0 ? 1 : 1), transition: '.5s'}}>
+                <div className="top" style={{
                   ...styles.borderSide,
                   top: 0, right: 0, left: 0,
                   height: transitionState === 'entered' ? (this.props.scrollTop > 0 ? 96 : 20) : 0,
                   transition: transitionState === 'entered' ? '400ms' : '1000ms'
                 }}></div>
-                <div style={{
+                <div className="right" style={{
                   ...styles.borderSide,
                   top: 0, right: 0, bottom: 0,
                   width: transitionState === 'entered' ? 20 : 0
                 }}></div>
-                <div style={{
+                <div className="bottom" style={{
                   ...styles.borderSide,
                   right: 0, bottom: 0, left: 0,
                   height: transitionState === 'entered' ? 20 : 0,
                 }}></div>
-                <div style={{
+                <div className="left" style={{
                   ...styles.borderSide,
                   top: 0, bottom: 0, left: 0,
                   width: transitionState === 'entered' ? 20 : 0

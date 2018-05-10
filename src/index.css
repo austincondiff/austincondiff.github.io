@@ -223,15 +223,17 @@ header .title {
 
 header .social {
 	margin: 64px 0;
+	display: flex;
+  justify-content: center;
 }
+
+header .social li {}
 
 header .social a {
 	display: inline-block;
 	background: #50d0bf;
 	width: 45px;
 	height: 45px;
-	/* font-size: 0px;
-	text-indent: -99999px; */
   color: white;
   border-radius: 100px;
   margin: 0 8px;
@@ -1044,6 +1046,21 @@ footer .wrap {
 
 @media (max-width: 1000px) {
 
+	nav .page-border .top {
+		height: 0 !important;
+	}
+	nav.scrolled .page-border .top {
+		height: 64px !important;
+	}
+	nav.scrolled .wrap {
+		padding: 8px 0;
+	}
+	nav .page-border .right,
+	nav .page-border .bottom,
+	nav .page-border .left {
+		display: none
+	}
+
 	.wrap {
 		width: 100% !important;
 		padding-left: 20px;
@@ -1131,22 +1148,26 @@ footer .wrap {
 	}
 
 	header .wrap {
-    padding: 60px 0 30px 0;
+    padding: 0 0 30px 0;
 	}
 
 	header .photo {
-		width: 120px;
-		height: 120px;
-    margin: 0px auto 20px auto;
+		width: 160px;
+		height: 160px;
+    margin: 0px auto 40px auto;
 }
 
+	header .social {
+	  margin: 40px 0;
+	}
+
 	header .name {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 9px;
 	}
 
 	header .title {
-    font-size: 12.5px;
+    font-size: 14.5px;
 	}
 
 	ul.theory li {
@@ -1284,7 +1305,7 @@ footer .wrap {
 		background: #50D0BF;
 		color: #FFF;
 		font-size: 18px;
-		padding: 12px 25px;
+		padding: 16px 25px;
 		margin: 0;
 		width: 100%;
 	}
@@ -1302,6 +1323,12 @@ footer .wrap {
 		margin: 0 8px;
 	}
 
+	nav a.about { display: none }
+
+	nav .wrap {
+	  padding: 20px 0;
+	}
+
 	.mission-statement h3, ul.theory {
 		font-size: 18px;
 		line-height: 1.5;
@@ -1317,11 +1344,21 @@ footer .wrap {
     background-size: cover;
 	}
 
+	header .social {
+		flex-wrap: wrap;
+		padding: 0 10%;
+	}
+
+	header .social li {
+		flex: 1 0 25%;
+		padding: 5% 0;
+	}
+
 	header .social a {
 		/* display: inline-block; */
 		background: #50D0BF;
-		width: 35px;
-		height: 35px;
+		width: 48px;
+		height: 48px;
 		color: white;
 		text-decoration: none;
 		-moz-border-radius: 100px;
@@ -1350,8 +1387,37 @@ footer .wrap {
 		text-decoration: none;
 	} */
 
+	.block.mission-statement .wrap,
+	.block.skillset .wrap {
+		padding: 15% 10%;
+	}
+
+	.block.about .wrap {
+	  padding: 15% 5%;
+	}
+
+	.block.skillset ul li {
+		width: 50%;
+	}
+
+	.block.work.repos ul li {
+		width: 100%;
+	}
+
+	form.contact ul li.name,
+	form.contact ul li.email,
+	form.contact ul li.message {
+		width: 100%;
+	}
+
+	form.contact ul li.name input,
+	form.contact ul li.email input,
+	form.contact ul li.message textarea {
+		padding: 16px 16px
+	}
+
 	.block.timeline .wrap {
-    padding-bottom: 0;
+    padding-bottom: 40px;
 	}
 
 	ul.timeline {
@@ -1393,14 +1459,12 @@ footer .wrap {
 
 	.find-me .social a {
 		display: inline-block;
-		width: 32px;
+		width: calc(25% - 26px);
 		height: 32px;
-		/* font-size: 0px;
-		text-indent: -99999px; */
 		-moz-border-radius: 100px;
 		-webkit-border-radius: 100px;
 		border-radius: 100px;
-		margin: 0 5px;
+		margin: 10px 5px;
 		text-decoration: none;
 	}
 

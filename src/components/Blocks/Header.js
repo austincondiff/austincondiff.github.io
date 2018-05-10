@@ -47,11 +47,11 @@ export default class Header extends Component {
                 <div className="photo"></div>
                 <h1 className="name">Austin <em>Condiff</em></h1>
                 <h2 className="title">UX/UI Designer &amp; Developer</h2>
-                <div className="social">
+                <ul className="social">
                   {social.map((s) =>
-                    <a key={s.id} target="_blank" href={s.url}><Icon type={s.id} /></a>
+                    <li key={s.id}><a target="_blank" href={s.url}><Icon type={s.id} /></a></li>
                   )}
-          			</div>
+          			</ul>
               </div>
               <i className="arrow" style={{
                 opacity: transitionState === 'entered' ? 1 : 0,
