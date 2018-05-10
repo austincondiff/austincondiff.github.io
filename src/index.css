@@ -1067,6 +1067,9 @@ footer .wrap {
 	nav.scrolled .page-border .top {
 		height: 64px !important;
 	}
+	nav .wrap {
+		padding: 20px 0
+	}
 	nav.scrolled .wrap {
 		padding: 8px 0;
 	}
@@ -1076,10 +1079,23 @@ footer .wrap {
 		display: none
 	}
 
+	nav.block a.resume span { display: none }
+
+	header {
+		height: auto;
+	}
+
+	#logo {
+		display: none;
+	}
+
 	.wrap {
 		width: 100% !important;
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+	.block.mission-statement .wrap {
+	  padding: 80px 20px;
 	}
 	ul.timeline li:nth-child(odd) {
 		margin-left: calc(-100% - 20px);
@@ -1089,7 +1105,7 @@ footer .wrap {
 		margin-left: 50%;
 	}
 	ul.timeline li:last-child {
-		width: 130px;
+		width: 200px;
 		text-align: center;
 	}
 

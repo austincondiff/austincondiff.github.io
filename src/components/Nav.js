@@ -65,7 +65,7 @@ export default class Nav extends Component {
                 <a data-scroll className={'timeline' + (this.isScrollTopWithinSection('timeline') ? ' current' : '')} href="#timeline">Timeline</a>
                 <a data-scroll className={'work' + (this.isScrollTopWithinSection('work') ? ' current' : '')} href="#work">Work</a>
                 <a data-scroll className={'connect' + (this.isScrollTopWithinSection('connect') ? ' current' : '')} href="#connect">Connect</a>
-                <a href="/assets/resume-2018.pdf" target="_blank" className="resume">Download Resume</a>
+                <a href="/assets/resume-2018.pdf" target="_blank" className="resume"><span>Download</span> Resume</a>
               </div>
             </nav>
           }
