@@ -1159,6 +1159,8 @@ footer .wrap {
 		display: inline-block;
 		font-size: 16px;
 	}
+
+	nav a.resume span { display: none; }
 }
 
 @media (max-width: 768px) {
