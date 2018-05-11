@@ -64,7 +64,7 @@ export default class Timeline extends Component {
         company: 'Verizon',
         title: 'Creative UI Engineer',
         date: '2017 - Present',
-        description: 'At Verizon, I created a design system, developed a story map (or user flow) based on user input, and arechetected a frontend project from the ground up based on ReactJS for hardware operations.'
+        description: 'At Verizon, I created a design system, developed a story map (or user flow) based on user input, and architected a frontend project from the ground up based on ReactJS for hardware operations.'
       },
     ]
     return (
