@@ -42535,7 +42535,7 @@ var Timeline = function (_Component) {
         company: 'OneGreatFamily',
         title: 'UX/UI Designer and Javascript Front-end Engineer',
         date: '2012',
-        description: 'At OneGreat Family I worked on a project called KiN2.me. KiN2 is the groundbreaking new application that shows you how you\'re related to famous celebrities, historical figures, and your facebook friends. Working at KiN2.me, I learned how to better program in Javascript and I have also become very proficient in jQuery. I also designed the website\'s UX/UI using HTML5 and CSS3 after designing Photoshop mockups. Here I was able to improve the overall site look and feel.'
+        description: 'At OneGreat Family, I worked on a project called KiN2.me. KiN2 is the groundbreaking new application that shows you how you\'re related to famous celebrities, historical figures, and your facebook friends. Working at KiN2.me, I learned how to better program in Javascript and I have also become very proficient in jQuery. I also designed the website\'s UX/UI using HTML5 and CSS3 after designing Photoshop mockups. Here I was able to improve the overall site look and feel.'
       }, {
         id: 'ancestry',
         company: 'Ancestry.com',
@@ -42553,13 +42553,13 @@ var Timeline = function (_Component) {
         company: 'SolutionStream',
         title: 'UI/UX Design Specialist',
         date: '2014',
-        description: 'During my time at SolutionStream I worked on many different projects for their clients. I got the opportunity to use a wide array of technologies and design styles. Depending on the project was used as a UX/UI design and a front-end dev resource.'
+        description: 'During my time at SolutionStream, I worked on many different projects for their clients. I got the opportunity to use a wide array of technologies and design styles. Depending on the project was used as a UX/UI design and a front-end dev resource.'
       }, {
         id: 'rss',
         company: 'RSS.com',
-        title: 'Lead UI/UX Designer &amp; Developer',
+        title: 'Co-founder - UI/UX Designer & Developer',
         date: '2015',
-        description: 'At RSS.com I  developed ideas for RSS.com in an effort to revive an aging technology, create a reimagined reader experience, help publishers to obtain a styled, user-friendly RSS feed page, and educate the public about the benefits of the technology. I designed wireframes and mockups then later implemented those mockups in an Angular front end.'
+        description: 'At RSS.com, I developed ideas for RSS.com in an effort to revive an aging technology, create a reimagined reader experience, help publishers to obtain a styled, user-friendly RSS feed page, and educate the public about the benefits of the technology. I designed wireframes and mockups then later implemented those mockups in an Angular front end.'
       }, {
         id: 'intuit',
         company: 'Intuit',
