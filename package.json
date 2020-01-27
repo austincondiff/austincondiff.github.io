@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/austincondiff/austincondiff.github.io#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-animate-on-scroll": "^2.1.4",
