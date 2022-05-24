@@ -46,7 +46,7 @@ export default class Header extends Component {
               }}>
                 <div className="photo"></div>
                 <h1 className="name">Austin <em>Condiff</em></h1>
-                <h2 className="title">UX/UI Designer &amp; Developer</h2>
+                <h2 className="title">Creative UI Developer</h2>
                 <ul className="social">
                   {social.map((s) =>
                     <li key={s.id}><a target="_blank" href={s.url}><Icon type={s.id} /></a></li>
