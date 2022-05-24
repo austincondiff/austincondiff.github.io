@@ -25318,25 +25318,29 @@ exports.default = [{
   color: '#24292e'
 }, {
   id: 'linkedin',
-  url: 'http://www.linkedin.com/pub/austin-condiff/19/966/b6b',
+  url: 'https://www.linkedin.com/in/austincondiff/',
   message: 'Connect with me on LinkedIn.',
   color: '#0077b5'
-}, {
-  id: 'facebook',
-  url: 'https://www.facebook.com/acondiff',
-  message: 'See what I\'m up to on Facebook.',
-  color: '#4c66a4'
-}, {
+},
+//   {
+//     id: 'facebook',
+//     url: 'https://www.facebook.com/acondiff',
+//     message: 'See what I\'m up to on Facebook.',
+//     color: '#4c66a4'
+//   },
+{
   id: 'instagram',
   url: 'http://instagram.com/austincondiff',
   message: 'Check out my recent photos on Instagram.',
   color: '#d93175'
-}, {
-  id: 'pinterest',
-  url: 'https://www.pinterest.com/austincondiff/',
-  message: 'Find out what I\'ve recently pinned on Pinterest.',
-  color: '#bd081c'
-}, {
+},
+//   {
+//     id: 'pinterest',
+//     url: 'https://www.pinterest.com/austincondiff/',
+//     message: 'Find out what I\'ve recently pinned on Pinterest.',
+//     color: '#bd081c'
+//   },
+{
   id: 'spotify',
   url: 'https://open.spotify.com/user/acondiff',
   message: 'Jam with me on Spotify.',
@@ -25453,7 +25457,7 @@ var Header = function (_Component) {
                 _react2.default.createElement(
                   'h2',
                   { className: 'title' },
-                  'UX/UI Designer & Developer'
+                  'Creative UI Developer'
                 ),
                 _react2.default.createElement(
                   'ul',
