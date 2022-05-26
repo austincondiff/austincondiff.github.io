@@ -23,7 +23,7 @@ export default class FindMe extends Component {
 
     return (
       <div className="block find-me" id="find-me" style={{ backgroundColor: currentSocial && currentSocial.color }}>
-    		<div className="wrap">
+    		<div className="wrap center-text">
     			<div className="social">
             {social.map((s) =>
               <a key={s.id} target="_blank" href={s.url} onMouseEnter={() => {this.handleMouseEnter(s)}} onMouseLeave={()=>{this.handleMouseLeave()}}><Icon type={s.id} /></a>

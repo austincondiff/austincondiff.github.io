@@ -14,7 +14,8 @@ export default class Header extends Component {
               background: 'linear-gradient(135deg, #3A3C47 0%, #6B6F81 100%)'
             }}>
               <div style={{
-                background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+                // background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+                background: '#066FFF',
                 opacity: transitionState === 'entered' ? 1 : 0,
                 transition: '1200ms cubic-bezier(0.390, 0.575, 0.565, 1.000)',
                 position: 'absolute',
@@ -37,7 +38,7 @@ export default class Header extends Component {
               }}>
                 <div className="bg-img" style={{transform: 'translateY(' + this.props.scrollTop/2 + 'px)'}}></div>
               </div>
-              <div className="wrap" style={{
+              <div className="wrap center-text" style={{
                 transform: transitionState === 'entered' ? 'scale(1)' : 'scale(1.5)',
                 opacity: transitionState === 'entered' ? 1 : 0,
                 // filter: transitionState === 'entered' ? 'blur(0)' :  'blur(8px)',

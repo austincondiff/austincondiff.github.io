@@ -17,7 +17,8 @@ export default class Nav extends Component {
     const styles = {
       borderSide: {
         position: 'fixed',
-        background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+        // background: 'linear-gradient(135deg, rgba(68,193,197,1) 0%, rgba(183,214,98,1) 100%)',
+        background: '#066FFF',
         backgroundAttachment: 'fixed',
         transition: '1200ms',
         transitionDelay: '200ms'

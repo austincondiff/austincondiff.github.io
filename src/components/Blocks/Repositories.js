@@ -29,7 +29,7 @@ export default class Repositories extends Component {
     return (
       <div className="block repos work">
     		<div className="grid" style={{padding: '5%'}}>
-          <h4>Some of my Github repositories</h4>
+          <h3 class="title">GitHub Repositories</h3>
           <ul>
             {repositories && repositories.map(repo =>
               <li key={repo.id}>
