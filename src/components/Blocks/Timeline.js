@@ -63,8 +63,15 @@ export default class Timeline extends Component {
         id: 'verizon',
         company: 'Verizon',
         title: 'Creative UI Engineer',
-        date: '2017 - Present',
+        date: '2017',
         description: 'At Verizon, I created a design system, developed a story map (or user flow) based on user input, and architected a frontend project from the ground up based on ReactJS for hardware operations.'
+      },
+      {
+        id: 'churchofjesuschrist',
+        company: 'The Church Of Jesus Christ of Latter-day Saints',
+        title: 'Senior Front-end Developer',
+        date: '2018 - Present',
+        description: 'At the Church of Jesus Christ of Latter-day Saints, my team and I built a large-scale financial application with React and Next.js that is used by an internal accounting team to manage donations using the latest technologies and development practices.'
       },
     ]
     return (
@@ -74,9 +81,13 @@ export default class Timeline extends Component {
     			<ul className="timeline">
             {jobs.map(job =>
               <li key={job.id} className={job.id}>
-      					<h4 className="company">{job.company}</h4>
-      					<h5 className="job-title">{job.title}</h5>
-      					<div className="date">{job.date}</div>
+                <div className="header">
+                  <div className="header-title">
+                    <h4 className="company">{job.company}</h4>
+                    <h5 className="job-title">{job.title}</h5>                  
+                  </div>
+                  <div className="date">{job.date}</div>                  
+                </div>
       					<div className="desc">
       						<p>{job.description}</p>
       					</div>
