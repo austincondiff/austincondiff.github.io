@@ -1094,9 +1094,9 @@ form.contact textarea {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 400;
-  padding: 16px 24px;
+  padding: 16px 20px;
   font-family: 'Roboto', sans-serif;
-  border-radius: 25px;
+  border-radius: 12px;
   outline: none;
   margin: 0;
   width: 100%;
