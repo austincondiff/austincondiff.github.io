@@ -4,7 +4,7 @@ import skills from '../../data/skills'
 const Skillset = () => {
   return (
     <div id="skillset" className="block skillset">
-      <div className="wrap">
+      <div className="wrap full-width">
         <h3 className="title">Skillset</h3>
         <p className="subtitle">
           The following lists skills that I have become proficient in over the course of my career.

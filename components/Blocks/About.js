@@ -4,7 +4,7 @@ import React from 'react'
 const About = () => {
   return (
     <div className="block about">
-      <div className="wrap center-text">
+      <div className="wrap full-width center-text">
         <ul className="theory">
           <li>
             <div className="img-circle">

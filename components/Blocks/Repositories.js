@@ -21,7 +21,7 @@ const Repositories = () => {
 
   return repos ? (
     <div className="block repos work">
-      <div className="grid" style={{ padding: '5%' }}>
+      <div className="wrap full-width">
         <h3 className="title">GitHub Repositories</h3>
         <p className="subtitle">Check out the repositories I have created or contribute to on GitHub.</p>
         <ul>

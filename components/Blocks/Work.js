@@ -24,7 +24,7 @@ const Work = () => {
 
   return (
     <div className="block work">
-      <div className="grid">
+      <div className="wrap full-width">
         <h3 className="title">Recent Work</h3>
         <p className="subtitle">
           Here are a few things I have been up to lately. Please note that I am only able to show work I have either

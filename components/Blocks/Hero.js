@@ -20,7 +20,7 @@ const Hero = () => (
             <div className="wrap center-text">
               <div className="hero-layout">
                 <div className="hero-content">
-                  <div class="hero-title">
+                  <div className="hero-title">
                     <div className="overline">
                       Hi, I'm <h1>Austin Condiff</h1>
                     </div>
