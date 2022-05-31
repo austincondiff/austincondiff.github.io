@@ -1,0 +1,8 @@
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M8,40 L22,40 L22,40 L22,56 L8,56 C6.8954305,56 6,55.1045695 6,54 L6,42 C6,40.8954305 6.8954305,40 8,40 Z" id="Rectangle" fill="#FF4E6B" opacity="0.434151786"></path>
+    <rect id="Rectangle-Copy-17" fill="#FF4E6B" opacity="0.745349702" x="22" y="40" width="16" height="16"></rect>
+    <path d="M38,40 L54,40 L54,54 C54,55.1045695 53.1045695,56 52,56 L38,56 L38,56 L38,40 Z" id="Rectangle-Copy-18" fill="#FF4E6B"></path>
+    <rect id="Rectangle-Copy-19" fill="#FF4E6B" opacity="0.745349702" x="38" y="24" width="16" height="16"></rect>
+    <path d="M40,8 L52,8 C53.1045695,8 54,8.8954305 54,10 L54,24 L54,24 L38,24 L38,10 C38,8.8954305 38.8954305,8 40,8 Z" id="Rectangle-Copy-21" fill="#FF4E6B" opacity="0.434151786"></path>
+    <path d="M24,24 L38,24 L38,24 L38,40 L22,40 L22,26 C22,24.8954305 22.8954305,24 24,24 Z" id="Rectangle-Copy-20" fill="#FF4E6B" opacity="0.434151786"></path>
+</svg>
