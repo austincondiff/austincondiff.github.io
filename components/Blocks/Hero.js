@@ -33,7 +33,9 @@ const Hero = () => (
                     experiences for small businesses and Fortune 500 companies using the best design techniques and the
                     latest front-end technologies.
                   </p>
-                  <button className="button primary">Work With Me</button>
+                  <a className="button primary" href="#connect">
+                    Work With Me
+                  </a>
                 </div>
                 <div className="hero-image">
                   <div className="photo"></div>

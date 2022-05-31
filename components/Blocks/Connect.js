@@ -93,7 +93,13 @@ const Connect = () => {
                 ></textarea>
               </li>
               <li className="buttons submit">
-                <input id="saveForm" name="saveForm" className="btTxt submit" type="submit" value="Submit" />
+                <input
+                  id="saveForm"
+                  name="saveForm"
+                  className="btTxt submit button primary"
+                  type="submit"
+                  value="Send"
+                />
               </li>
             </ul>
           </form>

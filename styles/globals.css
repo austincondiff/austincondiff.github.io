@@ -973,6 +973,10 @@ ul.timeline li.now {
   display: inline-block;
 }
 
+ul.timeline li.now:after {
+  background: #fed500;
+}
+
 ul.timeline li:last-child {
   position: absolute;
   left: 0;
@@ -1048,16 +1052,8 @@ form.contact ul li.name,
 form.contact ul li.email {
   width: 50%;
   display: inline-block;
-  /* margin-bottom: 14px; */
   padding: 8px;
 }
-
-/* form.contact ul li.name {
-	padding-right: 7px;
-}
-form.contact ul li.email {
-	padding-left: 7px;
-} */
 
 form.contact ul li.message {
   padding: 8px;
@@ -1067,31 +1063,6 @@ form.contact ul li.submit {
   padding: 8px;
   text-align: right;
   -webkit-appearance: none;
-}
-
-form.contact ul li.submit input.submit {
-  background: #066fff;
-  font-size: 14px;
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-family: 'Brandon Grotesque' sans-serif;
-  letter-spacing: 0.1em;
-  padding: 15px 25px;
-  border-radius: 24px;
-  outline: none;
-  margin: 0;
-  box-sizing: border-box;
-  transition: 0.25s;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-
-form.contact ul li.submit input.submit:hover {
-  background: #3288ff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 form.contact label {
@@ -1173,16 +1144,7 @@ header {
 }
 
 #hero-bg-img {
-  /* background-image: url(/assets/img/bg-hero.jpg);
-  background-position: center;
-  background-size: cover; */
-  /* position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; */
   opacity: 0.25;
-  -webkit-filter: saturate(0.1) contrast(1.25);
   filter: saturate(0.1) contrast(1.25);
 }
 
@@ -1192,22 +1154,6 @@ header .wrap {
   max-width: 1220px;
   width: 100%;
 }
-
-/* header .social a:after {
-	color: white;
-	font-family: 'entypo';
-	display: block;
-	width: 45px;
-	height: 45px;
-	position: absolute;
-	top:0;
-	left:0;
-	text-align: center;
-	font-size: 21px;
-	text-indent: 0;
-	line-height: 45px;
-	text-decoration: none;
-} */
 
 .find-me {
   -webkit-transition: 0.25s;
@@ -1223,14 +1169,6 @@ header .wrap {
   justify-content: center;
 }
 
-/* .find-me.twitter { background: #00ACEE; }
-.find-me.dribbble { background: #ea4c89; }
-.find-me.linkedin { background: #0077b5; }
-.find-me.gplus { background: #D34836; }
-.find-me.facebook { background: #4c66a4; }
-.find-me.instagram { background: #517fa4; }
-.find-me.rdio { background: #008fd5; } */
-
 .find-me .find-txt {
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -1242,8 +1180,6 @@ header .wrap {
   display: inline-block;
   width: 60px;
   height: 60px;
-  /* font-size: 0px;
-	text-indent: -99999px; */
   border-radius: 100px;
   padding: 0 8px;
   text-decoration: none;
@@ -1256,57 +1192,9 @@ header .wrap {
   box-sizing: content-box;
 }
 
-/* .find-me .social a:after {
-	color: rgba(0, 0, 0, 0.3);
-	font-family: 'entypo';
-	display: block;
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top:0;
-	left:0;
-	text-align: center;
-	font-size: 32px;
-	text-indent: 0;
-	line-height: 60px;
-	text-decoration: none;
-	-webkit-transition: .25s;
-	-moz-transition: .25s;
-	-ms-transition: .25s;
-	transition: .25s;
-} */
-
 .find-me .social a:hover {
   color: white;
 }
-
-/* .social a.twitter:after {
-	content: '\f309';
-}
-
-.social a.dribbble:after {
-	content: '\f31b';
-}
-
-.social a.linkedin:after {
-	content: '\f318';
-}
-
-.social a.gplus:after {
-	content: '\f30f';
-}
-
-.social a.facebook:after {
-	content: '\f30c';
-}
-
-.social a.instagram:after {
-	content: '\f32d';
-}
-
-.social a.rdio:after {
-	content: '\f324';
-} */
 
 footer {
   background: linear-gradient(135deg, rgba(68, 193, 197, 1) 0%, rgba(183, 214, 98, 1) 100%);
@@ -1333,12 +1221,34 @@ footer .wrap {
   padding: 12px 20px;
   transition: 0.25s;
   border-radius: 24px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .button.primary {
+  background: #066fff;
+  border-color: #066fff;
+  color: white;
+}
+
+.button.primary:hover {
+  background: #3288ff;
+  border-color: #3288ff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+header .button.primary {
   color: black;
   background-color: #fed500;
   border-color: #fed500;
+}
+
+header .button.primary:hover {
+  color: black;
+  background-color: #ffe24b;
+  border-color: #ffe24b;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.075), 0 4px 8px rgba(0, 0, 0, 0.33);
 }
 
 #resume-button {
