@@ -136,6 +136,10 @@ strong {
 
 /*-------------------------------------*/
 
+:root {
+  --app-height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -332,13 +336,9 @@ header {
 header .photo {
   position: relative;
   background-color: #fed500;
-  /* border: 4px solid white; */
-  width: 175px;
-  height: 175px;
-  margin: 0px auto 30px auto;
+  width: 256px;
+  height: 256px;
   border-radius: 200px;
-  /* background: url(/assets/img/profile.jpg) no-repeat;
-  background-size: cover; */
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 header .photo:after {
@@ -354,16 +354,52 @@ header .photo:after {
   background-position: bottom;
 }
 
-header .name {
+header .hero-layout {
+  display: flex;
+  gap: 48px;
+}
+
+header .hero-content {
+  text-align: left;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+header .hero-content p {
+  font-size: 16px;
+}
+
+header .hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+header .hero-profile-photo {
+}
+
+header .overline {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.0885em;
+  text-transform: uppercase;
+}
+
+header .overline h1 {
+  color: #fed500;
+  display: inline;
+}
+
+header .lead {
   font-size: 45px;
   font-weight: 300;
-  margin-bottom: 15px;
-  text-transform: lowercase;
 }
-header .name em {
-  font-weight: 600;
+header .lead em {
+  font-weight: 700;
   font-style: normal;
-  margin-left: -0.25em;
+  display: inline-block;
 }
 header .title {
   font-size: 16px;
@@ -979,10 +1015,17 @@ ul.timeline li .date {
 }
 
 .block.connect p.connect-txt,
-.block.find-me p.find-txt,
 .block p.big-txt {
   font-size: 16px;
   font-weight: 300;
+}
+.block.find-me p.find-txt {
+  font-size: 28px;
+  line-height: 1.25;
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: -0.025em;
 }
 
 .block.connect p.connect-txt.error {
@@ -1145,7 +1188,9 @@ header {
 
 header .wrap {
   position: relative;
-  padding: 80px 0 50px 0;
+  padding: 80px 150px 50px 150px;
+  max-width: 1220px;
+  width: 100%;
 }
 
 /* header .social a:after {
@@ -1203,7 +1248,7 @@ header .wrap {
   padding: 0 8px;
   text-decoration: none;
   font-size: 32px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1277,23 +1322,32 @@ footer .wrap {
   padding: 20px 0;
 }
 
-#resume-button {
+.button {
   font-size: 12px;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: 'Brandon Grotesque' sans-serif;
   letter-spacing: 0.15em;
   border: 2px solid white;
-  position: fixed;
   padding: 12px 20px;
-  right: 52px;
-  top: 48px;
   transition: 0.25s;
   border-radius: 24px;
+}
+
+.button.primary {
+  color: black;
+  background-color: #fed500;
+  border-color: #fed500;
+}
+
+#resume-button {
+  position: fixed;
+  right: 52px;
+  top: 48px;
   z-index: 501;
 }
+
 #resume-button.scrolled {
   top: 28px;
 }
@@ -1311,6 +1365,31 @@ footer .wrap {
   border: 2px solid white;
   background: #f4f4f4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1220px) {
+  header .hero-layout {
+    gap: 40px;
+  }
+  header .hero-content {
+    gap: 24px;
+  }
+  header .hero-title {
+    gap: 6px;
+  }
+  header .overline {
+    font-size: 16px;
+  }
+  header .lead {
+    font-size: 36px;
+  }
+  header .hero-content p {
+    font-size: 14px;
+  }
+  header .photo {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -1436,7 +1515,7 @@ footer .wrap {
   }
 
   header .wrap {
-    padding: 30px 0;
+    padding: 6%;
   }
 
   header .social {
@@ -1536,27 +1615,39 @@ footer .wrap {
 }
 
 @media (max-width: 600px) {
+  header {
+    height: calc(var(--app-height) - 49px);
+  }
   header .bg-img {
     top: 0 !important;
   }
 
+  header .wrap {
+    padding: 6%;
+  }
+
+  header .hero-layout {
+    gap: 40px;
+    flex-direction: column-reverse;
+  }
+  header .hero-content {
+    gap: 24px;
+  }
+  header .hero-title {
+    gap: 6px;
+  }
+  header .overline {
+    font-size: 14px;
+  }
+  header .lead {
+    font-size: 32px;
+  }
+  header .hero-content p {
+    font-size: 12px;
+  }
   header .photo {
-    width: 160px;
-    height: 160px;
-    margin: 0px auto 40px auto;
-  }
-
-  header .social {
-    margin: 20px 0 40px 0;
-  }
-
-  header .name {
-    font-size: 42px;
-    margin-bottom: 9px;
-  }
-
-  header .title {
-    font-size: 14.5px;
+    width: 150px;
+    height: 150px;
   }
 
   ul.theory li {
@@ -1683,7 +1774,6 @@ footer .wrap {
   }
 
   .block.connect p.connect-txt,
-  .block.find-me p.find-txt,
   .block p.big-txt {
     font-size: 21px;
     font-weight: 300;
@@ -1744,6 +1834,34 @@ footer .wrap {
   .block.find-me p.find-txt,
   .block p.big-txt {
     font-size: 18px;
+  }
+
+  header .hero-layout {
+    gap: 40px;
+    flex-direction: column-reverse;
+  }
+  header .hero-content {
+    gap: 24px;
+  }
+  header .hero-title {
+    gap: 6px;
+  }
+  header .overline {
+    font-size: 14px;
+  }
+  header .lead {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+  header .lead em {
+    display: block;
+  }
+  header .hero-content p {
+    font-size: 12px;
+  }
+  header .photo {
+    width: 150px;
+    height: 150px;
   }
 
   header .social {

@@ -24,16 +24,6 @@ const Nav = ({ scrollTop, sections }) => {
     )
 
     return !!(sectionViewportHeight > viewportHeight / 2)
-
-    // if (
-    //   sections[section] &&
-    //   Math.ceil(scrollTop) >= Math.floor(sections[section].offsetTop) &&
-    //   Math.ceil(scrollTop) <
-    //     Math.floor(sections[section].offsetTop) + Math.floor(sections[section].offsetHeight) - offset
-    // ) {
-    //   return true
-    // }
-    // return false
   }
 
   useEffect(() => {
@@ -99,7 +89,7 @@ const Nav = ({ scrollTop, sections }) => {
         href="/assets/files/resume-2022.pdf"
         target="_blank"
         id="resume-button"
-        className={scrollTop > 0 ? ' scrolled' : ''}
+        className={`button ${scrollTop > 0 ? ' scrolled' : ''}`}
       >
         <span>Download</span> Resume
       </a>
