@@ -1669,6 +1669,7 @@ header .button.primary:hover {
 
   h3.title {
     font-size: 28px;
+    margin-top: 8px;
     margin-bottom: 24px;
   }
 
