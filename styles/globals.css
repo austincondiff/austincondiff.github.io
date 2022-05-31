@@ -1522,17 +1522,9 @@ header .button.primary:hover {
     height: 150px;
   }
 
-  ul.theory {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
   ul.theory li {
     font-size: 14px;
     vertical-align: top;
-    width: 50%;
-    margin: 0;
   }
 
   ul.theory li img {
