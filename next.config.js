@@ -2,7 +2,7 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     loader: 'imgix',
-    path: 'https://noop/',
+    path: 'https://www.austincondiff.com/',
   },
 }
 
