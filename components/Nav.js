@@ -95,7 +95,12 @@ const Nav = ({ scrollTop, sections }) => {
           </svg>
         </div>
       </nav>
-      <a href="/assets/resume-2018.pdf" target="_blank" id="resume-button" className={scrollTop > 0 ? ' scrolled' : ''}>
+      <a
+        href="/assets/files/resume-2022.pdf"
+        target="_blank"
+        id="resume-button"
+        className={scrollTop > 0 ? ' scrolled' : ''}
+      >
         <span>Download</span> Resume
       </a>
     </>
