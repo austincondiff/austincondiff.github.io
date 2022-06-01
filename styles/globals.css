@@ -355,7 +355,7 @@ header .photo:after {
 
 header .hero-layout {
   display: flex;
-  gap: 48px;
+  gap: 6vw;
 }
 
 header .hero-content {
@@ -1119,8 +1119,8 @@ header {
 
 header .wrap {
   position: relative;
-  padding: 80px 150px 50px 150px;
-  max-width: 1220px;
+  padding: 0 15%;
+  max-width: 100%;
   width: 100%;
 }
 
