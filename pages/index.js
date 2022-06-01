@@ -29,6 +29,8 @@ export default function Home() {
           content="I design and develop beautiful yet functional interactive user experiences that provide both customer value and product success."
         ></meta>
         <meta property="og:url" content="http://austincondiff.com"></meta>
+        <meta name="twitter:image" content="https://austincondiff.com/assets/img/img-preview.jpg"></meta>
+        <meta name="twitter:image:src" content="https://austincondiff.com/assets/img/img-preview.jpg"></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:site" content="@austincondiff"></meta>
         <meta name="twitter:creator" content="@austincondiff"></meta>
@@ -37,7 +39,6 @@ export default function Home() {
           name="twitter:description"
           content="I design and develop beautiful yet functional interactive user experiences that provide both customer value and product success."
         ></meta>
-        <meta name="twitter:image" content="https://austincondiff.com/assets/img/img-preview.jpg"></meta>
         <meta name="theme-color" content="#066fff"></meta>
         <meta name="apple-mobile-web-app-status-bar-style" content="#066fff"></meta>
         <meta name="apple-mobile-web-app-capable" content="yes" />
