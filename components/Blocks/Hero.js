@@ -22,7 +22,7 @@ const Hero = () => (
                 <div className="hero-content">
                   <div className="hero-title">
                     <div className="overline">
-                      Hi, I'm <h1>Austin Condiff</h1>
+                      Hi, I&apos;m <h1>Austin Condiff</h1>
                     </div>
                     <h2 className="lead">
                       I create <em>digital experiences</em>
