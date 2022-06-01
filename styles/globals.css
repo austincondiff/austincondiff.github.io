@@ -400,6 +400,14 @@ header .lead em {
   font-style: normal;
   display: inline-block;
 }
+header .lead em:after {
+  background-color: #fed500;
+  content: '';
+  display: inline-block;
+  width: 0.1em;
+  height: 1.25em;
+  margin-bottom: -0.25em;
+}
 header .title {
   font-size: 16px;
   text-transform: uppercase;

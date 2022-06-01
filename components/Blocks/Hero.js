@@ -1,4 +1,5 @@
 import { ParallaxBanner } from 'react-scroll-parallax'
+import Typical from 'react-typical'
 import Icon from '../Icon'
 import social from '../../data/social'
 
@@ -25,10 +26,28 @@ const Hero = () => (
                       Hi, I&apos;m <h1>Austin Condiff</h1>
                     </div>
                     <h2 className="lead">
-                      I create <em>digital experiences</em>
+                      I create{' '}
+                      <Typical
+                        steps={[
+                          'digital experiences',
+                          1000,
+                          'user interfaces',
+                          1000,
+                          'brand identities',
+                          1000,
+                          'maintainable code',
+                          1000,
+                          'motion graphics',
+                          1000,
+                          'reusable components',
+                          1000,
+                        ]}
+                        loop={Infinity}
+                        wrapper="em"
+                      />
                     </h2>
                   </div>
-                  <p>
+                  <p class="summary">
                     For the past fifteen years I have been designing and developing mobile, desktop, and web based user
                     experiences for small businesses and Fortune 500 companies using the best design techniques and the
                     latest front-end technologies.
