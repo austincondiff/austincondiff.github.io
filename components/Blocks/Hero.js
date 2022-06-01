@@ -47,7 +47,7 @@ const Hero = () => (
                       />
                     </h2>
                   </div>
-                  <p class="summary">
+                  <p>
                     For the past fifteen years I have been designing and developing mobile, desktop, and web based user
                     experiences for small businesses and Fortune 500 companies using the best design techniques and the
                     latest front-end technologies.
