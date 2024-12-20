@@ -86,7 +86,7 @@ const Nav = ({ scrollTop, sections }) => {
         </div>
       </nav>
       <a
-        href="/assets/files/resume-2022.pdf"
+        href="/assets/files/resume-2024.pdf"
         target="_blank"
         id="resume-button"
         className={`button ${scrollTop > 0 ? ' scrolled' : ''}`}
