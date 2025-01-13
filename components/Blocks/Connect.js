@@ -24,7 +24,7 @@ const Connect = () => {
       method: 'POST',
       dataType: 'json',
       url: url,
-      data: this.state.formData,
+      data: formData,
     })
       .then((data) => {
         setSubmitted(true)
