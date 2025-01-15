@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Icon from '../Icon'
 
 const Connect = () => {
   const [formData, setFormData] = useState({})
+  const [loading, setLoading] = useState(false)
+  const [invalid, setInvalid] = useState(false)
+  const [hasError, setHasError] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (event) => {
@@ -16,9 +20,17 @@ const Connect = () => {
     }))
   }
 
+  const handleInvalid = () => {
+    if (!invalid) {
+      setInvalid(true)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const url = 'https://formcarry.com/s/HkACBO6Tz'
+    setLoading(true)
+    setInvalid(false)
 
     axios({
       method: 'POST',
@@ -26,13 +38,14 @@ const Connect = () => {
       url: url,
       data: formData,
     })
-      .then((data) => {
-        setSubmitted(true)
-      })
-      .catch((data) => {
-        console.log('There was a problem submitting the form.')
-        console.log(data)
-      })
+    .then((data) => {
+      setLoading(false)
+      setSubmitted(true)
+    })
+    .catch((data) => {
+      console.log('There was a problem submitting the form.')
+      console.log(data)
+    })
   }
 
   return (
@@ -44,9 +57,12 @@ const Connect = () => {
           me!
         </p>
         {submitted ? (
-          <p>Got it! I&apos;ll get in touch as soon as I can.</p>
+          <div className="banner success">
+            <Icon type="check" />
+            <p><strong>Got it!</strong> I&apos;ll get in touch as soon as I can.</p>
+          </div>
         ) : (
-          <form className="contact page" onSubmit={handleSubmit}>
+          <form className={`contact page${invalid ? ` invalid` : ``}`} onSubmit={handleSubmit}>
             <ul>
               <li className="name">
                 <input
@@ -60,6 +76,7 @@ const Connect = () => {
                   tabIndex="1"
                   required
                   placeholder="Name"
+                  onInvalid={handleInvalid}
                 />
               </li>
               <li className="email">
@@ -75,6 +92,7 @@ const Connect = () => {
                   tabIndex="2"
                   required
                   placeholder="Email"
+                  onInvalid={handleInvalid}
                 />
               </li>
               <li className="message">
@@ -90,10 +108,11 @@ const Connect = () => {
                   tabIndex="3"
                   required
                   placeholder="Message"
+                  onInvalid={handleInvalid}
                 ></textarea>
               </li>
               <li className="buttons submit">
-                <input id="saveForm" name="saveForm" className="submit button primary" type="submit" value="Send" />
+                <input id="saveForm" name="saveForm" className="submit button primary" type="submit" value={loading ? "Sending..." : "Send"} disabled={loading} />
               </li>
             </ul>
           </form>

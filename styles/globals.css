@@ -1000,6 +1000,25 @@ ul.timeline li .date {
   font-size: 16px;
   font-weight: 300;
 }
+
+.block.connect .banner {
+  padding: 20px;
+  background: #066fff;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 16px;
+}
+.block.connect .banner svg {
+  font-size: 24px;
+}
+
+.block.connect .banner.success {
+  background: #4ab00f;
+}
+
 .block.find-me p.find-txt {
   font-size: 28px;
   line-height: 1.25;
@@ -1085,9 +1104,9 @@ form.contact textarea {
   -webkit-appearance: none;
 }
 
-form.contact input[type='text']:hover,
-form.contact input[type='email']:hover,
-form.contact textarea:hover {
+form.contact input[type='text']:hover:not([disabled]),
+form.contact input[type='email']:hover:not([disabled]),
+form.contact textarea:hover:not([disabled]) {
   -webkit-box-shadow: 0 0 0 2px #d1d4dc;
   box-shadow: 0 0 0 2px #d1d4dc;
 }
@@ -1104,11 +1123,25 @@ form.contact textarea:focus {
   margin-bottom: 20px;
 }
 
-form.contact input[type='text'].error,
-form.contact input[type='email'].error,
-form.contact textarea.error {
+form.contact.invalid input[type='text']:invalid,
+form.contact.invalid input[type='email']:invalid,
+form.contact.invalid textarea:invalid {
   box-shadow: 0 0 0 2px #f37169;
   color: #f37169;
+}
+
+form.contact input[type='text'][disabled],
+form.contact input[type='email'][disabled],
+form.contact textarea[disabled] {
+  box-shadow: 0 0 0 8px transparent;
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+form.contact input.button.primary[disabled] {
+  border-color: #8e97a0;
+  background-color: #8e97a0;
+  pointer-events: none;
 }
 
 .social a {
