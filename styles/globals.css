@@ -619,14 +619,17 @@ ul.theory li em {
   background-color: white;
 }
 
-.block.skillset ul,
 .block.skillset h4 {
   text-align: left;
 }
 
+.block.skillset ul {
+  text-align: left;
+  columns: 5;
+}
+
 .block.skillset ul li {
-  display: inline-block;
-  width: 25%;
+  display: block;
   font-size: 13px;
   padding: 12px 0;
   color: #6b6f81;
@@ -1295,6 +1298,19 @@ header .button.primary:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 2000px) {
+  .block.work ul li {
+    width: 25%;
+  }
+
+  ul.theory li {
+    padding: 8px;
+    display: inline-block;
+    font-size: 20px;
+    width: 20%;
+  }
+}
+
 @media (max-width: 1220px) {
   header .hero-layout {
     gap: 40px;
@@ -1317,6 +1333,9 @@ header .button.primary:hover {
   header .photo {
     width: 200px;
     height: 200px;
+  }
+  .block.skillset ul {
+    columns: 4;
   }
 }
 
@@ -1477,11 +1496,16 @@ header .button.primary:hover {
     padding: 20px;
   }
 
+  .block.skillset ul {
+    columns: 3;
+  }
+
   .block.work ul li {
     width: 49%;
     display: inline-block;
   }
 }
+
 @media (min-width: 2001px) {
   ul.theory li {
     font-size: 21px;
@@ -1492,18 +1516,6 @@ header .button.primary:hover {
   }
 }
 
-@media (max-width: 2000px) {
-  .block.work ul li {
-    width: 25%;
-  }
-
-  ul.theory li {
-    padding: 8px;
-    display: inline-block;
-    font-size: 20px;
-    width: 20%;
-  }
-}
 @media (max-width: 1439px) {
   .block.work ul li {
     width: 33.33%;
@@ -1542,11 +1554,9 @@ header .button.primary:hover {
   header .bg-img {
     top: 0 !important;
   }
-
   header .wrap {
     padding: 6%;
   }
-
   header .hero-layout {
     gap: 40px;
     flex-direction: column-reverse;
@@ -1601,6 +1611,10 @@ header .button.primary:hover {
 
   .block.work ul li > a {
     margin: 4px;
+  }
+
+  .block.skillset ul {
+    columns: 2;
   }
 
   .block.timeline h3.title {
@@ -1802,10 +1816,6 @@ header .button.primary:hover {
     border-radius: 100px;
     margin: 0 3px;
     transition: 0.25s;
-  }
-
-  .block.skillset ul li {
-    width: 50%;
   }
 
   .block.work.repos ul {
