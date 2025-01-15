@@ -148,7 +148,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #5f6774;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 section:before {
@@ -664,6 +664,10 @@ ul.theory li em {
 .block.work ul li {
   width: 16.66%;
   display: inline-block;
+}
+
+.block.work ul li p {
+  font-size: 0.875em;
 }
 
 .block.work.repos .grid > h4 {
