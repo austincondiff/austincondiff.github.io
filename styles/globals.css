@@ -1111,9 +1111,9 @@ form.contact textarea:hover:not([disabled]) {
   box-shadow: 0 0 0 2px #d1d4dc;
 }
 
-form.contact input[type='text']:focus,
-form.contact input[type='email']:focus,
-form.contact textarea:focus {
+form.contact input[type='text']:focus:not([disabled]),
+form.contact input[type='email']:focus:not([disabled]),
+form.contact textarea:focus:not([disabled]) {
   -webkit-box-shadow: 0 0 0 2px #066fff;
   box-shadow: 0 0 0 2px #066fff;
   background: white;
