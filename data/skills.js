@@ -1,7 +1,6 @@
 const skills = {
   specialties: [
     'Front-end Development',
-    'User testing',
     'HTML5',
     'CSS3',
     'JavaScript',
@@ -28,6 +27,7 @@ const skills = {
     'Xcode',
     'User Experience Design',
     'User Interface Design',
+    'User Testing',
     'Story Maps',
     'Wireframes',
     'Visual Design',

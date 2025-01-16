@@ -1,9 +1,9 @@
 const social = [
   {
-    id: 'twitter',
-    url: 'https://twitter.com/austincondiff',
-    message: 'Follow me on Twitter.',
-    color: '#00ACEE',
+    id: 'x',
+    url: 'https://x.com/austincondiff',
+    message: 'Follow me on X.',
+    color: '#24292e',
   },
   {
     id: 'dribbble',
@@ -35,6 +35,6 @@ const social = [
     message: 'Jam with me on Spotify.',
     color: '#1db954',
   },
-]
+];
 
 export default social
