@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
-import { About, Connect, FindMe, Hero, MissionStatement, Repositories, Skillset, Timeline, Work } from './Blocks'
+import { About, Connect, FindMe, Hero, Repositories, Skillset, Timeline, Work } from './Blocks'
 import Footer from './Footer'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
@@ -43,7 +43,6 @@ export default class App extends Component {
               }}
             >
               <Hero scrollTop={this.state.scrollTop} />
-              <MissionStatement />
               <About />
             </section>
             <section

@@ -187,6 +187,11 @@ p {
   text-align: center;
 }
 
+.wrap.mission-statement {
+  padding-bottom: 0;
+  margin-bottom: -2%;
+}
+
 nav.block {
   background: rgba(49, 52, 63, 0);
   text-align: center;
@@ -552,22 +557,14 @@ h3.title + p.subtitle {
   margin-bottom: 32px;
 }
 
+.block.about,
 .block.timeline,
 .block.find-me,
 .block.repos {
   background: #f5f6f7;
 }
 
-.block.about {
-  background: #252b34;
-  color: white;
-}
-
-.block.mission-statement {
-  background: white;
-}
-
-.mission-statement h3 {
+.about h3 {
   font-size: 28px;
   line-height: 1.25;
   color: #000000;
@@ -576,7 +573,7 @@ h3.title + p.subtitle {
   letter-spacing: -0.025em;
 }
 
-.mission-statement p {
+.about p {
   margin-bottom: 12px;
   font-size: 16px;
 }
@@ -1698,7 +1695,7 @@ header .button.primary:hover {
     margin-bottom: 24px;
   }
 
-  .mission-statement h3,
+  .about h3,
   ul.theory {
     font-size: 21px;
     line-height: 1.5;
@@ -1753,7 +1750,7 @@ header .button.primary:hover {
     padding: 20px 0;
   }
 
-  .mission-statement h3,
+  .about h3,
   ul.theory {
     font-size: 18px;
     line-height: 1.5;
