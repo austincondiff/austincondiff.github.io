@@ -879,70 +879,80 @@ ul.timeline li:nth-child(even):after {
 ul.timeline li.ut {
   margin-top: -68px;
 }
-ul.timeline li.mf {
-  margin-top: -112px;
-}
-ul.timeline li.ogf {
-  margin-top: -95px;
-}
-ul.timeline li.ancestry {
-  margin-top: -166px;
-}
-ul.timeline li.usana {
-  margin-top: -20px;
-}
-ul.timeline li.solutionstream {
-  margin-top: -187px;
-}
-ul.timeline li.rss {
-  margin-top: 22px;
-}
-ul.timeline li.intuit {
-  margin-top: -221px;
-}
-ul.timeline li.verizon {
-  margin-top: 56px;
-}
-ul.timeline li.churchofjesuschrist {
-  margin-top: -201px;
-}
-
 ul.timeline li.ut:before,
 ul.timeline li.ut:after {
-  top: 10px;
+  top: 30px;
+}
+
+ul.timeline li.mf {
+  margin-top: -113px;
 }
 ul.timeline li.mf:before,
 ul.timeline li.mf:after {
   top: auto;
   bottom: 80px;
 }
+
+ul.timeline li.ogf {
+  margin-top: -28px;
+}
 ul.timeline li.ogf:before,
 ul.timeline li.ogf:after {
-  top: 100px;
+  top: 23px;
+}
+
+ul.timeline li.ancestry {
+  margin-top: -166px;
 }
 ul.timeline li.ancestry:before,
 ul.timeline li.ancestry:after {
-  top: 70px;
+  top: 76px;
+}
+
+ul.timeline li.usana {
+  margin-top: 4px;
 }
 ul.timeline li.usana:before,
 ul.timeline li.usana:after {
   top: 10px;
 }
+
+ul.timeline li.solutionstream {
+  margin-top: -165px;
+}
 ul.timeline li.solutionstream:before,
 ul.timeline li.solutionstream:after {
-  top: 40px;
+  top: 100px;
+}
+
+ul.timeline li.rss {
+  margin-top: 4px;
 }
 ul.timeline li.rss:before,
 ul.timeline li.rss:after {
-  top: 10px;
+  top: 21px;
+}
+
+ul.timeline li.intuit {
+  margin-top: -178px;
 }
 ul.timeline li.intuit:before,
 ul.timeline li.intuit:after {
-  top: 120px;
+  top: 102px;
+}
+
+ul.timeline li.verizon {
+  margin-top: 17px;
 }
 ul.timeline li.verizon:before,
 ul.timeline li.verizon:after {
   top: 10px;
+}
+
+ul.timeline li.churchofjesuschrist {
+    margin-top: -198px;
+    margin-bottom: -53px;
+    transform: translateY(40px);
 }
 ul.timeline li.churchofjesuschrist:before,
 ul.timeline li.churchofjesuschrist:after {
@@ -950,18 +960,13 @@ ul.timeline li.churchofjesuschrist:after {
 }
 
 ul.timeline li.now {
-  margin-top: -73px;
+  margin-top: -23px;
   display: inline-block;
+  margin-bottom: 0px;
+  transform: translateY(44px);
 }
-
 ul.timeline li.now:after {
   background: #fed500;
-}
-
-ul.timeline li:last-child {
-  position: absolute;
-  left: 0;
-  bottom: -60px;
 }
 
 ul.timeline li .company {
@@ -1503,6 +1508,97 @@ header .button.primary:hover {
   }
 }
 
+@media (max-width: 1070px) {
+
+
+
+
+  .block.timeline h3.title {
+    margin-left: 42px;
+  }
+
+  ul.timeline {
+    margin-left: 0;
+    margin-top: calc(-8vw - 52px);
+    border-left: 10px solid #fff;
+    padding: calc(8vw + 52px) 0 0 0;
+    position: relative;
+  }
+
+  ul.timeline li:nth-child(even) {
+    margin-left: 30px;
+    margin-right: inherit;
+  }
+
+  ul.timeline li:nth-child(odd):before,
+  ul.timeline li:nth-child(odd):after,
+  ul.timeline li:nth-child(even):before,
+  ul.timeline li:nth-child(even):after {
+    top: 10px;
+    bottom: auto;
+  }
+
+  ul.timeline li {
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+    margin-bottom: 20px !important;
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+
+  ul.timeline li:nth-child(odd) {
+    margin-right: 0px;
+  }
+
+  ul.timeline li:nth-child(even):before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid #fff;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    margin-top: 7px;
+  }
+
+  ul.timeline li:nth-child(even):after {
+    left: -52px;
+    right: auto;
+  }
+
+  ul.timeline li.now {
+    margin-left: 30px !important;
+    margin-top: -30px !important;
+    transform: translateY(50px) !important;
+    width: auto !important;
+  }
+
+  ul.timeline li:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 9px solid #fff;
+    position: absolute;
+    left: -52px;
+    top: 10px;
+  }
+
+
+
+
+
+
+}
+
 @media (min-width: 2001px) {
   ul.theory li {
     font-size: 21px;
@@ -1612,82 +1708,6 @@ header .button.primary:hover {
 
   .block.skillset ul {
     columns: 2;
-  }
-
-  .block.timeline h3.title {
-    margin-left: 42px;
-  }
-
-  ul.timeline {
-    margin-left: 0;
-    margin-top: calc(-8vw - 52px);
-    border-left: 10px solid #fff;
-    padding: calc(8vw + 52px) 0 30px 0;
-    position: relative;
-  }
-
-  ul.timeline li:nth-child(even) {
-    margin-left: 30px;
-    margin-right: inherit;
-  }
-
-  ul.timeline li:nth-child(odd):before,
-  ul.timeline li:nth-child(odd):after,
-  ul.timeline li:nth-child(even):before,
-  ul.timeline li:nth-child(even):after {
-    top: 10px;
-    bottom: auto;
-  }
-
-  ul.timeline li {
-    background: #fff;
-    padding: 20px;
-    position: relative;
-    text-align: left;
-    z-index: 1;
-    margin-bottom: 20px;
-    margin-top: 0 !important;
-  }
-
-  ul.timeline li:nth-child(odd) {
-    margin-right: 0px;
-  }
-
-  ul.timeline li:nth-child(even):before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border: 10px solid rgba(0, 0, 0, 0);
-    border-right: 10px solid #fff;
-    position: absolute;
-    left: -20px;
-    top: 10px;
-    margin-top: 7px;
-  }
-
-  ul.timeline li:nth-child(even):after {
-    left: -52px;
-    right: auto;
-  }
-
-  ul.timeline li.now {
-    margin-left: 30px !important;
-    width: auto !important;
-  }
-
-  ul.timeline li:after {
-    content: '';
-    display: block;
-    width: 15px;
-    height: 15px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    border: 9px solid #fff;
-    position: absolute;
-    left: -52px;
-    top: 10px;
   }
 
   h3.title {

@@ -5,7 +5,7 @@ const jobs = [
     title: 'Website/Graphic Designer',
     date: '2006',
     description:
-      'First being hired on as an intern, working at the University of Texas Health/Science Center at Houston has helped me not only to be a better designer, but also to be able to work well with others.',
+      'Hired as an intern and transitioned to a full-time role, contributing to the University of Texas Health Science Center at Houston by enhancing design skills and fostering collaboration within a professional environment.',
   },
   {
     id: 'mf',
@@ -13,15 +13,15 @@ const jobs = [
     title: 'Website UI Designer',
     date: '2011',
     description:
-      'MediaFire is a cloud storage service that helps people store, organize, and share data via the Internet. At MediaFire, I worked primarily with HTML5, CSS, and Photoshop to design and improve the overall look and feel of the website. This position has not only helped me to understand how better communicate and work together with a team, but it has also helped me to sharpen my skills as a designer.',
+      'Specialized in designing and improving the website user interface using HTML5, CSS, and Photoshop, while refining team collaboration skills and advancing design capabilities.',
   },
   {
     id: 'ogf',
     company: 'OneGreatFamily',
-    title: 'UX/UI Designer and Javascript Front-end Engineer',
+    title: 'UX/UI Designer and JavaScript Front-End Engineer',
     date: '2012',
     description:
-      "At OneGreat Family, I worked on a project called KiN2.me. KiN2 is the groundbreaking new application that shows you how you're related to famous celebrities, historical figures, and your facebook friends. Working at KiN2.me, I learned how to better program in Javascript and I have also become very proficient in jQuery. I also designed the website's UX/UI using HTML5 and CSS3 after designing Photoshop mockups. Here I was able to improve the overall site look and feel.",
+      'Contributed to the KiN2.me project, showcasing relationships to celebrities, historical figures, and social media friends. Enhanced JavaScript and jQuery expertise while designing UX/UI with HTML5, CSS3, and Photoshop mockups to improve functionality and aesthetics.',
   },
   {
     id: 'ancestry',
@@ -29,7 +29,7 @@ const jobs = [
     title: 'UI/UX Design Director',
     date: '2013',
     description:
-      'At Ancestry, I designed their new interface to be released to libraries all across the world. This new interface would help users better visualize the records they are searching for requarding their ancestors and help them minimize the time taken to accomplish tasks due to the limited amount of time given in libraries.',
+      'Directed the redesign of an interface deployed in libraries worldwide, enabling users to visualize records more effectively and streamline task completion during limited access periods.',
   },
   {
     id: 'usana',
@@ -37,7 +37,7 @@ const jobs = [
     title: 'UI/UX Design Specialist',
     date: '2014',
     description:
-      'At USANA I lead the design of their flagship web application, USANA Hub, which served as a sales portal that servs thousands of associates in many different markets around the world. I also ensured that all of the designs being used throught the company, were consistent in both function and asthetic. I also helped USANA to move from older technologies in favor of new ones such as AngularJS.',
+      'Led the design of the flagship web application USANA Hub, a sales portal supporting thousands of associates across global markets. Ensured design consistency and facilitated the adoption of modern technologies such as AngularJS.',
   },
   {
     id: 'solutionstream',
@@ -45,7 +45,7 @@ const jobs = [
     title: 'UI/UX Design Specialist',
     date: '2014',
     description:
-      'During my time at SolutionStream, I worked on many different projects for their clients. I got the opportunity to use a wide array of technologies and design styles. Depending on the project was used as a UX/UI design and a front-end dev resource.',
+      'Delivered design and development solutions across multiple client projects, employing diverse technologies and styles. Acted as both a UX/UI design resource and front-end developer depending on project requirements.',
   },
   {
     id: 'rss',
@@ -53,7 +53,7 @@ const jobs = [
     title: 'Co-founder - UI/UX Designer & Developer',
     date: '2015',
     description:
-      'At RSS.com, I developed ideas for RSS.com in an effort to revive an aging technology, create a reimagined reader experience, help publishers to obtain a styled, user-friendly RSS feed page, and educate the public about the benefits of the technology. I designed wireframes and mockups then later implemented those mockups in an Angular front end.',
+      'Developed initiatives to modernize RSS technology, creating a reimagined reader experience and user-friendly feed pages. Designed and implemented wireframes and mockups using Angular for front-end development.',
   },
   {
     id: 'intuit',
@@ -61,7 +61,7 @@ const jobs = [
     title: 'UI Engineer/Designer',
     date: '2016',
     description:
-      'At Intuit, I worked on a product that helps accountants better communicate and get documents from their clients. I helped in the transition from AngularJS to ReactJS and refreshed the design of both their accountant and client-facing apps.',
+      'Supported a product streamlining communication between accountants and clients, overseeing the transition from AngularJS to ReactJS and implementing design updates for enhanced user experiences.',
   },
   {
     id: 'verizon',
@@ -69,16 +69,16 @@ const jobs = [
     title: 'Creative UI Engineer',
     date: '2017',
     description:
-      'At Verizon, I created a design system, developed a story map (or user flow) based on user input, and architected a frontend project from the ground up based on ReactJS for hardware operations.',
+      'Created a comprehensive design system, mapped user flows based on input, and architected a ReactJS-based frontend project to support hardware operations.',
   },
   {
     id: 'churchofjesuschrist',
     company: 'The Church Of Jesus Christ of Latter-day Saints',
-    title: 'Senior Front-end Developer',
+    title: 'Senior Front-End Developer',
     date: '2018 - Present',
     description:
-      'At the Church of Jesus Christ of Latter-day Saints, my team and I built a large-scale financial application with React and Next.js that is used by an internal accounting team to manage donations using the latest technologies and development practices.',
+      'Developed a large-scale mission-critical financial application with React and Next.js to support internal accounting teams in managing donations, utilizing advanced technologies and best practices for scalability and efficiency.',
   },
-]
+];
 
-export default jobs
+export default jobs;
